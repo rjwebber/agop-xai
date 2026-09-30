@@ -81,9 +81,14 @@ class BalancedMapAlgebraTests(unittest.TestCase):
             left = model.apply_B(control) @ packed_seed
             right = control @ model.apply_BT(packed_seed)
             self.assertAlmostEqual(float(left), float(right), places=13)
-            np.testing.assert_array_equal(
+            # BLAS implementations may associate the two equivalent matrix
+            # products differently, so require floating-point agreement rather
+            # than bitwise identity.
+            np.testing.assert_allclose(
                 packed_matrix @ control,
                 model.apply_B(control),
+                rtol=2e-14,
+                atol=2e-14,
             )
             outside = np.ones(model.layout.packed_size, dtype=bool)
             outside[model.layout.packed_indices] = False
