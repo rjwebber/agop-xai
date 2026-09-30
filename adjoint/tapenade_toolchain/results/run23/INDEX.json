@@ -1,0 +1,276 @@
+{
+  "cases": {
+    "extreme_el_nino": {
+      "final_nino3_celsius": 4.446654796600342,
+      "forward_path_sha256": "5537a3f8b7e94b5341ca0a8897ff80ec18338d41428a2bd45850808c2b86be3d",
+      "gradient_l2_norm": 0.5248207133499752,
+      "gradient_package_npz_sha256": "4f884ed45203308f06dac19613f338eff4dcd669fcb84db04b9c905dec5a002e",
+      "gradient_package_report_sha256": "b90638a31347401c0923ea31311a8d2490ea3dd59a277bbafb70acfa0d8e0367",
+      "initial_checkpoint_sha256": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825",
+      "producer_metadata_sha256": "08e01bed17124438ffc06ff1fb0e7c59854d353240219a8cbc34fc431965ce46",
+      "raw_gradient_interpretation_warning": {
+        "dominant_manifest_segment": "Q0O",
+        "dominant_segment_squared_l2_fraction": 0.615045743920018,
+        "independent_control_squared_l2_fraction": 0.018042514972286677,
+        "raw_mixed_unit_norm_is_not_feature_importance": true
+      },
+      "raw_gradient_sha256": "da5b61f288b25d31f4113c8df0ac7698aed26af4c6b68a668e78461500f4f9a1",
+      "reverse_cpu_seconds": 0.3654769957065582,
+      "source_run_report_sha256": "a679014613f65c07d69b62c700dc6d2611e7995952fdf69abc7a1f97f8541836",
+      "title": "Extreme El Nino"
+    },
+    "extreme_la_nina": {
+      "final_nino3_celsius": -2.1435036659240723,
+      "forward_path_sha256": "5c244c6c52023a15dcda8149d05dbb8ad6d02b87d9f9827433c224117bed0e75",
+      "gradient_l2_norm": 1.8542298290251016,
+      "gradient_package_npz_sha256": "692dac5b47dc81010c041e75bbf7c6129e55275c49041d1d568468ff35dddf41",
+      "gradient_package_report_sha256": "bf42857ba3b50c2191b2afeb7e3e727772f84b99cc8e3804d6f52ddef08fa15b",
+      "initial_checkpoint_sha256": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7",
+      "producer_metadata_sha256": "4ca88dba3e21510f36d55928beddafdebfa761534133a5b26b04a3f7508eac65",
+      "raw_gradient_interpretation_warning": {
+        "dominant_manifest_segment": "UBAR",
+        "dominant_segment_squared_l2_fraction": 0.9367709586232057,
+        "independent_control_squared_l2_fraction": 0.0033564408190579426,
+        "raw_mixed_unit_norm_is_not_feature_importance": true
+      },
+      "raw_gradient_sha256": "a8c57ea8111fa14f919973aafc0e4fd46b6dcf27addb406412e31a63a7b02231",
+      "reverse_cpu_seconds": 0.36819398403167725,
+      "source_run_report_sha256": "54fe7be4d305240b35f357faf5e93a20f682f7f4bd77b3c977a3f0faaa4268e6",
+      "title": "Extreme La Nina"
+    },
+    "neutral_member_04": {
+      "final_nino3_celsius": -0.46085354685783386,
+      "forward_path_sha256": "2387e648f0d9c9fe8d6f587da41a189a4aa1cebb95a5c50485ab5eeab1d77df2",
+      "gradient_l2_norm": 2.4607209171750397,
+      "gradient_package_npz_sha256": "73ff5dc286a429f29bec6dc0eced055bb86f4d66464906837b7048cf5d905d9f",
+      "gradient_package_report_sha256": "df081d665f22eaef1fe7a27e37c55326d4373e2a7da9d8c32f975a6cd027bd39",
+      "initial_checkpoint_sha256": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74",
+      "producer_metadata_sha256": "b111fcd8802e8b36c2223b8836d6ee468e91742ff7db68c27d5af201a4238fa5",
+      "raw_gradient_interpretation_warning": {
+        "dominant_manifest_segment": "Q0O",
+        "dominant_segment_squared_l2_fraction": 0.5009649278161137,
+        "independent_control_squared_l2_fraction": 0.009437372603464729,
+        "raw_mixed_unit_norm_is_not_feature_importance": true
+      },
+      "raw_gradient_sha256": "4df158b4bc5669d302a0ad2d7f52a0a3d3a43c2b8bc1662dc334a95ff37609dd",
+      "reverse_cpu_seconds": 0.31492099165916443,
+      "source_run_report_sha256": "def12ae7d8a482e74026ddfe47ae01a6f580177829fe291b5d8afad2ea10e742",
+      "title": "Neutral member 04"
+    }
+  },
+  "certification": {
+    "assessed": false,
+    "automatic_acceptance_thresholds_applied": false,
+    "globally_certified": false
+  },
+  "claim_boundary": {
+    "not_supported": [
+      "global differentiability across branch changes",
+      "stability of unrecorded internal sign, cap, upwind, or threshold branches",
+      "a clean multi-level h^2 Taylor regime",
+      "a real64 verification twin",
+      "a validated derivative for another model configuration or initialization mode",
+      "coordinatewise equivalence to standardized 2162-feature neural-network AGOP",
+      "independently perturbing every active carried-state coordinate as a balanced physical control"
+    ],
+    "supported": [
+      "bitwise authentic-primal replay in all 15 locked window cases",
+      "fresh-process state closure in all three 40-step segmented cases",
+      "omitted-workspace closure in all six poison cases",
+      "same-generation scalar and generic-terminal tangent/reverse transpose comparisons on three paths",
+      "one-step authentic-primal centered differences on conservative independent-control and broader active-state directions",
+      "provisional 31-transition aligned scalar directional checks for the warm and neutral cases",
+      "arbitrary 59,148-coordinate terminal REAL-state linear-functional reverse seed API, including an exact all-zero smoke test when listed in evidence"
+    ]
+  },
+  "curation_time": {
+    "semantics": "latest created_utc value among the immutable input evidence; not wall-clock execution time of this deterministic curator",
+    "value": "2026-09-06T13:26:37.520734+00:00"
+  },
+  "curator_script_version": "1.0.1",
+  "derivative_build": {
+    "compile_input_inventory_file_sha256": {
+      "prepared": "7e92b921a0d250f046d32902dd926a612b2e4842c296d497d1e1a60157bce8cf",
+      "reverse": "968b22a83a61078a32b1db2485a20a9a020fbdb6cad66f247193697655a9ca41",
+      "tangent": "ee8c7e631930e0f50421208f47f15caa19980db6ed8b5c612c67edd4cdac6a4b"
+    },
+    "coupled_build_manifest_original_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+    "generated_source_manifest_sha256": "33ff5b6ac2a693f233d16d59bb0035a1d7efa74733bededda2c03957ae607750",
+    "o3_audit_tangent_executable_sha256": "94209b462cf968d3316f9ca28681ebc174d52c8374eb41f0affc3e2d9c56561b",
+    "prepared_source_manifest_sha256": "02eb3455bccad4c911ea659a8f192ac100f63ac2b7366ecce6f51f75d905db13",
+    "reverse_executable_sha256": "0932e1cab86c978dbe8005d913cc45c39f1a45aa97782f52ab570b714b7bfaae",
+    "tapenade_archive_sha256": "534b83598c508a3202880016403f84e352e4b00bdc4c6b934bb39ccbdddb0963",
+    "tapenade_revision": "0449e37b7da896cb2c38b63c8a34f10c87a84534"
+  },
+  "distribution": {
+    "checkpoint_or_raw_path_files_published": false,
+    "executables_published": false,
+    "generated_source_published": false,
+    "gradient_packages_published": true,
+    "raw_zc_source_published": false,
+    "reason": "This evidence bundle remains source-free; project-authored ZC-derived patches and coupled drivers are published separately as repository source.",
+    "source_bearing_patches_published": false,
+    "source_free": true
+  },
+  "finite_difference_summary": {
+    "active_carried_one_step_full_output_relative_l2_range": [
+      8.178888199903443e-05,
+      0.00016980868311880208
+    ],
+    "aligned_el_nino_best_stable_relative_defect": 0.0003364364011792926,
+    "aligned_la_nina": "no tested two-sided major-tape-stable h; NSST changes at step 15",
+    "aligned_neutral_best_stable_relative_defect": 0.011125363964408549,
+    "composed_random_full_state_classification": "diagnostic_not_a_pass",
+    "independent_control_one_step_full_output_relative_l2_range": [
+      2.071111859458695e-06,
+      2.3147980415541703e-06
+    ]
+  },
+  "forward_gate": {
+    "build_report_original_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "reference_executable_sha256": "eb1cd729120bfffe8edba83f4215e263c177a00a2319b3601ae51f4d9e1225a6",
+    "replay_report_original_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+    "segmented_replay_cases": 3,
+    "status": "passed",
+    "window_cases": 15,
+    "workspace_poison_cases": 6
+  },
+  "published_report_provenance": {
+    "cases/extreme_el_nino/producer_run_report.json": {
+      "published_sha256": "bc89729ddb781181e5eea6fdc6453e3888b1132923831d0c676a6661d9363995",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "a679014613f65c07d69b62c700dc6d2611e7995952fdf69abc7a1f97f8541836"
+    },
+    "cases/extreme_la_nina/producer_run_report.json": {
+      "published_sha256": "076dcd167a6c76879e5ace125f441f4f816122d3c16f3423a2726c4ef28a7f9c",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "54fe7be4d305240b35f357faf5e93a20f682f7f4bd77b3c977a3f0faaa4268e6"
+    },
+    "cases/neutral_member_04/producer_run_report.json": {
+      "published_sha256": "bb7216a894f128596ac6a7ededf5a786c40fc47749ef6f992ef7f74fdc77c235",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "def12ae7d8a482e74026ddfe47ae01a6f580177829fe291b5d8afad2ea10e742"
+    },
+    "evidence/generic_dot_extreme_el_nino.json": {
+      "published_sha256": "9f3f8fb5d37d8d09c69d1994b16f3102a9aacc88e5864f7a6528505d2e6ef8e8",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "466003d88fdf0d12f92e1b8cde75613e876da63fc3d65663dbc3cd560d66d21f"
+    },
+    "evidence/generic_dot_extreme_la_nina.json": {
+      "published_sha256": "fbc93371d41711e3e46850527f9c488f7ae8d3b21f42e631ca371cab63109772",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "2b4c0ee6ffb4b332b01cee055436123ebfe6292f5beea0b4717514d246ae1016"
+    },
+    "evidence/generic_dot_neutral_member_04.json": {
+      "published_sha256": "26016746766b89828ecb369770c2ee179de99d2df3216b8d347d1e899cec96e0",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "96c6f3b771619aa193d55c8ccc37f3b30b3e32ba3a82e7c320927bfd80cfe411"
+    },
+    "evidence/primal_replay_report.json": {
+      "published_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+    },
+    "evidence/scalar_dot_extreme_el_nino.json": {
+      "published_sha256": "21ba3c8e4104376efea62b07606eb97e6f28e728cbf9981643f0a1cc692547d1",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "030783304a57d178d9c5b37203909cdd159f85382b128afde1afb00066bdddea"
+    },
+    "evidence/scalar_dot_extreme_la_nina.json": {
+      "published_sha256": "dd31a91310b53d18e6ae3e8a15c45785b7bb798e42e7fa5064ea0ee002ce128a",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "40b4da76ab44125fb9533b98cad6de8d3b19e169e4c0afd6dbe8005d8c6c981c"
+    },
+    "evidence/scalar_dot_neutral_member_04.json": {
+      "published_sha256": "f85a09d6d812201d653efca6d877d147b1dbef53ecd03110d6a8fa5d06499b82",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "c6f522b667232c3f67f4cc4f6e06c6cbb8f4d54501c3d5234df8753c026e3b94"
+    },
+    "evidence/scalar_taylor_aligned_el.json": {
+      "published_sha256": "6d1cef55ff3214680014cbe697b7082ae7b6dba8ba6b2035dccb988224f5b86b",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "1d2a2ae81bba513cc1b3b4f5e17c6db71df248ec24dd8553e0e6d919199d37b2"
+    },
+    "evidence/scalar_taylor_aligned_la.json": {
+      "published_sha256": "56a04a1067c80c020091e3ef841e2a91777e44ecb82e1ba11116bb3c2cee2dd2",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "459ef6dae428a28fec610b510c20f74e3c1fd69e0fbdb34c7b951b496e965d40"
+    },
+    "evidence/scalar_taylor_aligned_neutral.json": {
+      "published_sha256": "3083c5565e342cb033b294593a8d483750be7304a537b668b29121c7a736ea90",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "9b4ad66cd0027820638c40e0bf319de5dcbba7ca1f9ce412839d17db6b1cab2e"
+    },
+    "evidence/scalar_taylor_random_full.json": {
+      "published_sha256": "f6378f6f27f9716f41f2561c59833b7430ca8240cc15c36d0d005b6190e285d0",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "c30a7698b5f13f7052bbf96ce29e964cd9d216f474628d8ca9288b3d1220aec5"
+    },
+    "evidence/tangent_composed_31step.json": {
+      "published_sha256": "b3a47bf6fd47b179fcb1737aef421fb71987f87da840f529b5f734d0134bc849",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "259a52d13decfd622c4e8350664d312d848f9877e2847a4a1fdefb3bf855b9dd"
+    },
+    "evidence/tangent_one_step_active.json": {
+      "published_sha256": "3b6ea0fadcbf02faa5034c00abe0971aed03cb817a544a6103fc711c5a3d8d78",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "51475e6fbdf66f0f826427f70ec7af6c473ad22ae88ea5f872f420557ae8c6b0"
+    },
+    "evidence/tangent_one_step_independent.json": {
+      "published_sha256": "5e475ea7189911cff33cc0bac327a1c3fd4b1a18785a1d92b361e817873671b5",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "5d71e069d31d435e7666722dc4db13a4ff11e386457fddd6619576ccc6735758"
+    },
+    "evidence/zero_terminal_seed_smoke.json": {
+      "published_sha256": "85aa62959d04f3ec63851685919915ab4cb9ae11f431b29d97cdfd94884e91ad",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "3eced0092fca9eae4c7b19f3d3d61c575938a2c38c1193cdf73a9838eb81d8e5"
+    },
+    "provenance/kernel_build_report.json": {
+      "published_sha256": "7486876459587d38afef205ff28a6679065de565d178df81e62160c3816cf18d",
+      "sanitization": "JSON values preserved except local project/home/compiler/SDK and private validation-stage paths were replaced by explicit tokens; key order and whitespace were canonicalized",
+      "source_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47"
+    }
+  },
+  "raw_gradient_interpretation": {
+    "balanced_standardized_observation_lift_available": false,
+    "conservative_independent_control_count": 28591,
+    "warning": "The 59,148-coordinate gradient mixes units and includes carried atmospheric memory. Its raw squared norm is dominated by Q0O for the warm and neutral cases and by UBAR for the cold case. Do not plot or interpret the full raw vector as physical feature importance."
+  },
+  "run_id": "run23-final3",
+  "sanitization": {
+    "finder_metadata_included": false,
+    "method": "recursive JSON value substitution for local project/home, compiler/SDK, and private validation-stage paths; all original and published report hashes are recorded"
+  },
+  "schema_version": 2,
+  "scientific_contract": {
+    "configuration": {
+      "NATM": 2,
+      "NIC": 0,
+      "NSEG": 1,
+      "arithmetic": "production-compatible default REAL (real32)",
+      "grid": "Standard",
+      "stochastic_westerly_wind_bursts": false
+    },
+    "model": "authentic Zebiak-Cane Fortran implementation",
+    "objective": "mean final TO over 66 cells, Fortran I=13:18,J=21:31",
+    "real_state": {
+      "active": 38315,
+      "conservative_independent_control": 28591,
+      "diagnostic": 18910,
+      "passive": 1923,
+      "total": 59148
+    },
+    "state_semantics": "pre-input native checkpoint",
+    "step_length": "10 days",
+    "transitions": 31
+  },
+  "status": "provisional_major_tape_conditioned",
+  "transpose_summary": {
+    "generic_bilinear_relative": 6.888990006384337e-05,
+    "generic_norm_product_scaled": 3.70160423739692e-08,
+    "scalar_bilinear_relative": 0.0005577615753275431,
+    "scalar_norm_product_scaled": 2.2895699535104552e-09
+  }
+}

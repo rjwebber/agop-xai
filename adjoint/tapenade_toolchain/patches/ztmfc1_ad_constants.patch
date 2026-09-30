@@ -1,0 +1,63 @@
+--- ztmfc1.f
++++ ztmfc1.f
+@@ -50,8 +50,11 @@
+       INTEGER IWK(ndimIWK)
+       LOGICAL IPRINT
+       REAL NINO3
+-      
+-      SAVE
++      INTEGER NMAX,NMAX1,MMAX,M_FFT2C
++      REAL PI,H1,DELTAY,YT
++      PARAMETER (NMAX=80,NMAX1=79,MMAX=64,M_FFT2C=6)
++      PARAMETER (PI=3.1415926535897932,H1=1.0,
++     A DELTAY=0.2,YT=7.9)
+ 
+       DATA DIF/544*0./
+       DATA E1, E2/80*(0.,0.), 80*(0.,0.)/
+@@ -68,14 +71,7 @@
+       end do
+       
+ c some basic parameter specifications...
+       IPRINT=.FALSE.
+-      NMAX=80
+-      MMAX=64
+-      PI=3.1415926535897932
+-      H1=1.0
+-      DELTAY=0.2
+-      YT=7.9
+-      NMAX1=NMAX-1
+ 
+ *     Eli: June 26, 1997:
+ c     Added a factor (beta_factor(i,j) to the heating function, so that the 
+@@ -389,7 +387,6 @@
+       DO 50 J=1, MMAX
+       VEC(J)=Q(I,J)
+ 50    CONTINUE
+-      M_fft2c=6
+ 
+ *Eli: if using local ZC_lib_routines instead of pre-packed library
+ *     from lamont, need to use modified argument list to fft2c:
+@@ -468,7 +465,6 @@
+       DO 251 J=1, MMAX
+       VEC(J)=CONJG(DIV(I,J))/FLOAT(MMAX)
+ 251   CONTINUE
+-      M_fft2c=6
+ 
+ *Eli: if using local ZC_lib_routines instead of pre-packed library
+ *     from lamont, need to use modified argument list to fft2c:
+@@ -511,7 +507,6 @@
+           VEC1(J)=(CONJG(Q(I,J)))/FLOAT(MMAX)
+  130    CONTINUE
+ *Eli:   avoid calling fft2c with an explicit "6" in argument list:
+-        M_fft2c=6
+ 
+ *Eli:   if using local ZC_lib_routines instead of pre-packed library
+ *       from lamont, need to use modified argument list to fft2c:
+@@ -521,7 +516,6 @@
+         DO 132 J=1, 34
+           U(I-25,J)=VEC(J)
+  132    CONTINUE
+-        M_fft2c=6
+ 
+ *Eli:   if using local ZC_lib_routines instead of pre-packed library
+ *       from lamont, need to use modified argument list to fft2c:

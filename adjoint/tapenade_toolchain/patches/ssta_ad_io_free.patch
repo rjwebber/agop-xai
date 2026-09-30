@@ -1,0 +1,6 @@
+--- ssta.f
++++ ssta.f
+@@ -195,2 +195 @@
+-c >>>>> calls to ploting program here.
+-         call plotit(t,rNINO3_Eli)
++c The callable kernel omits plotting; this call has no model-state effect.

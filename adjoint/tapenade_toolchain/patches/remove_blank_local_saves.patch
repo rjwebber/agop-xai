@@ -1,0 +1,34 @@
+--- ssta.f
++++ ssta.f
+@@ -129,7 +129,10 @@
+ *Eli: July 6, 1997: trying to add vertical diffusion of heat:
+       DIMENSION dt_vertical_diff(30,34)
+ 
+-      SAVE
++      SAVE FROZE_BACKGROUND,CHANGED_SST_DISSIPATION,DTZM,HBAR,
++     A HBAR_ELI,HBAR_EQUABLE,USE_FITTED_TSUB_COEFFS,
++     B TSUB_POSITIVE_LIKE_CZ,HBAR_FITTED,B_PLUS_FITTED,
++     C B_MINUS_FITTED
+ 
+ *Eli: July 3, 1997: a modified HBAR:
+       if (modify_HBAR) then
+@@ -812,8 +812,6 @@
+      D WM1(30,34),UAT(30,34),VAT(30,34),DIVT(30,34)
+ 
+       COMMON/SGRID/XWRS,DXRS,YNRS,DYRS,NYPS
+-      SAVE
+-
+       DX1=DXRS*1.11E7
+       DY1=DYRS*1.11E7
+       DTT=DTD*2.628E6
+--- ztmfc1.f
++++ ztmfc1.f
+@@ -581,7 +581,7 @@
+ *Eli: Apr 7, 1995:
+       include 'modified_means.common'
+ 
+-      SAVE
++      SAVE IRAMP,RAMP,INORTH,ISOUTH,JEAST
+  
+ c first smooth the ssta field....
+       DO I=6, 25

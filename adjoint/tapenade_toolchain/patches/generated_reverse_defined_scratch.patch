@@ -1,0 +1,143 @@
+--- ssta_b.f
++++ ssta_b.f
+@@ -247,6 +247,23 @@
+           dtzp(ii, jj) = 0.0
+         ENDDO
+       ENDDO
++C Tapenade records old scratch values at the split FWD boundary.  Give
++C those otherwise dead values deterministic definitions before any PUSH.
++      h_minus_eng = 0.0
++      a_plus_eng = 0.0
++      b_plus_eng = 0.0
++      rk_eng = 0.0
++      b_minus_eng = 0.0
++      h_plus_eng = 0.0
++      a_minus_eng = 0.0
++      is = 0
++      ie = 0
++      js = 0
++      je = 0
++      y = 0.0
++      a1 = 0.0
++      a2 = 0.0
++      result1 = 0.0
+ CEli: July 3, 1997: a modified HBAR:
+       IF (modify_hbar) THEN
+         DO iii=1,34
+--- ztmfc1_b.f
++++ ztmfc1_b.f
+@@ -131,6 +131,27 @@
+ CEli: inserted this on Jan 12, 1995:
+       DATA time_of_last_initialization /0.0/
+ C
++C Define scratch values which the generated split FWD records before their
++C first scientific assignment.  Their oldest restored values are dead.
++      div_mean = 0.0
++      div_total = 0.0
++      scale = 0.0
++      y = 0.0
++      eps1 = (0.0,0.0)
++      a2 = (0.0,0.0)
++      b2 = (0.0,0.0)
++      c2 = (0.0,0.0)
++      d2 = (0.0,0.0)
++      DO i=1,80
++        u1(i) = (0.0,0.0)
++        rhs(i) = (0.0,0.0)
++        v1(i) = (0.0,0.0)
++      ENDDO
++      DO i=6,25
++        DO j=6,32
++          beta_factor(i, j) = 0.0
++        ENDDO
++      ENDDO
+       DO j=1,64
+         DO i=6,25
+           qeo(i, j) = 0.0
+@@ -1350,6 +1371,7 @@
+       REAL*8 tmp
+       REAL*8 tmp0
+ C first smooth the ssta field....
++      a = 0.0
+       DO i=6,25
+         DO j=6,32
+           q0(i, j) = to(i, j)
+@@ -1850,6 +1872,9 @@
+       REAL t
+       INTEGER istart
+ C
++      a1 = 0.0
++      a2 = 0.0
++      at = 0.0
+       IF (istart .EQ. 0) THEN
+         dseed = tseed*1.
+         pi = 3.1415926535897932
+--- cforce_b.f
++++ cforce_b.f
+@@ -98,6 +98,11 @@
+ C  offsets for the staggering of F and G
+       DATA xoff /0.5e0, 1.e0/
+       DATA yoff /0.5e0, 1.e0/
++C Define old scratch values which are recorded before their first overwrite.
++      rx = 0.0
++      ry = 0.0
++      ix = 0
++      jy = 0
+ C Recompute the gridding constants on every call.  In the legacy routine
+ C these values lived in local SAVE storage initialized only by the
+ C ISTART=0 call.  Generated tangent/reverse routines have distinct SAVE
+--- fft2c_b.f
++++ fft2c_b.f
+@@ -39,6 +39,15 @@
+ C                                  SQ=SQRT2/2,SK=SIN(PI/8),CK=COS(PI/8) 
+ C                                  TWOPI=2*PI                           
+ C                                  FIRST EXECUTABLE STATEMENT           
++      c2 = 0.0D0
++      s2 = 0.0D0
++      c3 = 0.0D0
++      s3 = 0.0D0
++      k0 = 0
++      k1 = 0
++      k2 = 0
++      k3 = 0
++      jk = 0
+       mp = m + 1
+       n = 2**m
+       iwk(1) = 1
+--- tridag_b.f
++++ tridag_b.f
+@@ -25,6 +25,7 @@
+       REAL dn
+       INTEGER ii
+       INTEGER js
++      dn = 0.0
+       CALL PUSHREAL4(e(js+1))
+       e(js+1) = a(js+2)/b(js+1)
+       CALL PUSHREAL4(d(js+1))
+--- uhinit_b.f
++++ uhinit_b.f
+@@ -18,6 +18,9 @@
+       INTEGER ad_from0
+       j1 = jsouth(1)
+       j2 = jnorth(1) - 1
++      DO j=1,117
++        d(j) = 0.0
++      ENDDO
+       k = 2
+       DO i=1,nx
+ C *** A,R1,AND D ARE INTERMEDIATE QUANTITIES USED TO SOLVE FOR V
+--- uhcalc_b.f
++++ uhcalc_b.f
+@@ -25,6 +25,12 @@
+ C *** GET R1 AND R3
+       j1 = jsouth(k)
+       j2 = jnorth(k) - 1
++      DO j=j1,j2
++        r1(j) = 0.0
++      ENDDO
++      DO j=j1+1,j2
++        d(j) = 0.0
++      ENDDO
+       IF (i .NE. iwest(k)) THEN
+         CALL PUSHCONTROL1B(0)
+       ELSE IF (ktype(k) .LT. 4) THEN

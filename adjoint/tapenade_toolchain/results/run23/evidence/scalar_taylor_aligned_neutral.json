@@ -1,0 +1,397 @@
+{
+  "acceptance_thresholds": null,
+  "arithmetic_note": "Both the exact float32 publication and the preceding sequential float64 Nino-3 reduction are reported. The latter removes only the last scalar cast; the evolved state remains authentic float32 ZC.",
+  "build_provenance": {
+    "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+    "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+    "generator_script_sha256": "19c8c9f5ead08d16de5859d6a6b18c7c21fc07b7c88cbfe10627bee67b31c0aa",
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "kernel_source_tree_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f"
+  },
+  "cases": [
+    {
+      "adjoint_directional_derivative": 0.2390495414906553,
+      "baseline_major_tape": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ]
+      ],
+      "baseline_major_tape_matches_bound_path": true,
+      "baseline_matches_bound_path_bitwise": true,
+      "baseline_objective_double_reduction": -0.46085355216355034,
+      "baseline_objective_float32_publication": -0.46085354685783386,
+      "baseline_runtime_seconds": 0.3177592920255847,
+      "case": "neutral_member_04",
+      "case_layout": "packaged_runner_v1",
+      "direction_l2_norm": 1.0000000070005954,
+      "direction_mode": "adjoint_aligned",
+      "direction_scope": "independent continuous controls",
+      "direction_seed": 9401,
+      "direction_sha256": "1d14989d20b078f47b77c243714d05faf8e48b52a51f04906b7c0818490b6bbb",
+      "gradient_file": "<PRIVATE_VALIDATION_STAGE>/verified_inputs/cases/neutral_member_04/zc_nino3_gradient.bin",
+      "gradient_l2_norm": 2.4607209171750397,
+      "gradient_sha256": "4df158b4bc5669d302a0ad2d7f52a0a3d3a43c2b8bc1662dc334a95ff37609dd",
+      "initial_nt": 406358,
+      "steps": [
+        {
+          "adjoint_directional_derivative": 0.2390495414906553,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.0049639984871012455,
+          "centered_fd_double_reduction": 0.23408554300355405,
+          "centered_fd_float32_publication": 0.23408547043800354,
+          "centered_fd_relative_defect": 0.020765563724351645,
+          "centered_first_order_taylor_remainder": 0.001985599394840498,
+          "centered_input_direction_rounding_relative_l2": 0.0001060976389268466,
+          "h": 0.2,
+          "minus_first_order_taylor_remainder": 0.0017416038822259672,
+          "minus_float32_publication_taylor_remainder": 0.001741627362843584,
+          "minus_objective_double_reduction": -0.5069218565794554,
+          "minus_runtime_seconds": 0.84444762498606,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 0.000243995512614531,
+          "plus_float32_publication_taylor_remainder": 0.00024400105821711926,
+          "plus_objective_double_reduction": -0.4132876393780338,
+          "plus_runtime_seconds": 0.8551855830010027,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.04780990829813106
+        },
+        {
+          "adjoint_directional_derivative": 0.2390495414906553,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.004296294094153358,
+          "centered_fd_double_reduction": 0.24334583558480866,
+          "centered_fd_float32_publication": 0.24334579706192017,
+          "centered_fd_relative_defect": 0.017972400479677575,
+          "centered_first_order_taylor_remainder": 0.0008592588188306716,
+          "centered_input_direction_rounding_relative_l2": 0.00020754846944347444,
+          "h": 0.1,
+          "minus_first_order_taylor_remainder": 5.342626967945463e-05,
+          "minus_float32_publication_taylor_remainder": 5.343084162660883e-05,
+          "minus_objective_double_reduction": -0.4848119325822953,
+          "minus_runtime_seconds": 0.8886095000198111,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 0.0008058325491512169,
+          "plus_float32_publication_taylor_remainder": 0.0008058202726263647,
+          "plus_objective_double_reduction": -0.4361427654653336,
+          "plus_runtime_seconds": 0.6946635419735685,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.02390495414906553
+        },
+        {
+          "adjoint_directional_derivative": 0.2390495414906553,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.0026595131546085227,
+          "centered_fd_double_reduction": 0.24170905464526382,
+          "centered_fd_float32_publication": 0.24170905351638794,
+          "centered_fd_relative_defect": 0.011125363964408549,
+          "centered_first_order_taylor_remainder": 0.00026595131546085227,
+          "centered_input_direction_rounding_relative_l2": 0.0004294736295992412,
+          "h": 0.05,
+          "minus_first_order_taylor_remainder": 8.67637137969765e-05,
+          "minus_float32_publication_taylor_remainder": 8.676710042451047e-05,
+          "minus_objective_double_reduction": -0.4728927929518801,
+          "minus_runtime_seconds": 0.7846553749986924,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 0.00017918760166387576,
+          "plus_float32_publication_taylor_remainder": 0.00017918410214875363,
+          "plus_objective_double_reduction": -0.4487218874873537,
+          "plus_runtime_seconds": 0.847323750029318,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.011952477074532765
+        },
+        {
+          "adjoint_directional_derivative": 0.2390495414906553,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.00393529638998566,
+          "centered_fd_double_reduction": 0.24298483788064096,
+          "centered_fd_float32_publication": 0.24298489093780518,
+          "centered_fd_relative_defect": 0.016462262865873326,
+          "centered_first_order_taylor_remainder": 0.00019676481949928298,
+          "centered_input_direction_rounding_relative_l2": 0.0008329853379598546,
+          "h": 0.025,
+          "minus_first_order_taylor_remainder": 1.4774665939038673e-05,
+          "minus_float32_publication_taylor_remainder": 1.476078076613832e-05,
+          "minus_objective_double_reduction": -0.4668150160348777,
+          "minus_runtime_seconds": 0.8774725830298848,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 0.00021153948543832166,
+          "plus_float32_publication_taylor_remainder": 0.0002115282531236322,
+          "plus_objective_double_reduction": -0.45466577414084564,
+          "plus_runtime_seconds": 0.8708073750021867,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.0059762385372663825
+        },
+        {
+          "adjoint_directional_derivative": 0.2390495414906553,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.014646552465972656,
+          "centered_fd_double_reduction": 0.25369609395662795,
+          "centered_fd_float32_publication": 0.2536964416503906,
+          "centered_fd_relative_defect": 0.06126994586410953,
+          "centered_first_order_taylor_remainder": 0.0003661638116493164,
+          "centered_input_direction_rounding_relative_l2": 0.0016109373751882262,
+          "h": 0.0125,
+          "minus_first_order_taylor_remainder": 0.00017665967468149212,
+          "minus_float32_publication_taylor_remainder": 0.0001766787526833371,
+          "minus_objective_double_reduction": -0.464018331106865,
+          "minus_runtime_seconds": 0.6243929999764077,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 0.0001895041369678243,
+          "plus_float32_publication_taylor_remainder": 0.00018949375131004607,
+          "plus_objective_double_reduction": -0.4576759287579493,
+          "plus_runtime_seconds": 0.9512225409853272,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.0029881192686331912
+        }
+      ]
+    }
+  ],
+  "certification_assessed": false,
+  "claim": "Centered finite-difference and first-order Taylor tests of the 31-step scalar reverse gradient against the independently validated forward oracle. The three-value major tape does not observe every internal branch. This report records convergence data but applies no automatic acceptance threshold and is not certification.",
+  "created_utc": "2026-09-06T13:26:17.321137+00:00",
+  "gradient_producer_bindings": {
+    "neutral_member_04": {
+      "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+      "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+      "gradient_sha256": "4df158b4bc5669d302a0ad2d7f52a0a3d3a43c2b8bc1662dc334a95ff37609dd",
+      "path_sha256": "2387e648f0d9c9fe8d6f587da41a189a4aa1cebb95a5c50485ab5eeab1d77df2",
+      "reverse_executable_sha256": "0932e1cab86c978dbe8005d913cc45c39f1a45aa97782f52ab570b714b7bfaae",
+      "run_report_sha256": "def12ae7d8a482e74026ddfe47ae01a6f580177829fe291b5d8afad2ea10e742"
+    }
+  },
+  "primal_executable": "<PRIVATE_VALIDATION_STAGE>/verified_inputs/zc_kernel_replay",
+  "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+  "private_staged_input_binding": {
+    "files": {
+      "case neutral_member_04/gradient": "4df158b4bc5669d302a0ad2d7f52a0a3d3a43c2b8bc1662dc334a95ff37609dd",
+      "case neutral_member_04/initial_state": "f15de1499ddd2494461954dd53e8bd0017f5a42c666417969af7e010d5a79512",
+      "case neutral_member_04/path": "2387e648f0d9c9fe8d6f587da41a189a4aa1cebb95a5c50485ab5eeab1d77df2",
+      "case neutral_member_04/restart": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74",
+      "case neutral_member_04/run_report": "def12ae7d8a482e74026ddfe47ae01a6f580177829fe291b5d8afad2ea10e742",
+      "primal executable": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+      "state manifest": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775"
+    },
+    "trees": {
+      "kernel source": {
+        "file_count": 16,
+        "manifest_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a"
+      },
+      "runtime source": {
+        "file_count": 74,
+        "manifest_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5"
+      }
+    }
+  },
+  "replay_validation_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+  },
+  "runtime_source_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+    "runtime_source_complete_tree_entry_count": 74,
+    "runtime_source_complete_tree_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5",
+    "runtime_source_manifest_entry_count": 74,
+    "runtime_source_manifest_sha256": "f600085466d74b806169f2052738e887d0bcd45482dc3ed81fe8b5f5b0b2fd27"
+  },
+  "schema_version": 1,
+  "state_manifest_sha256": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+  "status": "completed_not_certified",
+  "validator_script_sha256": "9c5149d7e305e8efa3aab280fb09b24ece7efed3bca2c4950873f702bdea51d7"
+}

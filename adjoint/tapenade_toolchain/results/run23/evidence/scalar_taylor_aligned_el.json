@@ -1,0 +1,367 @@
+{
+  "acceptance_thresholds": null,
+  "arithmetic_note": "Both the exact float32 publication and the preceding sequential float64 Nino-3 reduction are reported. The latter removes only the last scalar cast; the evolved state remains authentic float32 ZC.",
+  "build_provenance": {
+    "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+    "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+    "generator_script_sha256": "19c8c9f5ead08d16de5859d6a6b18c7c21fc07b7c88cbfe10627bee67b31c0aa",
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "kernel_source_tree_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f"
+  },
+  "cases": [
+    {
+      "adjoint_directional_derivative": 0.07049519176726829,
+      "baseline_major_tape": [
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      "baseline_major_tape_matches_bound_path": true,
+      "baseline_matches_bound_path_bitwise": true,
+      "baseline_objective_double_reduction": 4.446654677391052,
+      "baseline_objective_float32_publication": 4.446654796600342,
+      "baseline_runtime_seconds": 0.7177209159708582,
+      "case": "extreme_el_nino",
+      "case_layout": "packaged_runner_v1",
+      "direction_l2_norm": 0.9999999813147856,
+      "direction_mode": "adjoint_aligned",
+      "direction_scope": "independent continuous controls",
+      "direction_seed": 9401,
+      "direction_sha256": "795e0b7a1486bd1c825eae8b85faab680015b49a935fefd4b0eceef46e30ec4a",
+      "gradient_file": "<PRIVATE_VALIDATION_STAGE>/verified_inputs/cases/extreme_el_nino/zc_nino3_gradient.bin",
+      "gradient_l2_norm": 0.524820713349975,
+      "gradient_sha256": "da5b61f288b25d31f4113c8df0ac7698aed26af4c6b68a668e78461500f4f9a1",
+      "initial_nt": 424799,
+      "steps": [
+        {
+          "adjoint_directional_derivative": 0.07049519176726829,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.004698617810446032,
+          "centered_fd_double_reduction": 0.06579657395682226,
+          "centered_fd_float32_publication": 0.0657796859741211,
+          "centered_fd_relative_defect": 0.06665160690615574,
+          "centered_first_order_taylor_remainder": 9.397235620892076e-05,
+          "centered_input_direction_rounding_relative_l2": 0.0041526066396256195,
+          "h": 0.01,
+          "minus_first_order_taylor_remainder": 4.641451537530628e-05,
+          "minus_float32_publication_taylor_remainder": 4.643980219416733e-05,
+          "minus_objective_double_reduction": 4.445996139988755,
+          "minus_runtime_seconds": 0.8162175420438871,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 4.755784083361448e-05,
+          "plus_float32_publication_taylor_remainder": 4.7870313668776704e-05,
+          "plus_objective_double_reduction": 4.447312071467891,
+          "plus_runtime_seconds": 0.8400457499665208,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.000704951917672683
+        },
+        {
+          "adjoint_directional_derivative": 0.07049519176726829,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.0017087223944403374,
+          "centered_fd_double_reduction": 0.06878646937282795,
+          "centered_fd_float32_publication": 0.06875991821289062,
+          "centered_fd_relative_defect": 0.024238850219480024,
+          "centered_first_order_taylor_remainder": 1.7087223944403434e-05,
+          "centered_input_direction_rounding_relative_l2": 0.007424209529931018,
+          "h": 0.005,
+          "minus_first_order_taylor_remainder": 1.6750087836837793e-05,
+          "minus_float32_publication_taylor_remainder": 1.6782599461341477e-05,
+          "minus_objective_double_reduction": 4.446318951520053,
+          "minus_runtime_seconds": 0.8829769159783609,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 3.371361075656413e-07,
+          "plus_float32_publication_taylor_remainder": 5.701360824352268e-07,
+          "plus_objective_double_reduction": 4.447006816213781,
+          "plus_runtime_seconds": 0.7422747499658726,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.0003524759588363415
+        },
+        {
+          "adjoint_directional_derivative": 0.07049519176726829,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 2.371714861862384e-05,
+          "centered_fd_double_reduction": 0.07047147461864967,
+          "centered_fd_float32_publication": 0.07047653198242188,
+          "centered_fd_relative_defect": 0.0003364364011792926,
+          "centered_first_order_taylor_remainder": 1.1858574309314956e-07,
+          "centered_input_direction_rounding_relative_l2": 0.013102382173072125,
+          "h": 0.0025,
+          "minus_first_order_taylor_remainder": 7.300171213746862e-07,
+          "minus_float32_publication_taylor_remainder": 6.686062751886366e-07,
+          "minus_objective_double_reduction": 4.446477709394513,
+          "minus_runtime_seconds": 0.8221097500063479,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 8.486028644678358e-07,
+          "plus_float32_publication_taylor_remainder": 7.619051994207384e-07,
+          "plus_objective_double_reduction": 4.446830066767606,
+          "plus_runtime_seconds": 0.8184726249892265,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 0.00017623797941817074
+        },
+        {
+          "adjoint_directional_derivative": 0.07049519176726829,
+          "both_major_tapes_match_baseline": true,
+          "centered_fd_absolute_defect": 0.00022626111933352067,
+          "centered_fd_double_reduction": 0.07072145288660181,
+          "centered_fd_float32_publication": 0.07076263427734375,
+          "centered_fd_relative_defect": 0.003209596479721561,
+          "centered_first_order_taylor_remainder": 5.656527983337865e-07,
+          "centered_input_direction_rounding_relative_l2": 0.02125444919849256,
+          "h": 0.00125,
+          "minus_first_order_taylor_remainder": 2.8372949987222275e-07,
+          "minus_float32_publication_taylor_remainder": 5.727217166958808e-07,
+          "minus_objective_double_reduction": 4.446566274671843,
+          "minus_runtime_seconds": 0.8907587919966318,
+          "minus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "plus_first_order_taylor_remainder": 2.8192329846156374e-07,
+          "plus_float32_publication_taylor_remainder": 9.58845584927558e-08,
+          "plus_objective_double_reduction": 4.44674307830406,
+          "plus_runtime_seconds": 0.7749031659914181,
+          "plus_tape": {
+            "matches_baseline": true,
+            "mismatch_count": 0,
+            "mismatches": []
+          },
+          "taylor_remainder_scale_h_times_derivative": 8.811898970908537e-05
+        }
+      ]
+    }
+  ],
+  "certification_assessed": false,
+  "claim": "Centered finite-difference and first-order Taylor tests of the 31-step scalar reverse gradient against the independently validated forward oracle. The three-value major tape does not observe every internal branch. This report records convergence data but applies no automatic acceptance threshold and is not certification.",
+  "created_utc": "2026-09-06T13:26:16.351485+00:00",
+  "gradient_producer_bindings": {
+    "extreme_el_nino": {
+      "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+      "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+      "gradient_sha256": "da5b61f288b25d31f4113c8df0ac7698aed26af4c6b68a668e78461500f4f9a1",
+      "path_sha256": "5537a3f8b7e94b5341ca0a8897ff80ec18338d41428a2bd45850808c2b86be3d",
+      "reverse_executable_sha256": "0932e1cab86c978dbe8005d913cc45c39f1a45aa97782f52ab570b714b7bfaae",
+      "run_report_sha256": "a679014613f65c07d69b62c700dc6d2611e7995952fdf69abc7a1f97f8541836"
+    }
+  },
+  "primal_executable": "<PRIVATE_VALIDATION_STAGE>/verified_inputs/zc_kernel_replay",
+  "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+  "private_staged_input_binding": {
+    "files": {
+      "case extreme_el_nino/gradient": "da5b61f288b25d31f4113c8df0ac7698aed26af4c6b68a668e78461500f4f9a1",
+      "case extreme_el_nino/initial_state": "c4afdc6c2549e841ed65ba75abb3411088bec51f44cefacc8b538c327f87c46b",
+      "case extreme_el_nino/path": "5537a3f8b7e94b5341ca0a8897ff80ec18338d41428a2bd45850808c2b86be3d",
+      "case extreme_el_nino/restart": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825",
+      "case extreme_el_nino/run_report": "a679014613f65c07d69b62c700dc6d2611e7995952fdf69abc7a1f97f8541836",
+      "primal executable": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+      "state manifest": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775"
+    },
+    "trees": {
+      "kernel source": {
+        "file_count": 16,
+        "manifest_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a"
+      },
+      "runtime source": {
+        "file_count": 74,
+        "manifest_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5"
+      }
+    }
+  },
+  "replay_validation_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+  },
+  "runtime_source_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+    "runtime_source_complete_tree_entry_count": 74,
+    "runtime_source_complete_tree_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5",
+    "runtime_source_manifest_entry_count": 74,
+    "runtime_source_manifest_sha256": "f600085466d74b806169f2052738e887d0bcd45482dc3ed81fe8b5f5b0b2fd27"
+  },
+  "schema_version": 1,
+  "state_manifest_sha256": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+  "status": "completed_not_certified",
+  "validator_script_sha256": "9c5149d7e305e8efa3aab280fb09b24ece7efed3bca2c4950873f702bdea51d7"
+}

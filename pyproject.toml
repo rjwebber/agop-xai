@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zc-xai"
+version = "1.0.0"
+description = "Reproducible PyTorch experiments for explaining Zebiak-Cane ENSO forecasts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "BSD-3-Clause"
+authors = [
+    {name = "Yuan Hui", email = "yuhui@ucsd.edu"},
+    {name = "Dorian S. Abbot", email = "abbot@uchicago.edu"},
+    {name = "Robert J. Webber", email = "rwebber@ucsd.edu"},
+]
+dependencies = [
+    "cartopy>=0.23",
+    "matplotlib>=3.9",
+    "numpy>=2.0",
+    "scipy>=1.13",
+    "torch>=2.2",
+]
+
+[project.urls]
+Repository = "https://github.com/rjwebber/agop-xai"
+Documentation = "https://github.com/rjwebber/agop-xai#readme"
+Issues = "https://github.com/rjwebber/agop-xai/issues"
+
+[project.optional-dependencies]
+benchmark = ["psutil>=5.9"]
+dev = ["psutil>=5.9", "ruff>=0.12"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-exclude = ["artifacts", "data/processed", "data/raw", "outputs", "scratch"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

@@ -1,0 +1,35 @@
+--- cforce.f
++++ cforce.f
+@@ -73,8 +73,6 @@
+ c the code assumes the wind data domain includes the entire ocean domain
+ 
+       DO 130 L=L1,L2
+-      ASSIGN 119 TO LFG
+-      IF(L.EQ.2) ASSIGN 118 TO LFG
+       AAWX=AWX-XOFF(L)*WDXS
+       AAWY=AWY-YOFF(L)*WDYS
+  
+@@ -112,15 +110,15 @@
+       JY=RY
+       RY=RY-JY
+       FA=HT(IX  ,JY)+RY*(HT(IX  ,JY+1)-HT(IX  ,JY))
+-      FB=HT(IX+1,JY)+RY*(HT(IX+1,JY+1)-HT(IX+1,JY))
+-      FA = FA + RX * ( FB - FA )
+-      GO TO LFG,(118,119)
+-118   G(J,I)=FA
+-      GO TO 120
+-119   F(J,I)=FA
+-
++      FB_RIGHT=HT(IX+1,JY)+RY*(HT(IX+1,JY+1)-HT(IX+1,JY))
++      FA = FA + RX * ( FB_RIGHT - FA )
++      IF(L.EQ.1) THEN
++         F(J,I)=FA
+ c compute bk, the projection of F and Q on kelvin mode
+-      BK(I)=BK(I)+FA*PHIK(J)
++         BK(I)=BK(I)+FA*PHIK(J)
++      ELSE
++         G(J,I)=FA
++      ENDIF
+ 120   CONTINUE
+ 
+ 125   CONTINUE

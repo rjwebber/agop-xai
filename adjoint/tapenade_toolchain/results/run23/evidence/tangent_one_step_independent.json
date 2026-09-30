@@ -1,0 +1,248 @@
+{
+  "acceptance_thresholds": null,
+  "build_provenance": {
+    "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+    "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+    "dataset_generator_sha256": "19c8c9f5ead08d16de5859d6a6b18c7c21fc07b7c88cbfe10627bee67b31c0aa",
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "one_step_executable_sha256": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5",
+    "optimization": "O3",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "snapshot_entry_count": 142,
+    "tangent_build_inputs_sha256": "4ae14db12f47e132f989ba18f683d58c4150737e99c71541bca87911dfe7e1cd",
+    "tangent_build_manifest_sha256": "75ca84383895f67d5a74122f62283de155f4a1c532608eb704009870ee98309a",
+    "tangent_input_count": 35
+  },
+  "cases": [
+    {
+      "baseline_runtime_seconds": 0.3609279589727521,
+      "centered_difference_steps": [
+        {
+          "active_output_cosine": 0.999999999997856,
+          "active_output_relative_l2_error": 2.0710581850484547e-06,
+          "finite_difference_runtime_seconds": 0.9340912500047125,
+          "full_absolute_l2_defect": 0.07667365926704071,
+          "full_cosine": 0.9999999999978568,
+          "full_relative_l2_error": 2.071111859458695e-06,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 2.0740550716708123e-06,
+          "major_tape_matches_baseline": true,
+          "nino3_forward_oracle_fd": -0.036625564098358154,
+          "nino3_forward_oracle_fd_absolute_error": 9.164214134216309e-07,
+          "nino3_forward_oracle_fd_relative_error": 2.5020733644526166e-05,
+          "nino3_tangent": -0.036626480519771576,
+          "nino3_transformed_primal_fd": -0.036625564098358154,
+          "nino3_transformed_primal_fd_absolute_error": 9.164214134216309e-07,
+          "nino3_transformed_primal_fd_relative_error": 2.5020733644526166e-05,
+          "random_output_functional_fd": 41.34594321730135,
+          "random_output_functional_normwise_defect": 9.932602423587127e-10,
+          "random_output_functional_relative_error": 8.893493604382075e-07,
+          "random_output_functional_tangent": 41.345979988322206,
+          "tangent_norm": 37020.53026101647,
+          "transformed_minus_primal_relative_l2_difference": 1.1723693269835846e-08,
+          "transformed_plus_primal_relative_l2_difference": 1.2971848733192376e-08,
+          "transformed_primal_fd_cosine": 0.99999999999767,
+          "transformed_primal_fd_relative_l2_error": 2.1598066131697524e-06,
+          "transformed_primal_fd_runtime_seconds": 0.9640177080291323,
+          "transformed_primal_major_tape_matches_forward_sides": true
+        }
+      ],
+      "checkpoint": "extreme_el_nino",
+      "direction_nonzero_count": 28591,
+      "direction_sha256": "95af4b6cf197fa6d535c8e8e1e3f3bb33cbb96ca490248db285dd77c374458f7",
+      "input_state_sha256": "c4afdc6c2549e841ed65ba75abb3411088bec51f44cefacc8b538c327f87c46b",
+      "pre_nt": 424799,
+      "scalar_forward_oracle_from_generic_window": null,
+      "scalar_head_expected_from_tangent_generic_window": null,
+      "scalar_head_matches_tangent_generic_window_bitwise": true,
+      "scalar_head_nino3": 4.4466552734375,
+      "scalar_head_nino3_tangent": -0.11004777252674103,
+      "scalar_head_tangent_expected_from_generic_window": null,
+      "scalar_head_tangent_matches_generic_window_bitwise": true,
+      "tangent_is_finite": true,
+      "tangent_primal_bitwise_matches_forward_oracle": false,
+      "tangent_primal_branch_tape_matches_baseline": true,
+      "tangent_primal_maximum_absolute_difference": 0.00014138221740722656,
+      "tangent_primal_relative_l2_difference": 1.2511890535649765e-08,
+      "tangent_runtime_seconds_including_extra_31_step_head": 0.5546555840410292,
+      "window_steps": 1
+    },
+    {
+      "baseline_runtime_seconds": 0.48909629200352356,
+      "centered_difference_steps": [
+        {
+          "active_output_cosine": 0.9999999999973892,
+          "active_output_relative_l2_error": 2.285506800394695e-06,
+          "finite_difference_runtime_seconds": 0.9736186669906601,
+          "full_absolute_l2_defect": 0.19214517576401144,
+          "full_cosine": 0.9999999999973216,
+          "full_relative_l2_error": 2.3147980415541703e-06,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 2.2682380847899275e-06,
+          "major_tape_matches_baseline": true,
+          "nino3_forward_oracle_fd": -0.019132718443870544,
+          "nino3_forward_oracle_fd_absolute_error": 3.725290298461914e-08,
+          "nino3_forward_oracle_fd_relative_error": 1.947074617740576e-06,
+          "nino3_tangent": -0.01913275569677353,
+          "nino3_transformed_primal_fd": -0.019132345914840698,
+          "nino3_transformed_primal_fd_absolute_error": 4.0978193283081055e-07,
+          "nino3_transformed_primal_fd_relative_error": 2.1417820795146333e-05,
+          "random_output_functional_fd": 530.4887749631868,
+          "random_output_functional_normwise_defect": 3.2054968310033133e-09,
+          "random_output_functional_relative_error": 5.015743442486221e-07,
+          "random_output_functional_tangent": 530.4890410428796,
+          "tangent_norm": 83007.31740510889,
+          "transformed_minus_primal_relative_l2_difference": 2.7439004394163016e-08,
+          "transformed_plus_primal_relative_l2_difference": 2.768974129954761e-08,
+          "transformed_primal_fd_cosine": 0.9999999999971751,
+          "transformed_primal_fd_relative_l2_error": 2.3772300179085405e-06,
+          "transformed_primal_fd_runtime_seconds": 1.11400554102147,
+          "transformed_primal_major_tape_matches_forward_sides": true
+        }
+      ],
+      "checkpoint": "extreme_la_nina",
+      "direction_nonzero_count": 28591,
+      "direction_sha256": "7199a25c43f86d18fb47ab54efbe7afbfffd38256b1639f598698094ac73f9c6",
+      "input_state_sha256": "0c2192d891e5a00f0a58e69bc1b1914e5c79756944c0d2000d939047cb220499",
+      "pre_nt": 417878,
+      "scalar_forward_oracle_from_generic_window": null,
+      "scalar_head_expected_from_tangent_generic_window": null,
+      "scalar_head_matches_tangent_generic_window_bitwise": true,
+      "scalar_head_nino3": -2.1435036659240723,
+      "scalar_head_nino3_tangent": -1.2384353876113892,
+      "scalar_head_tangent_expected_from_generic_window": null,
+      "scalar_head_tangent_matches_generic_window_bitwise": true,
+      "tangent_is_finite": true,
+      "tangent_primal_bitwise_matches_forward_oracle": false,
+      "tangent_primal_branch_tape_matches_baseline": true,
+      "tangent_primal_maximum_absolute_difference": 0.0002644062042236328,
+      "tangent_primal_relative_l2_difference": 2.4323496859119854e-08,
+      "tangent_runtime_seconds_including_extra_31_step_head": 0.531201499979943,
+      "window_steps": 1
+    },
+    {
+      "baseline_runtime_seconds": 0.2665384170250036,
+      "centered_difference_steps": [
+        {
+          "active_output_cosine": 0.9999999999978093,
+          "active_output_relative_l2_error": 2.0935727102689474e-06,
+          "finite_difference_runtime_seconds": 0.9182124999933876,
+          "full_absolute_l2_defect": 0.041775322863388926,
+          "full_cosine": 0.9999999999978089,
+          "full_relative_l2_error": 2.093718650412757e-06,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 2.0985194706071494e-06,
+          "major_tape_matches_baseline": true,
+          "nino3_forward_oracle_fd": -0.015476346015930176,
+          "nino3_forward_oracle_fd_absolute_error": 1.8440186977386475e-07,
+          "nino3_forward_oracle_fd_relative_error": 1.1914936022209441e-05,
+          "nino3_tangent": -0.01547653041779995,
+          "nino3_transformed_primal_fd": -0.015476346015930176,
+          "nino3_transformed_primal_fd_absolute_error": 1.8440186977386475e-07,
+          "nino3_transformed_primal_fd_relative_error": 1.1914936022209441e-05,
+          "random_output_functional_fd": 67.13015071641486,
+          "random_output_functional_normwise_defect": 1.956797331314511e-09,
+          "random_output_functional_relative_error": 5.816074637003582e-07,
+          "random_output_functional_tangent": 67.13011167304087,
+          "tangent_norm": 19952.69175978029,
+          "transformed_minus_primal_relative_l2_difference": 6.975246991067445e-09,
+          "transformed_plus_primal_relative_l2_difference": 7.002061236320226e-09,
+          "transformed_primal_fd_cosine": 0.999999999997843,
+          "transformed_primal_fd_relative_l2_error": 2.077086578530947e-06,
+          "transformed_primal_fd_runtime_seconds": 1.1179494999814779,
+          "transformed_primal_major_tape_matches_forward_sides": true
+        }
+      ],
+      "checkpoint": "neutral_member_04",
+      "direction_nonzero_count": 28591,
+      "direction_sha256": "86d89f218f1d1f7a5ff15b640e3a2cfa19220ce3fb7bfd0187ad7a7b88636ccc",
+      "input_state_sha256": "f15de1499ddd2494461954dd53e8bd0017f5a42c666417969af7e010d5a79512",
+      "pre_nt": 406358,
+      "scalar_forward_oracle_from_generic_window": null,
+      "scalar_head_expected_from_tangent_generic_window": null,
+      "scalar_head_matches_tangent_generic_window_bitwise": true,
+      "scalar_head_nino3": -0.46085357666015625,
+      "scalar_head_nino3_tangent": -0.35012149810791016,
+      "scalar_head_tangent_expected_from_generic_window": null,
+      "scalar_head_tangent_matches_generic_window_bitwise": true,
+      "tangent_is_finite": true,
+      "tangent_primal_bitwise_matches_forward_oracle": false,
+      "tangent_primal_branch_tape_matches_baseline": true,
+      "tangent_primal_maximum_absolute_difference": 6.0439109802246094e-05,
+      "tangent_primal_relative_l2_difference": 6.126776817350659e-09,
+      "tangent_runtime_seconds_including_extra_31_step_head": 0.5744844590080902,
+      "window_steps": 1
+    }
+  ],
+  "certification_assessed": false,
+  "checkpoint_inputs": [
+    {
+      "advance": 0,
+      "label": "extreme_el_nino",
+      "pre_nt": 424799,
+      "sha256": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825"
+    },
+    {
+      "advance": 0,
+      "label": "extreme_la_nina",
+      "pre_nt": 417878,
+      "sha256": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7"
+    },
+    {
+      "advance": 0,
+      "label": "neutral_member_04",
+      "pre_nt": 406358,
+      "sha256": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74"
+    }
+  ],
+  "compiler_mode": "gfortran -std=legacy; float32 model arithmetic with canonical float64 Nino-3 reduction",
+  "created_utc": "2026-09-06T13:25:28.772191+00:00",
+  "direction": "segment-scaled random direction over independent state",
+  "executables": {
+    "forward_oracle_with_reentrant_cforce_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "tapenade_tangent_sha256": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5"
+  },
+  "private_staged_input_binding": {
+    "files": {
+      "checkpoint extreme_el_nino": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825",
+      "checkpoint extreme_la_nina": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7",
+      "checkpoint neutral_member_04": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74",
+      "primal executable": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+      "state manifest": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+      "tangent executable": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5"
+    },
+    "trees": {
+      "kernel source": {
+        "file_count": 16,
+        "manifest_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a"
+      },
+      "runtime source": {
+        "file_count": 74,
+        "manifest_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5"
+      }
+    }
+  },
+  "replay_validation_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+  },
+  "replay_validation_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+  "runtime_source_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+    "runtime_source_complete_tree_entry_count": 74,
+    "runtime_source_complete_tree_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5",
+    "runtime_source_manifest_entry_count": 74,
+    "runtime_source_manifest_sha256": "f600085466d74b806169f2052738e887d0bcd45482dc3ed81fe8b5f5b0b2fd27"
+  },
+  "schema_version": 1,
+  "scientific_claim": "major-tape-conditioned tangent-linear comparison for the full coupled explicit-state ZC window. The recorded tape covers only SST substeps, atmosphere iterations, and reset; it does not observe every internal sign, cap, or upwind decision. This report applies no acceptance threshold and is not an adjoint certification.",
+  "state_manifest_sha256": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+  "state_real_length": 59148,
+  "status": "completed_not_certified",
+  "tapenade_generation_provenance": "<PROJECT_ROOT>/adjoint/tapenade_toolchain/build/coupled_run23_final3/coupled_compiled/build_input_snapshot/generated/generation_provenance.txt",
+  "tapenade_generation_provenance_sha256": "1c2c73a700ede6ee796464d6cff2615261e956e09b0694ce85d896440c527337",
+  "validator_script_sha256": "a070d70aa1085b504817330680be82a68faec1461908495efde9d78209b410cf"
+}

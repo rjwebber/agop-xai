@@ -1,0 +1,120 @@
+{
+  "schema_version": 2,
+  "supported_configuration": {
+    "NX": 78,
+    "NY": 115,
+    "NXP": 79,
+    "NYP": 116,
+    "NSEG": 1,
+    "NS": 2,
+    "NATM": 2,
+    "NIC": 0,
+    "westerly_wind_bursts": false
+  },
+  "indexing_contract": {
+    "start": "zero-based Python start, inclusive",
+    "stop": "zero-based Python stop, exclusive",
+    "fortran_start": "one-based packed-vector start, inclusive",
+    "fortran_end": "one-based packed-vector end, inclusive",
+    "shape": "logical array shape before flattening",
+    "order": "F means first Fortran subscript varies fastest"
+  },
+  "activity_contract": {
+    "active": "continuous state that can affect the subsequent forward trajectory",
+    "diagnostic": "serialized for byte-exact restart/output fidelity but overwritten before it can affect the next state",
+    "passive": "clock, branch, configuration, or disabled stochastic state; do not differentiate",
+    "independent_control": "whether this first conservative scientific-control mask permits an independent perturbation"
+  },
+  "arrays": {
+    "real32": {
+      "length": 59148,
+      "segments": [
+        {"name":"AKB","start":0,"stop":79,"fortran_start":1,"fortran_end":79,"shape":[79],"order":"F","restart_record":2,"role":"native_ocean_state","activity":"active","independent_control":true},
+        {"name":"UB","start":79,"stop":9243,"fortran_start":80,"fortran_end":9243,"shape":[116,79],"order":"F","restart_record":2,"role":"native_ocean_state","activity":"active","independent_control":true},
+        {"name":"HB","start":9243,"stop":18407,"fortran_start":9244,"fortran_end":18407,"shape":[116,79],"order":"F","restart_record":2,"role":"native_ocean_state","activity":"active","independent_control":true},
+        {"name":"ABC","start":18407,"stop":18409,"fortran_start":18408,"fortran_end":18409,"shape":[2],"order":"F","restart_record":2,"role":"inactive_segment_boundary_restart_memory","activity":"diagnostic","independent_control":false},
+        {"name":"ROSS","start":18409,"stop":18411,"fortran_start":18410,"fortran_end":18411,"shape":[2],"order":"F","restart_record":2,"role":"inactive_segment_boundary_restart_memory","activity":"diagnostic","independent_control":false},
+        {"name":"TR","start":18411,"stop":18413,"fortran_start":18412,"fortran_end":18413,"shape":[2],"order":"F","restart_record":2,"role":"inactive_segment_boundary_restart_memory","activity":"diagnostic","independent_control":false},
+        {"name":"V","start":18413,"stop":27577,"fortran_start":18414,"fortran_end":27577,"shape":[116,79],"order":"F","restart_record":2,"role":"native_ocean_state","activity":"active","independent_control":true},
+        {"name":"UBNDY","start":27577,"stop":27809,"fortran_start":27578,"fortran_end":27809,"shape":[116,2],"order":"F","restart_record":2,"role":"mixed_active_and_unused_ocean_boundary_memory","activity":"active","independent_control":false},
+        {"name":"HBNDY","start":27809,"stop":28041,"fortran_start":27810,"fortran_end":28041,"shape":[116,2],"order":"F","restart_record":2,"role":"mixed_active_and_unused_ocean_boundary_memory","activity":"active","independent_control":false},
+        {"name":"Q0O","start":28041,"stop":29061,"fortran_start":28042,"fortran_end":29061,"shape":[30,34],"order":"F","restart_record":3,"role":"atmosphere_iteration_memory","activity":"active","independent_control":false},
+        {"name":"UO","start":29061,"stop":30081,"fortran_start":29062,"fortran_end":30081,"shape":[30,34],"order":"F","restart_record":3,"role":"atmosphere_iteration_memory","activity":"active","independent_control":false},
+        {"name":"VO","start":30081,"stop":31101,"fortran_start":30082,"fortran_end":31101,"shape":[30,34],"order":"F","restart_record":3,"role":"atmosphere_iteration_memory","activity":"active","independent_control":false},
+        {"name":"DO","start":31101,"stop":32121,"fortran_start":31102,"fortran_end":32121,"shape":[30,34],"order":"F","restart_record":3,"role":"atmosphere_iteration_memory","activity":"active","independent_control":false},
+        {"name":"TO","start":32121,"stop":33141,"fortran_start":32122,"fortran_end":33141,"shape":[30,34],"order":"F","restart_record":3,"role":"native_sst_anomaly","activity":"active","independent_control":true},
+        {"name":"U1","start":33141,"stop":34161,"fortran_start":33142,"fortran_end":34161,"shape":[30,34],"order":"F","restart_record":3,"role":"lagged_coarse_ocean_diagnostic","activity":"active","independent_control":false},
+        {"name":"V1","start":34161,"stop":35181,"fortran_start":34162,"fortran_end":35181,"shape":[30,34],"order":"F","restart_record":3,"role":"lagged_coarse_ocean_diagnostic","activity":"active","independent_control":false},
+        {"name":"H1","start":35181,"stop":36201,"fortran_start":35182,"fortran_end":36201,"shape":[30,34],"order":"F","restart_record":3,"role":"lagged_coarse_ocean_diagnostic","activity":"active","independent_control":false},
+        {"name":"HTAU","start":36201,"stop":38241,"fortran_start":36202,"fortran_end":38241,"shape":[34,30,2],"order":"F","restart_record":4,"role":"lagged_atmosphere_to_ocean_coupling","activity":"active","independent_control":false},
+        {"name":"US","start":38241,"stop":39261,"fortran_start":38242,"fortran_end":39261,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"VS","start":39261,"stop":40281,"fortran_start":39262,"fortran_end":40281,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"WP","start":40281,"stop":41301,"fortran_start":40282,"fortran_end":41301,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"DT1","start":41301,"stop":48441,"fortran_start":41302,"fortran_end":48441,"shape":[30,34,7],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"TT","start":48441,"stop":49461,"fortran_start":48442,"fortran_end":49461,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"UV1","start":49461,"stop":50481,"fortran_start":49462,"fortran_end":50481,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"UV2","start":50481,"stop":51501,"fortran_start":50482,"fortran_end":51501,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"WM1","start":51501,"stop":52521,"fortran_start":51502,"fortran_end":52521,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"UAT","start":52521,"stop":53541,"fortran_start":52522,"fortran_end":53541,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"VAT","start":53541,"stop":54561,"fortran_start":53542,"fortran_end":54561,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"DIVT","start":54561,"stop":55581,"fortran_start":54562,"fortran_end":55581,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"QF","start":55581,"stop":56601,"fortran_start":55582,"fortran_end":56601,"shape":[30,34],"order":"F","restart_record":4,"role":"restart_diagnostic","activity":"diagnostic","independent_control":false},
+        {"name":"QEO","start":56601,"stop":58521,"fortran_start":56602,"fortran_end":58521,"shape":[30,64],"order":"F","restart_record":4,"role":"disabled_equable_run_heating","activity":"passive","independent_control":false},
+        {"name":"DIF","start":58521,"stop":59065,"fortran_start":58522,"fortran_end":59065,"shape":[16,34],"order":"F","restart_record":4,"role":"overwritten_atmosphere_convergence_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"UBAR","start":59065,"stop":59066,"fortran_start":59066,"fortran_end":59066,"shape":[1],"order":"F","restart_record":4,"role":"atmosphere_convergence_memory","activity":"active","independent_control":false},
+        {"name":"T0","start":59066,"stop":59067,"fortran_start":59067,"fortran_end":59067,"shape":[1],"order":"F","restart_record":4,"role":"disabled_stochastic_forcing_memory","activity":"passive","independent_control":false},
+        {"name":"R","start":59067,"stop":59068,"fortran_start":59068,"fortran_end":59068,"shape":[1],"order":"F","restart_record":4,"role":"disabled_stochastic_forcing_memory","activity":"passive","independent_control":false},
+        {"name":"time_of_last_initialization","start":59068,"stop":59069,"fortran_start":59069,"fortran_end":59069,"shape":[1],"order":"F","restart_record":4,"role":"branch_clock","activity":"passive","independent_control":false},
+        {"name":"AK","start":59069,"stop":59148,"fortran_start":59070,"fortran_end":59148,"shape":[79],"order":"F","restart_record":null,"role":"kelvin_wave_memory_missing_from_legacy_restart","activity":"active","independent_control":false}
+      ]
+    },
+    "complex64": {
+      "length": 5280,
+      "segments": [
+        {"name":"Q","start":0,"stop":5120,"fortran_start":1,"fortran_end":5120,"shape":[80,64],"order":"F","restart_record":4,"role":"restart_atmosphere_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"E1","start":5120,"stop":5200,"fortran_start":5121,"fortran_end":5200,"shape":[80],"order":"F","restart_record":4,"role":"restart_atmosphere_workspace","activity":"diagnostic","independent_control":false},
+        {"name":"E2","start":5200,"stop":5280,"fortran_start":5201,"fortran_end":5280,"shape":[80],"order":"F","restart_record":4,"role":"restart_atmosphere_workspace","activity":"diagnostic","independent_control":false}
+      ]
+    },
+    "real64": {
+      "length": 1,
+      "segments": [
+        {"name":"DSEED","start":0,"stop":1,"fortran_start":1,"fortran_end":1,"shape":[1],"order":"F","restart_record":4,"role":"disabled_stochastic_forcing_memory","activity":"passive","independent_control":false}
+      ]
+    },
+    "integer": {
+      "length": 4,
+      "segments": [
+        {"name":"NT","start":0,"stop":1,"fortran_start":1,"fortran_end":1,"shape":[1],"order":"F","restart_record":1,"role":"step_clock","activity":"passive","independent_control":false},
+        {"name":"IT","start":1,"stop":2,"fortran_start":2,"fortran_end":2,"shape":[1],"order":"F","restart_record":null,"role":"season_index","activity":"passive","independent_control":false},
+        {"name":"MP","start":2,"stop":3,"fortran_start":3,"fortran_end":3,"shape":[1],"order":"F","restart_record":null,"role":"next_season_index","activity":"passive","independent_control":false},
+        {"name":"ISTART","start":3,"stop":4,"fortran_start":4,"fortran_end":4,"shape":[1],"order":"F","restart_record":1,"role":"initialization_flag","activity":"passive","independent_control":false}
+      ]
+    },
+    "passive_time_real32": {
+      "length": 2,
+      "segments": [
+        {"name":"TD","start":0,"stop":1,"fortran_start":1,"fortran_end":1,"shape":[1],"order":"F","restart_record":null,"role":"absolute_model_time","activity":"passive","independent_control":false},
+        {"name":"TY","start":1,"stop":2,"fortran_start":2,"fortran_end":2,"shape":[1],"order":"F","restart_record":null,"role":"seasonal_interpolation_fraction","activity":"passive","independent_control":false}
+      ]
+    }
+  },
+  "named_offsets_for_target_and_attribution": {
+    "TO": {"python_slice":"32121:33141","fortran_slice":"32122:33141","shape":[30,34],"order":"F"},
+    "U1": {"python_slice":"33141:34161","fortran_slice":"33142:34161","shape":[30,34],"order":"F"},
+    "V1": {"python_slice":"34161:35181","fortran_slice":"34162:35181","shape":[30,34],"order":"F"},
+    "H1": {"python_slice":"35181:36201","fortran_slice":"35182:36201","shape":[30,34],"order":"F"}
+  },
+  "excluded_overwritten_workspace": ["U", "H", "F", "G", "BK"],
+  "notes": [
+    "The separate typed vectors are an API layout, not the byte order of the mixed-type Fortran restart record.",
+    "Two-dimensional native arrays use Fortran column-major order over only the active NXP by NYP Standard-grid slice.",
+    "H1, U1, V1, and HTAU are derived or lagged fields, but they affect the next coupled step and are therefore active state, not independent controls.",
+    "Restart workspace is retained for exact replay but is not an independently perturbable scientific control.",
+    "Q is zeroed completely at the start of ZATMC; E1 and E2 entries used by TRID are assigned before use, while element 80 is unused. The packed complex arrays are therefore diagnostic restart workspace, not active trajectory state, for the supported configuration.",
+    "The legacy restart omits AK, but BNDARY reads prior-step AK(2) before MLOOP rebuilds AK. The explicit API appends AK(1:NXP) after all restart-derived REAL values so fresh-process segmented replay is closed without changing target offsets.",
+    "For the supported rectangular NSEG=1 basin, ABC/ROSS/TR belong only to inactive segmented-boundary paths. Incoming DIF cannot affect convergence because the first comparison occurs before IMIN and DIF is then overwritten. They remain serialized for restart fidelity but are diagnostic.",
+    "Only the first column of UBNDY/HBNDY is live for NSEG=1; the second packed column is unused padding. The combined segments are conservatively active but are not offered as direct intervention controls.",
+    "The independent_control flags define the first conservative native-control mask; covariance-constrained experiments may use a stricter subspace."
+  ]
+}

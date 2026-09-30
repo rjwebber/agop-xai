@@ -1,0 +1,56 @@
+--- zc_kernel_api.f
++++ zc_kernel_api.f
+@@ -265,7 +265,7 @@
+ 
+ 
+       SUBROUTINE ZC_PACK_REAL(A,N,X,K)
+-      REAL A(*),X(*)
++      REAL A(N),X(*)
+       DO 10 I=1,N
+          X(K)=A(I)
+          K=K+1
+@@ -274,7 +274,7 @@
+       END
+ 
+       SUBROUTINE ZC_UNPACK_REAL(A,N,X,K)
+-      REAL A(*),X(*)
++      REAL A(N),X(*)
+       DO 10 I=1,N
+          A(I)=X(K)
+          K=K+1
+@@ -283,7 +283,7 @@
+       END
+ 
+       SUBROUTINE ZC_PACK_COMPLEX(A,N,X,K)
+-      COMPLEX A(*),X(*)
++      COMPLEX A(N),X(*)
+       DO 10 I=1,N
+          X(K)=A(I)
+          K=K+1
+@@ -292,7 +292,7 @@
+       END
+ 
+       SUBROUTINE ZC_UNPACK_COMPLEX(A,N,X,K)
+-      COMPLEX A(*),X(*)
++      COMPLEX A(N),X(*)
+       DO 10 I=1,N
+          A(I)=X(K)
+          K=K+1
+@@ -301,7 +301,7 @@
+       END
+ 
+       SUBROUTINE ZC_PACK_REAL_2D(A,LDA,NROW,NCOL,X,K)
+-      REAL A(LDA,*),X(*)
++      REAL A(LDA,NCOL),X(*)
+       DO 20 J=1,NCOL
+          DO 10 I=1,NROW
+             X(K)=A(I,J)
+@@ -312,7 +312,7 @@
+       END
+ 
+       SUBROUTINE ZC_UNPACK_REAL_2D(A,LDA,NROW,NCOL,X,K)
+-      REAL A(LDA,*),X(*)
++      REAL A(LDA,NCOL),X(*)
+       DO 20 J=1,NCOL
+          DO 10 I=1,NROW
+             A(I,J)=X(K)

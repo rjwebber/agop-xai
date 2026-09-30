@@ -1,0 +1,14 @@
+# Independently authored files intended to remain visible to source control.
+# All generated directories and command summaries are excluded by .gitignore.
+.gitignore
+README.md
+RELEASE_FILES.txt
+build_run_tangent.sh
+output_safety.py
+tangent_driver.F
+tangent_path_driver.F
+validate_adjoint_dot.py
+validate_composed_tangent.py
+validate_generic_adjoint_dot.py
+validate_scalar_taylor.py
+validate_tangent.py

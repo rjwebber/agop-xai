@@ -1,0 +1,58 @@
+--- ssta_b.f
++++ ssta_b.f
+@@ -455,6 +455,7 @@
+ C calculate the change in sst, using variable sub-timestep to insure
+ C numerical stability
+       CALL GETN(nsst)
++      kernel_nsst = nsst
+ C      write(*,*) " In ssta.f: t=",t,"; NSST=",NSST
+ C      if (.true.) stop
+ C
+--- ztmfc1_b.f
++++ ztmfc1_b.f
+@@ -187,6 +187,7 @@
+ C determine whether full anomaly field is being recalculated, or whether
+ C the anomaly field is only being incremented, based on the NINO3 criterion.
+ C
++      kernel_atm_reset = 0
+       istep = .true.
+       nino3 = 0.
+       DO i=13,18
+@@ -211,6 +212,7 @@
+ C     scheme does not work.  See file ISTEP.Doc.
+       IF (abs0 .LE. 0.1) THEN
+         istep = .false.
++        kernel_atm_reset = 1
+         time_of_last_initialization = t
+         CALL PUSHCONTROL1B(0)
+       ELSE
+@@ -222,6 +224,7 @@
+       IF (istep .AND. t - time_of_last_initialization .GT. 5*12) THEN
+         CALL PUSHCONTROL1B(0)
+         istep = .false.
++        kernel_atm_reset = 1
+         time_of_last_initialization = t
+       ELSE
+         CALL PUSHCONTROL1B(1)
+@@ -642,7 +645,8 @@
+       CALL PUSHINTEGER4(ad_count)
+ C
+ C otherwise, finish up by inverting wind field transforms
+- 110  DO i=26,55
++ 110  kernel_atm_iter = ad_count
++      DO i=26,55
+         DO j=1,mmax
+           vec(j) = CONJG(u(i-25, j))/FLOAT(mmax)
+           vec1(j) = CONJG(q(i, j))/FLOAT(mmax)
+--- zc_kernel_api_b.f
++++ zc_kernel_api_b.f
+@@ -423,6 +423,9 @@
+       CALL STRESS_FWD(td, istart)
+       CALL CFORCE_FWD()
+       CALL MLOOP_FWD()
++      tape(1) = kernel_nsst
++      tape(2) = kernel_atm_iter
++      tape(3) = kernel_atm_reset
+ C
+       END
+ 

@@ -1,0 +1,300 @@
+C=======================================================================
+C Independently compose the Tapenade tangent on a certified ZC boundary
+C path.  Re-anchoring the primal at every one-step boundary makes this the
+C exact forward-mode counterpart of zc_nino3_adjoint_driver.F's segmented
+C reverse schedule.  Only the continuous REAL state is active.
+C=======================================================================
+      PROGRAM ZC_TANGENT_PATH_DRIVER
+      INCLUDE 'zc_kernel_state.inc'
+      INCLUDE 'zeq.common'
+      INCLUDE 'modified_means.common'
+
+      INTEGER TARGET_STEPS,TO_OFFSET
+      PARAMETER (TARGET_STEPS=31,TO_OFFSET=32121)
+      REAL STATE_R_IN_D(ZC_STATE_NREAL),STATE_R_OUT_D(ZC_STATE_NREAL)
+      REAL STATE_R_OUT(ZC_STATE_NREAL)
+      COMPLEX STATE_C_OUT(ZC_STATE_NCOMPLEX)
+      REAL*8 STATE_D_OUT(ZC_STATE_NDOUBLE)
+      INTEGER STATE_I_OUT(ZC_STATE_NINTEGER)
+      REAL STATE_TIME_OUT(ZC_STATE_NTIME)
+      REAL, ALLOCATABLE :: STATE_R_PATH(:,:)
+      COMPLEX, ALLOCATABLE :: STATE_C_PATH(:,:)
+      REAL*8, ALLOCATABLE :: STATE_D_PATH(:,:)
+      INTEGER, ALLOCATABLE :: STATE_I_PATH(:,:)
+      REAL, ALLOCATABLE :: STATE_TIME_PATH(:,:)
+      INTEGER TAPE_REFERENCE(ZC_TAPE_WIDTH,TARGET_STEPS)
+      INTEGER TAPE_WORK(ZC_TAPE_WIDTH,1)
+      DOUBLE PRECISION NINO3_D,NORM2,XDIFF,XREF,DIFF2,REF2
+      DOUBLE PRECISION STEP_MAX,STEP_REL,WORST_MAX,WORST_REL
+      INTEGER I,J,K,N,NSTART,NT_RESTART,NATMR,IT1,IOS
+      REAL TFIND,TD_RESTART,TZERO_RESTART,TSTART,TEND
+      LOGICAL ZC_KERNEL_MODE
+      COMMON/commTIME/IT,MP,TY
+      COMMON/IST/ist
+      COMMON/STRPAR/RSTR,TCUT,TSEED,TAMP1,TAMP2,JLEFT,JRT,ITOP,
+     A IBOT,NIC
+      COMMON/zc_kernel_mode/ZC_KERNEL_MODE
+      CHARACTER*1 HEADER_LOCAL(80)
+      CHARACTER*512 PATH_FILE,DIRECTION_FILE,OUTPUT_PREFIX
+      CHARACTER*512 OUTPUT_FILE,META_FILE
+
+      PATH_FILE=' '
+      DIRECTION_FILE=' '
+      OUTPUT_PREFIX=' '
+      CALL GET_COMMAND_ARGUMENT(1,PATH_FILE)
+      CALL GET_COMMAND_ARGUMENT(2,DIRECTION_FILE)
+      CALL GET_COMMAND_ARGUMENT(3,OUTPUT_PREFIX)
+      IF(LEN_TRIM(PATH_FILE).EQ.0) PATH_FILE='zc_31step_path.bin'
+      IF(LEN_TRIM(DIRECTION_FILE).EQ.0) THEN
+         DIRECTION_FILE='tangent_direction.bin'
+      ENDIF
+      IF(LEN_TRIM(OUTPUT_PREFIX).EQ.0) OUTPUT_PREFIX='zc_tangent_path'
+
+C     Recreate the same immutable/static context as the certified primal
+C     and reverse drivers before loading the explicit trajectory.
+      ZC_KERNEL_MODE=.TRUE.
+      iprint_namelists=0
+      ist=0
+      OPEN(5,FILE='fc.data',STATUS='OLD',IOSTAT=IOS)
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot open fc.data; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      READ(5,450) HEADER_LOCAL
+ 450  FORMAT(80A1)
+      CALL OPENFL
+      NATM=2
+      READ(5,40,END=999) NSTART,TFIND
+ 40   FORMAT(8X,I15/8X,F15.0)
+      IF(NSTART.NE.3) THEN
+         WRITE(*,*) 'ERROR: tangent path driver requires NSTART=3'
+         STOP 2
+      ENDIF
+      CALL RDHIST(0,TFIND)
+      TD_RESTART=TD
+      NT_RESTART=NT
+      TZERO_RESTART=TZERO
+      NATMR=NATM
+      CALL SETUP
+      TD=TD_RESTART
+      NT=NT_RESTART
+      TZERO=TZERO_RESTART
+      IT1=TD+120.501
+      IT=MOD(IT1,12)
+      MP=IT+1
+      IF(IT.EQ.0) IT=12
+      TY=TD+120.501-IT1
+      CALL SETUP2
+      CALL INITDAT
+      CALL CONSTC
+      IF(NIC.NE.0) THEN
+         WRITE(*,*) 'ERROR: tangent path driver requires NIC=0'
+         STOP 2
+      ENDIF
+
+      ALLOCATE(STATE_R_PATH(ZC_STATE_NREAL,0:TARGET_STEPS))
+      ALLOCATE(STATE_C_PATH(ZC_STATE_NCOMPLEX,0:TARGET_STEPS))
+      ALLOCATE(STATE_D_PATH(ZC_STATE_NDOUBLE,0:TARGET_STEPS))
+      ALLOCATE(STATE_I_PATH(ZC_STATE_NINTEGER,0:TARGET_STEPS))
+      ALLOCATE(STATE_TIME_PATH(ZC_STATE_NTIME,0:TARGET_STEPS))
+      CALL ZC_TL_READ_PATH(TRIM(PATH_FILE),STATE_R_PATH,STATE_C_PATH,
+     A STATE_D_PATH,STATE_I_PATH,STATE_TIME_PATH,TAPE_REFERENCE)
+      CALL ZC_TL_READ_REAL(TRIM(DIRECTION_FILE),STATE_R_IN_D,
+     A ZC_STATE_NREAL)
+
+      WORST_MAX=0.0D0
+      WORST_REL=0.0D0
+      CALL CPU_TIME(TSTART)
+      DO 100 N=1,TARGET_STEPS
+         CALL ZC_KERNEL_WINDOW_D(STATE_R_PATH(1,N-1),STATE_R_IN_D,
+     A    STATE_C_PATH(1,N-1),STATE_D_PATH(1,N-1),
+     B    STATE_I_PATH(1,N-1),STATE_TIME_PATH(1,N-1),1,
+     C    STATE_R_OUT,STATE_R_OUT_D,STATE_C_OUT,STATE_D_OUT,
+     D    STATE_I_OUT,STATE_TIME_OUT,TAPE_WORK)
+         DIFF2=0.0D0
+         REF2=0.0D0
+         STEP_MAX=0.0D0
+         DO 70 I=1,ZC_STATE_NREAL
+            XDIFF=DBLE(STATE_R_OUT(I))-DBLE(STATE_R_PATH(I,N))
+            XREF=DBLE(STATE_R_PATH(I,N))
+            DIFF2=DIFF2+XDIFF*XDIFF
+            REF2=REF2+XREF*XREF
+            STEP_MAX=MAX(STEP_MAX,ABS(XDIFF))
+ 70      CONTINUE
+         STEP_REL=DSQRT(DIFF2/MAX(REF2,1.0D-300))
+         WORST_MAX=MAX(WORST_MAX,STEP_MAX)
+         WORST_REL=MAX(WORST_REL,STEP_REL)
+         DO 80 I=1,ZC_TAPE_WIDTH
+            IF(TAPE_WORK(I,1).NE.TAPE_REFERENCE(I,N)) THEN
+               WRITE(*,*) 'tangent branch mismatch: step/index ',N,I
+               STOP 2
+            ENDIF
+ 80      CONTINUE
+         DO 90 I=1,ZC_STATE_NREAL
+            STATE_R_IN_D(I)=STATE_R_OUT_D(I)
+ 90      CONTINUE
+ 100  CONTINUE
+      CALL CPU_TIME(TEND)
+
+      NINO3_D=0.0D0
+      DO 120 J=21,31
+         DO 110 I=13,18
+            K=TO_OFFSET+I+30*(J-1)
+            NINO3_D=NINO3_D+DBLE(STATE_R_IN_D(K))
+ 110     CONTINUE
+ 120  CONTINUE
+      NINO3_D=NINO3_D/66.0D0
+      NORM2=0.0D0
+      DO 130 I=1,ZC_STATE_NREAL
+         NORM2=NORM2+DBLE(STATE_R_IN_D(I))*DBLE(STATE_R_IN_D(I))
+ 130  CONTINUE
+      NORM2=DSQRT(NORM2)
+
+      OUTPUT_FILE=TRIM(OUTPUT_PREFIX)//'_jv.bin'
+      OPEN(201,FILE=TRIM(OUTPUT_FILE),FORM='UNFORMATTED',
+     A ACCESS='STREAM',STATUS='REPLACE')
+      WRITE(201) STATE_R_IN_D
+      CLOSE(201)
+      META_FILE=TRIM(OUTPUT_PREFIX)//'_jv.txt'
+      OPEN(202,FILE=TRIM(META_FILE),STATUS='REPLACE')
+      WRITE(202,'(A)') 'method=Tapenade tangent mode'
+      WRITE(202,'(A)') 'schedule=certified one-step boundary composition'
+      WRITE(202,'(A,I0)') 'transitions=',TARGET_STEPS
+      WRITE(202,'(A,ES24.16)') 'nino3_tangent=',NINO3_D
+      WRITE(202,'(A,ES24.16)') 'jv_l2_norm=',NORM2
+      WRITE(202,'(A,ES24.16)') 'cpu_seconds=',TEND-TSTART
+      WRITE(202,'(A,ES24.16)') 'fwd_real_worst_max_abs=',WORST_MAX
+      WRITE(202,'(A,ES24.16)') 'fwd_real_worst_rel_l2=',WORST_REL
+      CLOSE(202)
+      WRITE(*,'(A,ES16.8)') 'Nino-3 tangent: ',NINO3_D
+      WRITE(*,'(A,A)') 'Tangent: ',TRIM(OUTPUT_FILE)
+      STOP
+ 999  WRITE(*,*) 'ERROR: unexpected end of fc.data'
+      STOP 2
+      END
+
+
+      SUBROUTINE ZC_TL_READ_PATH(NAME,STATE_R,STATE_C,STATE_D,
+     A STATE_I,STATE_TIME,TAPE)
+      INCLUDE 'zc_kernel_state.inc'
+      INTEGER TARGET_STEPS
+      PARAMETER (TARGET_STEPS=31)
+      CHARACTER*(*) NAME
+      REAL STATE_R(ZC_STATE_NREAL,0:TARGET_STEPS)
+      COMPLEX STATE_C(ZC_STATE_NCOMPLEX,0:TARGET_STEPS)
+      REAL*8 STATE_D(ZC_STATE_NDOUBLE,0:TARGET_STEPS)
+      INTEGER STATE_I(ZC_STATE_NINTEGER,0:TARGET_STEPS)
+      REAL STATE_TIME(ZC_STATE_NTIME,0:TARGET_STEPS)
+      INTEGER TAPE(ZC_TAPE_WIDTH,TARGET_STEPS)
+      INTEGER HSTEPS,HREAL,HCOMPLEX,HDOUBLE,HINTEGER,HTIME,HTAPE,IOS
+      INTEGER*8 FILE_BYTES,EXPECTED_BYTES
+      LOGICAL EXISTS
+      EXPECTED_BYTES=7_8*4_8+
+     A (TARGET_STEPS+1_8)*(4_8*ZC_STATE_NREAL+
+     B  8_8*ZC_STATE_NCOMPLEX+8_8*ZC_STATE_NDOUBLE+
+     C  4_8*ZC_STATE_NINTEGER+4_8*ZC_STATE_NTIME)+
+     D TARGET_STEPS*4_8*ZC_TAPE_WIDTH
+      INQUIRE(FILE=NAME,EXIST=EXISTS,SIZE=FILE_BYTES)
+      IF(.NOT.EXISTS .OR. FILE_BYTES.NE.EXPECTED_BYTES) THEN
+         WRITE(*,*) 'ERROR: invalid path-file bytes: ',FILE_BYTES,
+     A    ' expected ',EXPECTED_BYTES
+         STOP 2
+      ENDIF
+      OPEN(200,FILE=NAME,FORM='UNFORMATTED',ACCESS='STREAM',
+     A STATUS='OLD',IOSTAT=IOS)
+      READ(200,IOSTAT=IOS) HSTEPS,HREAL,HCOMPLEX,HDOUBLE,HINTEGER,
+     A HTIME,HTAPE
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot read path header; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      IF(HSTEPS.NE.TARGET_STEPS .OR. HREAL.NE.ZC_STATE_NREAL .OR.
+     A HCOMPLEX.NE.ZC_STATE_NCOMPLEX .OR.
+     B HDOUBLE.NE.ZC_STATE_NDOUBLE .OR.
+     C HINTEGER.NE.ZC_STATE_NINTEGER .OR. HTIME.NE.ZC_STATE_NTIME
+     D .OR. HTAPE.NE.ZC_TAPE_WIDTH) THEN
+         WRITE(*,*) 'ERROR: invalid path-file header'
+         STOP 2
+      ENDIF
+      READ(200,IOSTAT=IOS) STATE_R,STATE_C,STATE_D,STATE_I,
+     A STATE_TIME,TAPE
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot read path payload; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      CLOSE(200)
+      RETURN
+      END
+
+
+      SUBROUTINE ZC_TL_READ_REAL(NAME,X,N)
+      CHARACTER*(*) NAME
+      REAL X(N)
+      INTEGER IOS
+      INTEGER*8 FILE_BYTES,EXPECTED_BYTES
+      LOGICAL EXISTS
+      EXPECTED_BYTES=4_8*N
+      INQUIRE(FILE=NAME,EXIST=EXISTS,SIZE=FILE_BYTES)
+      IF(.NOT.EXISTS .OR. FILE_BYTES.NE.EXPECTED_BYTES) THEN
+         WRITE(*,*) 'ERROR: invalid tangent-direction bytes: ',
+     A    FILE_BYTES,' expected ',EXPECTED_BYTES
+         STOP 2
+      ENDIF
+      OPEN(203,FILE=NAME,FORM='UNFORMATTED',ACCESS='STREAM',
+     A STATUS='OLD',IOSTAT=IOS)
+      READ(203,IOSTAT=IOS) X
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot read tangent direction; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      CLOSE(203)
+      RETURN
+      END
+
+
+C Passive helpers pruned by Tapenade from the active derivative graph.
+      SUBROUTINE ZC_PACK_COMPLEX(A,N,X,K)
+      COMPLEX A(N),X(*)
+      DO 10 I=1,N
+         X(K)=A(I)
+         K=K+1
+ 10   CONTINUE
+      RETURN
+      END
+
+
+      SUBROUTINE ZC_UNPACK_COMPLEX(A,N,X,K)
+      COMPLEX A(N),X(*)
+      DO 10 I=1,N
+         A(I)=X(K)
+         K=K+1
+ 10   CONTINUE
+      RETURN
+      END
+
+
+C GETN selects a discrete branch and remains passive in the branchwise map.
+      SUBROUTINE GETN(NSST)
+      INCLUDE 'zeq.common'
+      COMMON/ZDATA/WM(30,34,2,12),DIVM(30,34,12),Q0O(30,34),
+     A SSTM(30,34,12),UO(30,34),VO(30,34),DO(30,34),HTAU(34,30,2),
+     B WEM(30,34,12),TO(30,34),UV(30,34,2,12),US(30,34),VS(30,34),
+     C WP(30,34),DT1(30,34,7),TT(30,34),UV1(30,34),UV2(30,34),
+     D WM1(30,34),UAT(30,34),VAT(30,34),DIVT(30,34)
+      COMMON/SGRID/XWRS,DXRS,YNRS,DYRS,NYPS
+      DX1=DXRS*1.11E7
+      DY1=DYRS*1.11E7
+      DTT=DTD*2.628E6
+      NSST=2
+      DO 20 I=6,25
+         DO 10 J=6,32
+            AAA=ABS(US(I,J))*DTT/DX1
+            BBB=ABS(VS(I,J))*DTT/DY1
+            IAA=1+AAA
+            IBB=1+BBB
+            NSST=MAX0(NSST,IAA)
+            NSST=MAX0(NSST,IBB)
+ 10      CONTINUE
+ 20   CONTINUE
+      RETURN
+      END

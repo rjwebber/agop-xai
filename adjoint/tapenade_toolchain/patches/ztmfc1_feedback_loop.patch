@@ -1,0 +1,51 @@
+--- ztmfc1.f.orig
++++ ztmfc1.f
+@@ -187,15 +187,12 @@
+ 
+ c set the convergence feedback loop counter to zero
+       IC=0
+-      GO TO 380
+-
+-
+-
++      DO WHILE(.TRUE.)
+ c top of convergence feedback loop......................................
+ c here we compute the convergence feedback part of the heating at the
+ c current iteration
+ 
+-310   continue
++      IF(IC.GT.0) THEN
+ *Eli: 19990422: implementing tanh switches in the atmospheric convection,
+ c     upwelling-sst, and sub-surface temperature parts of the model:
+       if (use_tanh_switches) then
+@@ -233,13 +230,15 @@
+  22       CONTINUE
+  21     CONTINUE
+       end if
++      END IF
+ 
+ c Now the heating is specified; set up the atmosphere dynamics calculation
+-380   DO 31 I=1, 80
+-      DO 31 J=1, 64
++      DO I=1, 80
++      DO J=1, 64
+ !       initializing with a complex zero:
+         Q(I,J)=(0.,0.)  
+-31    CONTINUE
++      END DO
++      END DO
+ 
+ *Eli: May 28, added option for externally specified heating field, using
+ *the prescription in the following email from Steve Zebiak:
+@@ -503,8 +502,10 @@
+ c loop back.
+       IF(.NOT. IPRINT .AND. IC .NE. IMAX) THEN
+       IC=IC+1
+-      GO TO 310
++      ELSE
++      EXIT
+       ENDIF
++      END DO
+ 
+ c otherwise, finish up by inverting wind field transforms
+       DO 120 I=26, 55

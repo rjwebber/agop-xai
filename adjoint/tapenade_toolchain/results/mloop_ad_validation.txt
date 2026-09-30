@@ -1,0 +1,90 @@
+
+
+ HEQUIV = 86. CM.  CWAVE = 2.90 M/S.  LEQ = 3.22 DEGREES.  TEQ = 1.42 DAYS = 0.0467 MONTHS.
+ WSCALE = 4.23 M/(CM/SEC)**2
+
+                         XW        XE        YS        YN        DX       DY       DT       TDECAY
+ DIMENSIONAL          124.00    280.00    -28.75     28.75   2.00000   0.50000   0.33333     30.00
+ NONDIMENSIONAL          0.0     48.51     -8.94      8.94   0.62198   0.15550   7.13363   0.00156
+
+
+  NX =   78  NY =  115  TZERO =    0.50  TENDD =      10.50  NTIMES =      30
+
+
+
+                              BASIN CONFIGURATION
+
+ SEG NO    TYPE    WEST         SOUTH        NORTH          ONEK      NORM        TK     NSTAR
+
+     1       6     1 124.00     1 -28.75   116  28.75       8.5748    6.4456    0.0000       0
+ ADY2=  147.5      ALPHA=  11.47      ALPHDT= 3.216      DYINV=  12.86      ASQM= -18.30      ASQMI= -5.4646E-02  ASQP=  18.58    
+  EFRIC= 0.9890      PI=    3.141593      SQRT2=    1.414214    
+
+
+ HEQUIV = 86. CM.  CWAVE = 2.90 M/S.  LEQ = 3.22 DEGREES.  TEQ = 1.42 DAYS = 0.0467 MONTHS.
+ WSCALE = 4.23 M/(CM/SEC)**2
+
+                         XW        XE        YS        YN        DX       DY       DT       TDECAY
+ DIMENSIONAL          124.00    280.00    -28.75     28.75   2.00000   0.50000   0.33333     30.00
+ NONDIMENSIONAL          0.0     48.51     -8.94      8.94   0.62198   0.15550   7.13363   0.00156
+
+
+  NX =   78  NY =  115  TZERO =    0.50  TENDD =      10.50  NTIMES =      30
+
+
+
+                              BASIN CONFIGURATION
+
+ SEG NO    TYPE    WEST         SOUTH        NORTH          ONEK      NORM        TK     NSTAR
+
+     1       6     1 124.00     1 -28.75   116  28.75       8.5748    6.4456    0.0000       0
+ ADY2=  147.5      ALPHA=  11.47      ALPHDT= 3.216      DYINV=  12.86      ASQM= -18.30      ASQMI= -5.4646E-02  ASQP=  18.58    
+  EFRIC= 0.9890      PI=    3.141593      SQRT2=    1.414214    
+
+
+ HEQUIV = 86. CM.  CWAVE = 2.90 M/S.  LEQ = 3.22 DEGREES.  TEQ = 1.42 DAYS = 0.0467 MONTHS.
+ WSCALE = 4.23 M/(CM/SEC)**2
+
+                         XW        XE        YS        YN        DX       DY       DT       TDECAY
+ DIMENSIONAL          124.00    280.00    -28.75     28.75   2.00000   0.50000   0.33333     30.00
+ NONDIMENSIONAL          0.0     48.51     -8.94      8.94   0.62198   0.15550   7.13363   0.00156
+
+
+  NX =   78  NY =  115  TZERO =    0.50  TENDD =      10.50  NTIMES =      30
+
+
+
+                              BASIN CONFIGURATION
+
+ SEG NO    TYPE    WEST         SOUTH        NORTH          ONEK      NORM        TK     NSTAR
+
+     1       6     1 124.00     1 -28.75   116  28.75       8.5748    6.4456    0.0000       0
+ ADY2=  147.5      ALPHA=  11.47      ALPHDT= 3.216      DYINV=  12.86      ASQM= -18.30      ASQMI= -5.4646E-02  ASQP=  18.58    
+  EFRIC= 0.9890      PI=    3.141593      SQRT2=    1.414214    
+
+
+ HEQUIV = 86. CM.  CWAVE = 2.90 M/S.  LEQ = 3.22 DEGREES.  TEQ = 1.42 DAYS = 0.0467 MONTHS.
+ WSCALE = 4.23 M/(CM/SEC)**2
+
+                         XW        XE        YS        YN        DX       DY       DT       TDECAY
+ DIMENSIONAL          124.00    280.00    -28.75     28.75   2.00000   0.50000   0.33333     30.00
+ NONDIMENSIONAL          0.0     48.51     -8.94      8.94   0.62198   0.15550   7.13363   0.00156
+
+
+  NX =   78  NY =  115  TZERO =    0.50  TENDD =      10.50  NTIMES =      30
+
+
+
+                              BASIN CONFIGURATION
+
+ SEG NO    TYPE    WEST         SOUTH        NORTH          ONEK      NORM        TK     NSTAR
+
+     1       6     1 124.00     1 -28.75   116  28.75       8.5748    6.4456    0.0000       0
+ ADY2=  147.5      ALPHA=  11.47      ALPHDT= 3.216      DYINV=  12.86      ASQM= -18.30      ASQMI= -5.4646E-02  ASQP=  18.58    
+  EFRIC= 0.9890      PI=    3.141593      SQRT2=    1.414214    
+tangent_dot=  9.1188685110578194E+02
+adjoint_dot=  9.1188683253343243E+02
+dot_relative_defect=  2.0366945192084062E-08
+centered_fd=  9.1188680149976858E+02
+fd_relative_error=  5.4399307658221983E-08
+PASS mloop tangent/adjoint/finite-difference test

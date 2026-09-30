@@ -1,0 +1,15 @@
+# Deny generated directories by default.  This audit workspace writes every
+# compiler tree, replay trajectory, finite-difference perturbation, and ad hoc
+# run into a top-level directory.  The independently authored release files
+# are deliberately kept at the top level and enumerated in RELEASE_FILES.txt.
+# Curated immutable evidence belongs under ../tapenade_toolchain/results/ with
+# an explicit provenance manifest; it must not be committed from this tree.
+/*/
+
+# Machine-generated command summaries can also appear as top-level files.
+*_console.json
+*_stdout.json
+
+# Python cache files.
+__pycache__/
+*.py[cod]

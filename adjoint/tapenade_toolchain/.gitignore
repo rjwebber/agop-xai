@@ -1,0 +1,3 @@
+# Local compiler/Tapenade trees can contain copied upstream source, generated
+# derivatives, executables, native data, and machine-local paths.
+/build/

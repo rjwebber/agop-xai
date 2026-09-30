@@ -1,0 +1,49 @@
+{
+  "important_interpretation": [
+    "Tapenade reported implicit external declarations for GGNQF and GGUBFS; the build links the independently hashed support routines.",
+    "Tapenade reported legacy mixed-kind assignments and a complex constructor cost-analysis message.",
+    "I/O warnings describe dormant diagnostic writes in the prepared source; the differentiated kernel path is run I/O-free.",
+    "Generation warnings were retained and were not treated as proof of derivative correctness; numerical evidence is reported separately."
+  ],
+  "messages": {
+    "reverse": {
+      "message_code_counts": {
+        "AD03": 34,
+        "CF01": 2,
+        "DD31": 4,
+        "DF05": 2,
+        "TC16": 29,
+        "TC19": 1,
+        "TC30": 3,
+        "TC33": 2,
+        "TC37": 2,
+        "TOOL_MESSAGE": 2
+      },
+      "message_count": 81,
+      "source_message_file_sha256": "19df43fdd9916d50cd2d701cbccd5e09142f6c54bbeeaf39a69ff85d32671da2"
+    },
+    "tangent": {
+      "message_code_counts": {
+        "AD03": 34,
+        "CF01": 2,
+        "DD31": 4,
+        "DF05": 2,
+        "TC16": 29,
+        "TC19": 1,
+        "TC30": 3,
+        "TC33": 2,
+        "TC37": 2,
+        "TOOL_MESSAGE": 1
+      },
+      "message_count": 80,
+      "source_message_file_sha256": "8bd176569ca0f5079eaa957fb952ba4dad513b7c2c5a4add7252f173735c7e01"
+    }
+  },
+  "raw_message_files_published": false,
+  "schema_version": 1,
+  "tapenade": {
+    "archive_sha256": "534b83598c508a3202880016403f84e352e4b00bdc4c6b934bb39ccbdddb0963",
+    "revision": "0449e37b7da896cb2c38b63c8a34f10c87a84534",
+    "version": "3.16"
+  }
+}

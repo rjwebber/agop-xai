@@ -1,0 +1,263 @@
+{
+  "aligned_scalar_31_transition": {
+    "extreme_el_nino": {
+      "best_major_tape_stable_centered_fd": {
+        "absolute_defect": 2.371714861862384e-05,
+        "h": 0.0025,
+        "input_rounding_relative_l2": 0.013102382173072125,
+        "relative_defect": 0.0003364364011792926
+      },
+      "case": "extreme_el_nino",
+      "direction_mode": "adjoint_aligned",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [
+        0.01,
+        0.005,
+        0.0025,
+        0.00125
+      ],
+      "source_report_sha256": "1d2a2ae81bba513cc1b3b4f5e17c6db71df248ec24dd8553e0e6d919199d37b2",
+      "tested_step_sizes": [
+        0.01,
+        0.005,
+        0.0025,
+        0.00125
+      ]
+    },
+    "extreme_la_nina": {
+      "best_major_tape_stable_centered_fd": null,
+      "case": "extreme_la_nina",
+      "direction_mode": "adjoint_aligned",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [],
+      "source_report_sha256": "459ef6dae428a28fec610b510c20f74e3c1fd69e0fbdb34c7b951b496e965d40",
+      "tested_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+        0.01,
+        0.005,
+        0.0025
+      ]
+    },
+    "neutral_member_04": {
+      "best_major_tape_stable_centered_fd": {
+        "absolute_defect": 0.0026595131546085227,
+        "h": 0.05,
+        "input_rounding_relative_l2": 0.0004294736295992412,
+        "relative_defect": 0.011125363964408549
+      },
+      "case": "neutral_member_04",
+      "direction_mode": "adjoint_aligned",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125
+      ],
+      "source_report_sha256": "9b4ad66cd0027820638c40e0bf319de5dcbba7ca1f9ce412839d17db6b1cab2e",
+      "tested_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125
+      ]
+    }
+  },
+  "certification_assessed": false,
+  "composed_full_state_31_transition": {
+    "cases": {
+      "extreme_el_nino": {
+        "major_tape_stable_step_sizes": [],
+        "tested_step_sizes": [
+          0.2,
+          0.1,
+          0.05,
+          0.025,
+          0.02,
+          0.01,
+          0.005
+        ]
+      },
+      "extreme_la_nina": {
+        "major_tape_stable_step_sizes": [],
+        "tested_step_sizes": [
+          0.2,
+          0.1,
+          0.05,
+          0.025,
+          0.02,
+          0.01,
+          0.005
+        ]
+      },
+      "neutral_member_04": {
+        "major_tape_stable_step_sizes": [
+          0.2,
+          0.1,
+          0.05,
+          0.025,
+          0.02,
+          0.01,
+          0.005
+        ],
+        "tested_step_sizes": [
+          0.2,
+          0.1,
+          0.05,
+          0.025,
+          0.02,
+          0.01,
+          0.005
+        ]
+      }
+    },
+    "interpretation": "Diagnostic only, not a pass: random full-state segment-scaled directions change the recorded major tape for the warm and cold cases; the neutral case remains tape-stable but is noisy in production float32 arithmetic.",
+    "source_report_sha256": "259a52d13decfd622c4e8350664d312d848f9877e2847a4a1fdefb3bf855b9dd"
+  },
+  "limitations": [
+    "No clean multi-level h^2 Taylor regime was established.",
+    "Input rounding and trajectory arithmetic are real32.",
+    "The three-slot external tape does not expose internal sign, cap, upwind, CFL-controlling-cell, or threshold-distance information.",
+    "Every tested aligned La Nina perturbation changes NSST at step 15."
+  ],
+  "one_step_centered_finite_difference": {
+    "active_carried_state": {
+      "cases": {
+        "extreme_el_nino": {
+          "full_output_cosine": 0.9999999855825146,
+          "full_output_relative_l2_error": 0.00016980868311880208,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        },
+        "extreme_la_nina": {
+          "full_output_cosine": 0.9999999966552923,
+          "full_output_relative_l2_error": 8.178888199903443e-05,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        },
+        "neutral_member_04": {
+          "full_output_cosine": 0.9999999915200605,
+          "full_output_relative_l2_error": 0.00013023010521909147,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        }
+      },
+      "source_report_sha256": "51475e6fbdf66f0f826427f70ec7af6c473ad22ae88ea5f872f420557ae8c6b0"
+    },
+    "independent_control": {
+      "cases": {
+        "extreme_el_nino": {
+          "full_output_cosine": 0.9999999999978568,
+          "full_output_relative_l2_error": 2.071111859458695e-06,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        },
+        "extreme_la_nina": {
+          "full_output_cosine": 0.9999999999973216,
+          "full_output_relative_l2_error": 2.3147980415541703e-06,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        },
+        "neutral_member_04": {
+          "full_output_cosine": 0.9999999999978089,
+          "full_output_relative_l2_error": 2.093718650412757e-06,
+          "h": 0.02,
+          "major_tape_matches_baseline": true
+        }
+      },
+      "source_report_sha256": "5d71e069d31d435e7666722dc4db13a4ff11e386457fddd6619576ccc6735758"
+    }
+  },
+  "random_scalar_31_transition": [
+    {
+      "best_major_tape_stable_centered_fd": {
+        "absolute_defect": 0.010450328106461779,
+        "h": 0.00078125,
+        "input_rounding_relative_l2": 3.247677490127374e-05,
+        "relative_defect": 0.14346225208600674
+      },
+      "case": "extreme_el_nino",
+      "direction_mode": "random_segment_scaled",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [
+        0.00078125,
+        0.000390625
+      ],
+      "tested_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+        0.00625,
+        0.003125,
+        0.0015625,
+        0.00078125,
+        0.000390625
+      ]
+    },
+    {
+      "best_major_tape_stable_centered_fd": null,
+      "case": "extreme_la_nina",
+      "direction_mode": "random_segment_scaled",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [],
+      "tested_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+        0.00625,
+        0.003125,
+        0.0015625,
+        0.00078125,
+        0.000390625
+      ]
+    },
+    {
+      "best_major_tape_stable_centered_fd": {
+        "absolute_defect": 0.0037262041546298197,
+        "h": 0.0125,
+        "input_rounding_relative_l2": 2.032803407565805e-06,
+        "relative_defect": 0.04184321606496001
+      },
+      "case": "neutral_member_04",
+      "direction_mode": "random_segment_scaled",
+      "direction_scope": "independent continuous controls",
+      "major_tape_stable_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+        0.00625,
+        0.003125,
+        0.0015625,
+        0.00078125,
+        0.000390625
+      ],
+      "tested_step_sizes": [
+        0.2,
+        0.1,
+        0.05,
+        0.025,
+        0.0125,
+        0.00625,
+        0.003125,
+        0.0015625,
+        0.00078125,
+        0.000390625
+      ]
+    }
+  ],
+  "random_scalar_31_transition_source_report_sha256": "c30a7698b5f13f7052bbf96ce29e964cd9d216f474628d8ca9288b3d1220aec5",
+  "schema_version": 1,
+  "status": "provisional_evidence_not_certification"
+}

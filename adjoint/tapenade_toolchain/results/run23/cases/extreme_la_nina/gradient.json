@@ -1,0 +1,1552 @@
+{
+  "adjoint_certification": {
+    "assessed_by_packager": false,
+    "producer_declared_status": "provisional",
+    "warning": "The packager does not certify tangent/reverse correctness. Any status is a producer declaration bound to separately hashed validation evidence."
+  },
+  "archive": {
+    "filename": "gradient.npz",
+    "keys": [
+      "packed_gradient",
+      "AKB",
+      "UB",
+      "HB",
+      "ABC",
+      "ROSS",
+      "TR",
+      "V",
+      "UBNDY",
+      "HBNDY",
+      "Q0O",
+      "UO",
+      "VO",
+      "DO",
+      "TO",
+      "U1",
+      "V1",
+      "H1",
+      "HTAU",
+      "US",
+      "VS",
+      "WP",
+      "DT1",
+      "TT",
+      "UV1",
+      "UV2",
+      "WM1",
+      "UAT",
+      "VAT",
+      "DIVT",
+      "QF",
+      "QEO",
+      "DIF",
+      "UBAR",
+      "T0",
+      "R",
+      "time_of_last_initialization",
+      "AK",
+      "independent_control_mask"
+    ],
+    "sha256": "692dac5b47dc81010c041e75bbf7c6129e55275c49041d1d568468ff35dddf41"
+  },
+  "by_activity": {
+    "active": {
+      "coefficient_at_max_abs": -1.7946521043777466,
+      "coefficient_count": 38315,
+      "l1_norm": 8.51092082502292,
+      "l2_norm": 1.8542298290251016,
+      "max_abs": 1.7946521043777466,
+      "max_abs_flat_index": 38235,
+      "nonzero_count": 27711,
+      "squared_l2_norm": 3.4381682588464577,
+      "zero_count": 10604
+    },
+    "diagnostic": {
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 18910,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_flat_index": null,
+      "nonzero_count": 0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 18910
+    },
+    "passive": {
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1923,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_flat_index": null,
+      "nonzero_count": 0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1923
+    }
+  },
+  "coordinate_semantics": {
+    "control_warning": "Only segments with independent_control=true belong to the manifest's conservative direct-control mask. Active carried state, diagnostic, and passive segments marked false are not independent scientific intervention controls.",
+    "coordinate_system": "raw packed Fortran model-state coordinates",
+    "gradient_statement": "Each coefficient is the derivative of the producer's scalar objective with respect to one raw packed REAL state coordinate.",
+    "norm_warning": "The packed state mixes physical variables and units; raw norms must not be interpreted as standardized variable importance.",
+    "rescaled_or_standardized_by_this_program": false
+  },
+  "format_validation": {
+    "scope": "Exact byte count, declared byte order, finite coefficients, and state-manifest layout only. This is not validation of the adjoint calculation.",
+    "status": "passed"
+  },
+  "independent_control_gradient_summary": {
+    "coefficient_at_max_abs": -0.030170271173119545,
+    "coefficient_count": 28591,
+    "excluded_coordinate_summary": {
+      "coefficient_at_max_abs": -1.7946521043777466,
+      "coefficient_count": 30557,
+      "l1_norm": 5.512926305313792,
+      "l2_norm": 1.8511154071423197,
+      "max_abs": 1.7946521043777466,
+      "nonzero_count": 2952,
+      "squared_l2_norm": 3.426628250559676,
+      "zero_count": 27605
+    },
+    "l1_norm": 2.9979945197091284,
+    "l2_norm": 0.10742443058625736,
+    "max_abs": 0.030170271173119545,
+    "nonzero_count": 24759,
+    "squared_l2_norm": 0.011540008286781625,
+    "zero_count": 3832
+  },
+  "independent_control_mask": {
+    "canonical_bool_mask_sha256": "0f7f3bdde0dcfb5283d0a3a40bbff632d1a4ca182be0ae72274fb89075d02a12",
+    "coefficient_count": 59148,
+    "false_count": 30557,
+    "true_count": 28591
+  },
+  "input": {
+    "byte_order_requested": "little",
+    "bytes": 236592,
+    "filename": "zc_nino3_gradient.bin",
+    "resolved_numpy_dtype": "<f4",
+    "sha256": "a8c57ea8111fa14f919973aafc0e4fd46b6dcf27addb406412e31a63a7b02231"
+  },
+  "packed_gradient": {
+    "canonical_little_endian_packed_sha256": "19f2d27a8d051b52e636fe234842d3ce5b401fc913d48fd0a85c922957f2364c",
+    "coefficient_at_max_abs": -1.7946521043777466,
+    "coefficient_count": 59148,
+    "l1_norm": 8.510920825022922,
+    "l2_norm": 1.8542298290251016,
+    "max_abs": 1.7946521043777466,
+    "max_abs_location": {
+      "global_fortran_index": 59066,
+      "global_python_index": 59065,
+      "local_fortran_index": [
+        1
+      ],
+      "local_python_index": [
+        0
+      ],
+      "segment": "UBAR"
+    },
+    "nonzero_count": 27711,
+    "squared_l2_norm": 3.4381682588464577,
+    "zero_count": 31437
+  },
+  "producer_provenance": {
+    "certification": {
+      "evidence": [
+        {
+          "artifact": {
+            "bytes": 34374,
+            "filename": "primal_replay_report.json",
+            "sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+          },
+          "kind": "primal_replay"
+        },
+        {
+          "artifact": {
+            "bytes": 2502,
+            "filename": "transpose_summary.json",
+            "sha256": "331beb40f810d0019924bcdb6ed8b353db85e26c8d4dc107f5b6ee5c38e018bc"
+          },
+          "kind": "tangent_reverse_dot"
+        },
+        {
+          "artifact": {
+            "bytes": 7503,
+            "filename": "finite_difference_summary.json",
+            "sha256": "8a9cdf5a14d2403ffa000a35d1ef1e88cfe7ed6e598b157bba3cc5a63b56b004"
+          },
+          "kind": "independent_finite_difference_or_taylor"
+        }
+      ],
+      "producer_declared_status": "provisional",
+      "required_evidence_kinds_for_certified_status": [
+        "independent_finite_difference_or_taylor",
+        "primal_replay",
+        "tangent_reverse_dot"
+      ],
+      "scope": "provisional_major_tape_conditioned: locked Standard, NSEG=1, NATM=2, NIC=0, default-real 31-transition branchwise derivative; not global certification"
+    },
+    "certified_path": {
+      "bytes": 8924048,
+      "filename": "zc_31step_path.bin",
+      "sha256": "5c244c6c52023a15dcda8149d05dbb8ad6d02b87d9f9827433c224117bed0e75"
+    },
+    "gradient": {
+      "bytes": 236592,
+      "filename": "zc_nino3_gradient.bin",
+      "sha256": "a8c57ea8111fa14f919973aafc0e4fd46b6dcf27addb406412e31a63a7b02231"
+    },
+    "initial_checkpoint": {
+      "artifact": {
+        "bytes": 278808,
+        "filename": "zeq9fsu.hst",
+        "sha256": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7"
+      },
+      "label": "extreme_la_nina"
+    },
+    "metadata_file": {
+      "canonical_json_sha256": "225401472adaa65be46a4616bf361fc9d53c993758e33189228df3a10102cc0b",
+      "filename": "producer_metadata.json",
+      "sha256": "4ca88dba3e21510f36d55928beddafdebfa761534133a5b26b04a3f7508eac65"
+    },
+    "objective": {
+      "definition": "Mean of 66 final TO cells at Fortran I=13:18, J=21:31 after 31 coupled ten-day transitions.",
+      "name": "canonical_nino3",
+      "terminal_seed": "uniform float32 1/66 on the 66 terminal TO cells; zero elsewhere",
+      "units": "degrees Celsius"
+    },
+    "reverse_executable": {
+      "bytes": 1151488,
+      "filename": "zc_nino3_adjoint",
+      "sha256": "0932e1cab86c978dbe8005d913cc45c39f1a45aa97782f52ab570b714b7bfaae"
+    },
+    "schema_version": 2,
+    "source_manifests": {
+      "prepared": {
+        "bytes": 1763,
+        "filename": "prepared_compile_inputs.sha256",
+        "sha256": "7e92b921a0d250f046d32902dd926a612b2e4842c296d497d1e1a60157bce8cf"
+      },
+      "reverse": {
+        "bytes": 1193,
+        "filename": "reverse_compile_inputs.sha256",
+        "sha256": "968b22a83a61078a32b1db2485a20a9a020fbdb6cad66f247193697655a9ca41"
+      },
+      "tangent": {
+        "bytes": 1193,
+        "filename": "tangent_compile_inputs.sha256",
+        "sha256": "ee8c7e631930e0f50421208f47f15caa19980db6ed8b5c612c67edd4cdac6a4b"
+      }
+    },
+    "tapenade": {
+      "archive_sha256": "534b83598c508a3202880016403f84e352e4b00bdc4c6b934bb39ccbdddb0963",
+      "revision": "0449e37b7da896cb2c38b63c8a34f10c87a84534",
+      "version": "3.16"
+    },
+    "transitions": 31
+  },
+  "schema_version": 3,
+  "script_version": "2.2.1",
+  "segments": [
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "2ecc2543c135e97a267f6be1cd60d5040a560d1ea9f0e01d5c90784c2201b77f",
+      "coefficient_at_max_abs": -0.0020360799971967936,
+      "coefficient_count": 79,
+      "fortran_slice": [
+        1,
+        79
+      ],
+      "independent_control": true,
+      "l1_norm": 0.019983384675470006,
+      "l2_norm": 0.003434967701665399,
+      "max_abs": 0.0020360799971967936,
+      "max_abs_global_fortran_index": 1,
+      "max_abs_global_python_index": 0,
+      "max_abs_local_fortran_index": [
+        1
+      ],
+      "max_abs_local_python_index": [
+        0
+      ],
+      "name": "AKB",
+      "nonzero_count": 78,
+      "order": "F",
+      "python_slice": [
+        0,
+        79
+      ],
+      "role": "native_ocean_state",
+      "shape": [
+        79
+      ],
+      "squared_l2_fraction_of_packed_gradient": 3.4317701238516955e-06,
+      "squared_l2_norm": 1.1799003111484476e-05,
+      "zero_count": 1
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "084bd3fbd646beabd148d2f456d7da5067bbbbc4f14e280873153acaa2fca6f4",
+      "coefficient_at_max_abs": -0.0014769196277484298,
+      "coefficient_count": 9164,
+      "fortran_slice": [
+        80,
+        9243
+      ],
+      "independent_control": true,
+      "l1_norm": 0.4543388385120686,
+      "l2_norm": 0.01209839652242251,
+      "max_abs": 0.0014769196277484298,
+      "max_abs_global_fortran_index": 8810,
+      "max_abs_global_python_index": 8809,
+      "max_abs_local_fortran_index": [
+        31,
+        76
+      ],
+      "max_abs_local_python_index": [
+        30,
+        75
+      ],
+      "name": "UB",
+      "nonzero_count": 8970,
+      "order": "F",
+      "python_slice": [
+        79,
+        9243
+      ],
+      "role": "native_ocean_state",
+      "shape": [
+        116,
+        79
+      ],
+      "squared_l2_fraction_of_packed_gradient": 4.257243607468885e-05,
+      "squared_l2_norm": 0.00014637119841376508,
+      "zero_count": 194
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "224e57d53dc1a52d39111ed96f8ec619a11d5282f62801966c4ce62c04c23089",
+      "coefficient_at_max_abs": -0.006396712735295296,
+      "coefficient_count": 9164,
+      "fortran_slice": [
+        9244,
+        18407
+      ],
+      "independent_control": true,
+      "l1_norm": 0.8222136485351061,
+      "l2_norm": 0.028094938897964293,
+      "max_abs": 0.006396712735295296,
+      "max_abs_global_fortran_index": 18109,
+      "max_abs_global_python_index": 18108,
+      "max_abs_local_fortran_index": [
+        50,
+        77
+      ],
+      "max_abs_local_python_index": [
+        49,
+        76
+      ],
+      "name": "HB",
+      "nonzero_count": 8970,
+      "order": "F",
+      "python_slice": [
+        9243,
+        18407
+      ],
+      "role": "native_ocean_state",
+      "shape": [
+        116,
+        79
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.00022957735987742911,
+      "squared_l2_norm": 0.0007893255916803471,
+      "zero_count": 194
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "069c7fe51b3179d70d15e0534ce4bb5633f00f0f239264260bcea683759ad303",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 2,
+      "fortran_slice": [
+        18408,
+        18409
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "ABC",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        18407,
+        18409
+      ],
+      "role": "inactive_segment_boundary_restart_memory",
+      "shape": [
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 2
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "069c7fe51b3179d70d15e0534ce4bb5633f00f0f239264260bcea683759ad303",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 2,
+      "fortran_slice": [
+        18410,
+        18411
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "ROSS",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        18409,
+        18411
+      ],
+      "role": "inactive_segment_boundary_restart_memory",
+      "shape": [
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 2
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "069c7fe51b3179d70d15e0534ce4bb5633f00f0f239264260bcea683759ad303",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 2,
+      "fortran_slice": [
+        18412,
+        18413
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "TR",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        18411,
+        18413
+      ],
+      "role": "inactive_segment_boundary_restart_memory",
+      "shape": [
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 2
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "0c93bc9356dd51e8ae7c8694e99769b8fe5db8bbe669e354ba8a1726c6217db7",
+      "coefficient_at_max_abs": 0.0005227301735430956,
+      "coefficient_count": 9164,
+      "fortran_slice": [
+        18414,
+        27577
+      ],
+      "independent_control": true,
+      "l1_norm": 0.09960846317514016,
+      "l2_norm": 0.0032401761843577886,
+      "max_abs": 0.0005227301735430956,
+      "max_abs_global_fortran_index": 27171,
+      "max_abs_global_python_index": 27170,
+      "max_abs_local_fortran_index": [
+        58,
+        76
+      ],
+      "max_abs_local_python_index": [
+        57,
+        75
+      ],
+      "name": "V",
+      "nonzero_count": 6156,
+      "order": "F",
+      "python_slice": [
+        18413,
+        27577
+      ],
+      "role": "native_ocean_state",
+      "shape": [
+        116,
+        79
+      ],
+      "squared_l2_fraction_of_packed_gradient": 3.0535857803544028e-06,
+      "squared_l2_norm": 1.0498741705679398e-05,
+      "zero_count": 3008
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "34ddf07097b6cdbf4200c048e766dd93c65089ebfc88b77d16255bd0bb834c00",
+      "coefficient_at_max_abs": -6.911360105732456e-05,
+      "coefficient_count": 232,
+      "fortran_slice": [
+        27578,
+        27809
+      ],
+      "independent_control": false,
+      "l1_norm": 0.004197628517204066,
+      "l2_norm": 0.00046009715106077004,
+      "max_abs": 6.911360105732456e-05,
+      "max_abs_global_fortran_index": 27654,
+      "max_abs_global_python_index": 27653,
+      "max_abs_local_fortran_index": [
+        77,
+        1
+      ],
+      "max_abs_local_python_index": [
+        76,
+        0
+      ],
+      "name": "UBNDY",
+      "nonzero_count": 115,
+      "order": "F",
+      "python_slice": [
+        27577,
+        27809
+      ],
+      "role": "mixed_active_and_unused_ocean_boundary_memory",
+      "shape": [
+        116,
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 6.157039809484515e-08,
+      "squared_l2_norm": 2.1168938841423703e-07,
+      "zero_count": 117
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "1c9261492083beaff8dad364ba6a75ce84f0de5e086165ed2a01da7de059393b",
+      "coefficient_at_max_abs": 3.708432996063493e-05,
+      "coefficient_count": 232,
+      "fortran_slice": [
+        27810,
+        28041
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0011108081059774122,
+      "l2_norm": 0.0001495793713499276,
+      "max_abs": 3.708432996063493e-05,
+      "max_abs_global_fortran_index": 27867,
+      "max_abs_global_python_index": 27866,
+      "max_abs_local_fortran_index": [
+        58,
+        1
+      ],
+      "max_abs_local_python_index": [
+        57,
+        0
+      ],
+      "name": "HBNDY",
+      "nonzero_count": 115,
+      "order": "F",
+      "python_slice": [
+        27809,
+        28041
+      ],
+      "role": "mixed_active_and_unused_ocean_boundary_memory",
+      "shape": [
+        116,
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 6.507531525215771e-09,
+      "squared_l2_norm": 2.237398833343954e-08,
+      "zero_count": 117
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        28042,
+        29061
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "Q0O",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        28041,
+        29061
+      ],
+      "role": "atmosphere_iteration_memory",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        29062,
+        30081
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "UO",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        29061,
+        30081
+      ],
+      "role": "atmosphere_iteration_memory",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        30082,
+        31101
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "VO",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        30081,
+        31101
+      ],
+      "role": "atmosphere_iteration_memory",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        31102,
+        32121
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "DO",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        31101,
+        32121
+      ],
+      "role": "atmosphere_iteration_memory",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "3425dcdb4af39d221e368eeab938f0d1cb7403d6a39db924f17c290c1a2358ef",
+      "coefficient_at_max_abs": -0.030170271173119545,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        32122,
+        33141
+      ],
+      "independent_control": true,
+      "l1_norm": 1.6018501848113438,
+      "l2_norm": 0.1028689153820062,
+      "max_abs": 0.030170271173119545,
+      "max_abs_global_fortran_index": 33038,
+      "max_abs_global_python_index": 33037,
+      "max_abs_local_fortran_index": [
+        17,
+        31
+      ],
+      "max_abs_local_python_index": [
+        16,
+        30
+      ],
+      "name": "TO",
+      "nonzero_count": 585,
+      "order": "F",
+      "python_slice": [
+        32121,
+        33141
+      ],
+      "role": "native_sst_anomaly",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.003077805667201619,
+      "squared_l2_norm": 0.01058201375187035,
+      "zero_count": 435
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "600e9d430bf32892b5bc268ea4ea543561fa1738a53404d8e8baf8a973540a33",
+      "coefficient_at_max_abs": 0.0008852764149196446,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        33142,
+        34161
+      ],
+      "independent_control": false,
+      "l1_norm": 0.028612129391838437,
+      "l2_norm": 0.002767443661381916,
+      "max_abs": 0.0008852764149196446,
+      "max_abs_global_fortran_index": 34088,
+      "max_abs_global_python_index": 34087,
+      "max_abs_local_fortran_index": [
+        17,
+        32
+      ],
+      "max_abs_local_python_index": [
+        16,
+        31
+      ],
+      "name": "U1",
+      "nonzero_count": 531,
+      "order": "F",
+      "python_slice": [
+        33141,
+        34161
+      ],
+      "role": "lagged_coarse_ocean_diagnostic",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 2.2275653319807373e-06,
+      "squared_l2_norm": 7.658744418922943e-06,
+      "zero_count": 489
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "8a1602a7fb354bcd3da54b000279264ebe6d8b6f00a84c2a36dd89f326facaaf",
+      "coefficient_at_max_abs": 0.005187937989830971,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        34162,
+        35181
+      ],
+      "independent_control": false,
+      "l1_norm": 0.10466091893833607,
+      "l2_norm": 0.010591546866138309,
+      "max_abs": 0.005187937989830971,
+      "max_abs_global_fortran_index": 35106,
+      "max_abs_global_python_index": 35105,
+      "max_abs_local_fortran_index": [
+        15,
+        32
+      ],
+      "max_abs_local_python_index": [
+        14,
+        31
+      ],
+      "name": "V1",
+      "nonzero_count": 566,
+      "order": "F",
+      "python_slice": [
+        34161,
+        35181
+      ],
+      "role": "lagged_coarse_ocean_diagnostic",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 3.2628090474909486e-05,
+      "squared_l2_norm": 0.00011218086501760423,
+      "zero_count": 454
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "164c50f9c1273aa3ba1bd3299838fd82091fe9dcf619610a4d3f1620e2df0c51",
+      "coefficient_at_max_abs": -0.0005412602913565934,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        35182,
+        36201
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0047850922019984955,
+      "l2_norm": 0.0010679936281984498,
+      "max_abs": 0.0005412602913565934,
+      "max_abs_global_fortran_index": 36098,
+      "max_abs_global_python_index": 36097,
+      "max_abs_local_fortran_index": [
+        17,
+        31
+      ],
+      "max_abs_local_python_index": [
+        16,
+        30
+      ],
+      "name": "H1",
+      "nonzero_count": 264,
+      "order": "F",
+      "python_slice": [
+        35181,
+        36201
+      ],
+      "role": "lagged_coarse_ocean_diagnostic",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 3.3174943865463276e-07,
+      "squared_l2_norm": 1.1406103898724884e-06,
+      "zero_count": 756
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "75a35aecde446cbe37f11006ae11fe7a770479c9b4bc05613661dbe70cc638a8",
+      "coefficient_at_max_abs": 0.2671099603176117,
+      "coefficient_count": 2040,
+      "fortran_slice": [
+        36202,
+        38241
+      ],
+      "independent_control": false,
+      "l1_norm": 3.5749076237806907,
+      "l2_norm": 0.4535756392587666,
+      "max_abs": 0.2671099603176117,
+      "max_abs_global_fortran_index": 36676,
+      "max_abs_global_python_index": 36675,
+      "max_abs_local_fortran_index": [
+        33,
+        14,
+        1
+      ],
+      "max_abs_local_python_index": [
+        32,
+        13,
+        0
+      ],
+      "name": "HTAU",
+      "nonzero_count": 1360,
+      "order": "F",
+      "python_slice": [
+        36201,
+        38241
+      ],
+      "role": "lagged_atmosphere_to_ocean_coupling",
+      "shape": [
+        34,
+        30,
+        2
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.05983734507456121,
+      "squared_l2_norm": 0.20573086052899878,
+      "zero_count": 680
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        38242,
+        39261
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "US",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        38241,
+        39261
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        39262,
+        40281
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "VS",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        39261,
+        40281
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        40282,
+        41301
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "WP",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        40281,
+        41301
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "8847cac28015ef6897d979f8d10637527469833023729faac5af5363bd404823",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 7140,
+      "fortran_slice": [
+        41302,
+        48441
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "DT1",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        41301,
+        48441
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34,
+        7
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 7140
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        48442,
+        49461
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "TT",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        48441,
+        49461
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        49462,
+        50481
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "UV1",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        49461,
+        50481
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        50482,
+        51501
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "UV2",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        50481,
+        51501
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        51502,
+        52521
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "WM1",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        51501,
+        52521
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        52522,
+        53541
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "UAT",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        52521,
+        53541
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        53542,
+        54561
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "VAT",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        53541,
+        54561
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        54562,
+        55581
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "DIVT",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        54561,
+        55581
+      ],
+      "role": "restart_workspace",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "9a1c6e9d72c193c859c1053d26bcc77ea92bd8b2262252595b8747d908194267",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1020,
+      "fortran_slice": [
+        55582,
+        56601
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "QF",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        55581,
+        56601
+      ],
+      "role": "restart_diagnostic",
+      "shape": [
+        30,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1020
+    },
+    {
+      "activity": "passive",
+      "canonical_little_endian_fortran_order_sha256": "2de0b0221ffafcbc26a9d4b6b89f67c757420c02aae293f522a6fddbb2364252",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1920,
+      "fortran_slice": [
+        56602,
+        58521
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "QEO",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        56601,
+        58521
+      ],
+      "role": "disabled_equable_run_heating",
+      "shape": [
+        30,
+        64
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1920
+    },
+    {
+      "activity": "diagnostic",
+      "canonical_little_endian_fortran_order_sha256": "904b63fd17919ca640f802e25d52d5f7473e45e34c557f342e146f207a35d96a",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 544,
+      "fortran_slice": [
+        58522,
+        59065
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "DIF",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        58521,
+        59065
+      ],
+      "role": "overwritten_atmosphere_convergence_workspace",
+      "shape": [
+        16,
+        34
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 544
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "bd7922ba81354a510c28aaace9085052fd5c5ac53cf85959905c8684efaf9844",
+      "coefficient_at_max_abs": -1.7946521043777466,
+      "coefficient_count": 1,
+      "fortran_slice": [
+        59066,
+        59066
+      ],
+      "independent_control": false,
+      "l1_norm": 1.7946521043777466,
+      "l2_norm": 1.7946521043777466,
+      "max_abs": 1.7946521043777466,
+      "max_abs_global_fortran_index": 59066,
+      "max_abs_global_python_index": 59065,
+      "max_abs_local_fortran_index": [
+        1
+      ],
+      "max_abs_local_python_index": [
+        0
+      ],
+      "name": "UBAR",
+      "nonzero_count": 1,
+      "order": "F",
+      "python_slice": [
+        59065,
+        59066
+      ],
+      "role": "atmosphere_convergence_memory",
+      "shape": [
+        1
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.9367709586232057,
+      "squared_l2_norm": 3.220776175747474,
+      "zero_count": 0
+    },
+    {
+      "activity": "passive",
+      "canonical_little_endian_fortran_order_sha256": "d15108d13fbf60fadc6dc0e137ba78994fe64d1a7a776930d8820e5a429529da",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1,
+      "fortran_slice": [
+        59067,
+        59067
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "T0",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        59066,
+        59067
+      ],
+      "role": "disabled_stochastic_forcing_memory",
+      "shape": [
+        1
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1
+    },
+    {
+      "activity": "passive",
+      "canonical_little_endian_fortran_order_sha256": "d15108d13fbf60fadc6dc0e137ba78994fe64d1a7a776930d8820e5a429529da",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1,
+      "fortran_slice": [
+        59068,
+        59068
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "R",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        59067,
+        59068
+      ],
+      "role": "disabled_stochastic_forcing_memory",
+      "shape": [
+        1
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1
+    },
+    {
+      "activity": "passive",
+      "canonical_little_endian_fortran_order_sha256": "d15108d13fbf60fadc6dc0e137ba78994fe64d1a7a776930d8820e5a429529da",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 1,
+      "fortran_slice": [
+        59069,
+        59069
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "time_of_last_initialization",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        59068,
+        59069
+      ],
+      "role": "branch_clock",
+      "shape": [
+        1
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 1
+    },
+    {
+      "activity": "active",
+      "canonical_little_endian_fortran_order_sha256": "189287aecb509cf9e6161d9b90a9dcde60cb724e9b98eba48f0624eace85a245",
+      "coefficient_at_max_abs": null,
+      "coefficient_count": 79,
+      "fortran_slice": [
+        59070,
+        59148
+      ],
+      "independent_control": false,
+      "l1_norm": 0.0,
+      "l2_norm": 0.0,
+      "max_abs": 0.0,
+      "max_abs_global_fortran_index": null,
+      "max_abs_global_python_index": null,
+      "max_abs_local_fortran_index": null,
+      "max_abs_local_python_index": null,
+      "name": "AK",
+      "nonzero_count": 0,
+      "order": "F",
+      "python_slice": [
+        59069,
+        59148
+      ],
+      "role": "kelvin_wave_memory_missing_from_legacy_restart",
+      "shape": [
+        79
+      ],
+      "squared_l2_fraction_of_packed_gradient": 0.0,
+      "squared_l2_norm": 0.0,
+      "zero_count": 79
+    }
+  ],
+  "state_manifest": {
+    "filename": "state_manifest.json",
+    "schema_version": 2,
+    "sha256": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+    "supported_configuration": {
+      "NATM": 2,
+      "NIC": 0,
+      "NS": 2,
+      "NSEG": 1,
+      "NX": 78,
+      "NXP": 79,
+      "NY": 115,
+      "NYP": 116,
+      "westerly_wind_bursts": false
+    }
+  }
+}

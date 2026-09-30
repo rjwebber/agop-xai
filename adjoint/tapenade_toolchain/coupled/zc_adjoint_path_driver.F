@@ -1,0 +1,186 @@
+C=======================================================================
+C Build an independently certified 31-step boundary-state path for the
+C segmented ZC reverse driver.  This executable links only the normalized
+C authentic primal kernel; no generated derivative routine defines the path.
+C=======================================================================
+      PROGRAM ZC_ADJOINT_PATH_DRIVER
+      INCLUDE 'zc_kernel_state.inc'
+      INCLUDE 'zeq.common'
+      INCLUDE 'modified_means.common'
+
+      INTEGER TARGET_STEPS,TO_OFFSET
+      PARAMETER (TARGET_STEPS=31,TO_OFFSET=32121)
+      REAL STATE_R_IN(ZC_STATE_NREAL)
+      COMPLEX STATE_C_IN(ZC_STATE_NCOMPLEX)
+      REAL*8 STATE_D_IN(ZC_STATE_NDOUBLE)
+      INTEGER STATE_I_IN(ZC_STATE_NINTEGER)
+      REAL STATE_TIME_IN(ZC_STATE_NTIME)
+      REAL, ALLOCATABLE :: STATE_R_PATH(:,:)
+      COMPLEX, ALLOCATABLE :: STATE_C_PATH(:,:)
+      REAL*8, ALLOCATABLE :: STATE_D_PATH(:,:)
+      INTEGER, ALLOCATABLE :: STATE_I_PATH(:,:)
+      REAL, ALLOCATABLE :: STATE_TIME_PATH(:,:)
+      INTEGER TAPE_REFERENCE(ZC_TAPE_WIDTH,TARGET_STEPS)
+      REAL NINO3,TSTART,TEND
+      DOUBLE PRECISION NINO3_SUM
+      INTEGER I,N,NSTART,NT_RESTART,NATMR,IT1,IOS
+      REAL TFIND,TD_RESTART,TZERO_RESTART
+      LOGICAL ZC_KERNEL_MODE
+      COMMON/commTIME/IT,MP,TY
+      COMMON/IST/ist
+      COMMON/STRPAR/RSTR,TCUT,TSEED,TAMP1,TAMP2,JLEFT,JRT,ITOP,
+     A IBOT,NIC
+      COMMON/zc_kernel_mode/ZC_KERNEL_MODE
+      CHARACTER*1 HEADER_LOCAL(80)
+      CHARACTER*512 STATE_FILE,PATH_FILE,META_FILE
+
+      STATE_FILE=' '
+      PATH_FILE=' '
+      CALL GET_COMMAND_ARGUMENT(1,STATE_FILE)
+      CALL GET_COMMAND_ARGUMENT(2,PATH_FILE)
+      IF(LEN_TRIM(STATE_FILE).EQ.0) STATE_FILE='kernel_initial_state.bin'
+      IF(LEN_TRIM(PATH_FILE).EQ.0) PATH_FILE='zc_31step_path.bin'
+
+C     Recreate the immutable/static context used by the certified kernel.
+      ZC_KERNEL_MODE=.TRUE.
+      iprint_namelists=0
+      ist=0
+      OPEN(5,FILE='fc.data',STATUS='OLD',IOSTAT=IOS)
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot open fc.data; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      READ(5,450) HEADER_LOCAL
+ 450  FORMAT(80A1)
+      CALL OPENFL
+      NATM=2
+      READ(5,40,END=999) NSTART,TFIND
+ 40   FORMAT(8X,I15/8X,F15.0)
+      IF(NSTART.NE.3) THEN
+         WRITE(*,*) 'ERROR: path driver requires NSTART=3'
+         STOP 2
+      ENDIF
+      CALL RDHIST(0,TFIND)
+      TD_RESTART=TD
+      NT_RESTART=NT
+      TZERO_RESTART=TZERO
+      NATMR=NATM
+      CALL SETUP
+      TD=TD_RESTART
+      NT=NT_RESTART
+      TZERO=TZERO_RESTART
+      IT1=TD+120.501
+      IT=MOD(IT1,12)
+      MP=IT+1
+      IF(IT.EQ.0) IT=12
+      TY=TD+120.501-IT1
+      CALL SETUP2
+      CALL INITDAT
+      CALL CONSTC
+      IF(NIC.NE.0) THEN
+         WRITE(*,*) 'ERROR: path driver requires deterministic NIC=0'
+         STOP 2
+      ENDIF
+
+      CALL ZC_PATH_READ_STATE(TRIM(STATE_FILE),STATE_R_IN,STATE_C_IN,
+     A STATE_D_IN,STATE_I_IN,STATE_TIME_IN)
+      ALLOCATE(STATE_R_PATH(ZC_STATE_NREAL,0:TARGET_STEPS))
+      ALLOCATE(STATE_C_PATH(ZC_STATE_NCOMPLEX,0:TARGET_STEPS))
+      ALLOCATE(STATE_D_PATH(ZC_STATE_NDOUBLE,0:TARGET_STEPS))
+      ALLOCATE(STATE_I_PATH(ZC_STATE_NINTEGER,0:TARGET_STEPS))
+      ALLOCATE(STATE_TIME_PATH(ZC_STATE_NTIME,0:TARGET_STEPS))
+      DO 10 I=1,ZC_STATE_NREAL
+         STATE_R_PATH(I,0)=STATE_R_IN(I)
+ 10   CONTINUE
+      DO 11 I=1,ZC_STATE_NCOMPLEX
+         STATE_C_PATH(I,0)=STATE_C_IN(I)
+ 11   CONTINUE
+      DO 12 I=1,ZC_STATE_NDOUBLE
+         STATE_D_PATH(I,0)=STATE_D_IN(I)
+ 12   CONTINUE
+      DO 13 I=1,ZC_STATE_NINTEGER
+         STATE_I_PATH(I,0)=STATE_I_IN(I)
+ 13   CONTINUE
+      DO 14 I=1,ZC_STATE_NTIME
+         STATE_TIME_PATH(I,0)=STATE_TIME_IN(I)
+ 14   CONTINUE
+
+      CALL CPU_TIME(TSTART)
+      DO 20 N=1,TARGET_STEPS
+         CALL ZC_KERNEL_WINDOW(STATE_R_PATH(1,N-1),
+     A    STATE_C_PATH(1,N-1),STATE_D_PATH(1,N-1),
+     B    STATE_I_PATH(1,N-1),STATE_TIME_PATH(1,N-1),1,
+     C    STATE_R_PATH(1,N),STATE_C_PATH(1,N),STATE_D_PATH(1,N),
+     D    STATE_I_PATH(1,N),STATE_TIME_PATH(1,N),
+     E    TAPE_REFERENCE(1,N))
+ 20   CONTINUE
+      CALL CPU_TIME(TEND)
+
+      NINO3_SUM=0.0D0
+      DO 30 J=21,31
+         DO 25 I=13,18
+            K=TO_OFFSET+I+30*(J-1)
+            NINO3_SUM=NINO3_SUM+DBLE(STATE_R_PATH(K,TARGET_STEPS))
+ 25      CONTINUE
+ 30   CONTINUE
+      NINO3=NINO3_SUM/66.0D0
+
+      OPEN(201,FILE=TRIM(PATH_FILE),FORM='UNFORMATTED',
+     A ACCESS='STREAM',STATUS='REPLACE')
+      WRITE(201) TARGET_STEPS,ZC_STATE_NREAL,ZC_STATE_NCOMPLEX,
+     A ZC_STATE_NDOUBLE,ZC_STATE_NINTEGER,ZC_STATE_NTIME,ZC_TAPE_WIDTH
+      WRITE(201) STATE_R_PATH,STATE_C_PATH,STATE_D_PATH,STATE_I_PATH,
+     A STATE_TIME_PATH,TAPE_REFERENCE
+      CLOSE(201)
+      META_FILE=TRIM(PATH_FILE)//'.txt'
+      OPEN(202,FILE=TRIM(META_FILE),STATUS='REPLACE')
+      WRITE(202,'(A)') 'producer=normalized authentic primal kernel'
+      WRITE(202,'(A)') 'state_semantics=pre-input checkpoint'
+      WRITE(202,'(A,I0)') 'transitions=',TARGET_STEPS
+      WRITE(202,'(A)') 'fortran_box=I=13:18,J=21:31'
+      WRITE(202,'(A,ES24.16)') 'final_nino3_celsius=',NINO3
+      WRITE(202,'(A,ES24.16)') 'path_cpu_seconds=',TEND-TSTART
+      CLOSE(202)
+      WRITE(*,'(A,ES16.8)') 'Final canonical Nino-3 (C): ',NINO3
+      WRITE(*,'(A,A)') 'Certified primal path: ',TRIM(PATH_FILE)
+      STOP
+ 999  WRITE(*,*) 'ERROR: unexpected end of fc.data'
+      STOP 2
+      END
+
+
+      SUBROUTINE ZC_PATH_READ_STATE(NAME,STATE_R,STATE_C,STATE_D,
+     A STATE_I,STATE_TIME)
+      INCLUDE 'zc_kernel_state.inc'
+      CHARACTER*(*) NAME
+      REAL STATE_R(ZC_STATE_NREAL)
+      COMPLEX STATE_C(ZC_STATE_NCOMPLEX)
+      REAL*8 STATE_D(ZC_STATE_NDOUBLE)
+      INTEGER STATE_I(ZC_STATE_NINTEGER)
+      REAL STATE_TIME(ZC_STATE_NTIME)
+      INTEGER IOS
+      INTEGER*8 FILE_BYTES,EXPECTED_BYTES
+      LOGICAL EXISTS
+      EXPECTED_BYTES=4_8*ZC_STATE_NREAL+8_8*ZC_STATE_NCOMPLEX+
+     A 8_8*ZC_STATE_NDOUBLE+4_8*ZC_STATE_NINTEGER+
+     B 4_8*ZC_STATE_NTIME
+      INQUIRE(FILE=NAME,EXIST=EXISTS,SIZE=FILE_BYTES)
+      IF(.NOT.EXISTS .OR. FILE_BYTES.NE.EXPECTED_BYTES) THEN
+         WRITE(*,*) 'ERROR: invalid state-file bytes: ',FILE_BYTES,
+     A    ' expected ',EXPECTED_BYTES
+         STOP 2
+      ENDIF
+      OPEN(200,FILE=NAME,FORM='UNFORMATTED',ACCESS='STREAM',
+     A STATUS='OLD',IOSTAT=IOS)
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot open state file; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      READ(200,IOSTAT=IOS) STATE_R,STATE_C,STATE_D,STATE_I,STATE_TIME
+      IF(IOS.NE.0) THEN
+         WRITE(*,*) 'ERROR: cannot read state file; IOSTAT=',IOS
+         STOP 2
+      ENDIF
+      CLOSE(200)
+      RETURN
+      END

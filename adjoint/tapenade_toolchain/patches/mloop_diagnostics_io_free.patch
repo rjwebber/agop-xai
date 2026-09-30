@@ -1,0 +1,16 @@
+--- mloop.f
++++ mloop.f
+@@ -71,13 +71,0 @@
+-c write diagnostic output line to standard output....
+-
+-*Eli:
+-       if (print_timestep_diagnostics) then
+-c          if (td .gt. 1000. .and. td .lt. 1200.0) then
+-c             write(69,'(1000g14.6)') td,(akb(i),i=1,85)
+-c             j=??
+-c             write(69,'(1000g14.6)') td,(h(j,i),i=1,85)
+-c          end if
+-          IF(MOD(NT,NPRINT).EQ.0) WRITE(6,135) NT,TD,AKB(1),AKB(NXP)
+- 135      FORMAT(' TIMESTEP',I6,' TIME =',F8.3,' MONTHS. AK(1),AKXE...'
+-     $         ,1PD12.4,D12.4)
+-       end if

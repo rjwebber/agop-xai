@@ -1,0 +1,7 @@
+# Fixed-form Fortran patches preserve source-column whitespace deliberately.
+*.F -whitespace
+*.patch -whitespace
+
+# These provenance records preserve byte-exact upstream/tool output.
+adjoint/tapenade_toolchain/VERSION.env -whitespace
+adjoint/tapenade_toolchain/results/mloop_ad_validation.txt -whitespace

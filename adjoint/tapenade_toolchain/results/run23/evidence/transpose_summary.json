@@ -1,0 +1,56 @@
+{
+  "cases": {
+    "extreme_el_nino": {
+      "dense_generic_terminal_seed": {
+        "maximum_bilinear_relative_defect": 6.888990006384337e-05,
+        "maximum_norm_product_scaled_defect": 3.038507622593608e-08,
+        "seeds": 3,
+        "source_report_sha256": "466003d88fdf0d12f92e1b8cde75613e876da63fc3d65663dbc3cd560d66d21f"
+      },
+      "scalar_nino3_head": {
+        "maximum_bilinear_relative_defect": 0.0005577615753275431,
+        "maximum_norm_product_scaled_defect": 6.386686910565326e-10,
+        "seeds": 3,
+        "source_report_sha256": "030783304a57d178d9c5b37203909cdd159f85382b128afde1afb00066bdddea"
+      }
+    },
+    "extreme_la_nina": {
+      "dense_generic_terminal_seed": {
+        "maximum_bilinear_relative_defect": 6.249138605334287e-05,
+        "maximum_norm_product_scaled_defect": 3.70160423739692e-08,
+        "seeds": 3,
+        "source_report_sha256": "2b4c0ee6ffb4b332b01cee055436123ebfe6292f5beea0b4717514d246ae1016"
+      },
+      "scalar_nino3_head": {
+        "maximum_bilinear_relative_defect": 2.1356706529767587e-05,
+        "maximum_norm_product_scaled_defect": 6.402664168805337e-10,
+        "seeds": 3,
+        "source_report_sha256": "40b4da76ab44125fb9533b98cad6de8d3b19e169e4c0afd6dbe8005d8c6c981c"
+      }
+    },
+    "neutral_member_04": {
+      "dense_generic_terminal_seed": {
+        "maximum_bilinear_relative_defect": 6.186432156900287e-05,
+        "maximum_norm_product_scaled_defect": 3.3968271022825044e-08,
+        "seeds": 3,
+        "source_report_sha256": "96c6f3b771619aa193d55c8ccc37f3b30b3e32ba3a82e7c320927bfd80cfe411"
+      },
+      "scalar_nino3_head": {
+        "maximum_bilinear_relative_defect": 0.00010412225881063477,
+        "maximum_norm_product_scaled_defect": 2.2895699535104552e-09,
+        "seeds": 3,
+        "source_report_sha256": "c6f522b667232c3f67f4cc4f6e06c6cbb8f4d54501c3d5234df8753c026e3b94"
+      }
+    }
+  },
+  "certification_assessed": false,
+  "claim": "Same-generation 31-transition real32 tangent/reverse transpose comparisons on three locked checkpoints. No automatic acceptance threshold was applied. Both cancellation-sensitive bilinear and norm-product-scaled defects are reported.",
+  "global_maxima": {
+    "generic_bilinear_relative": 6.888990006384337e-05,
+    "generic_norm_product_scaled": 3.70160423739692e-08,
+    "scalar_bilinear_relative": 0.0005577615753275431,
+    "scalar_norm_product_scaled": 2.2895699535104552e-09
+  },
+  "schema_version": 1,
+  "status": "completed_not_certified"
+}

@@ -1,0 +1,27 @@
+--- ZC_lib_routines/fft2c.f
++++ ZC_lib_routines/fft2c.f
+@@ -8,8 +8,3 @@
+-      DOUBLE PRECISION   RAD,C1,C2,C3,S1,S2,S3,CK,SK,SQ,A0,A1,A2,A3,    
+-     1                   B0,B1,B2,B3,TWOPI,TEMP,                        
+-     2                   ZERO,ONE,Z0(2),Z1(2),Z2(2),Z3(2)               
+-      COMPLEX*16         ZA0,ZA1,ZA2,ZA3,AK2                            
+-      EQUIVALENCE        (ZA0,Z0(1)),(ZA1,Z1(1)),(ZA2,Z2(1)),           
+-     1                   (ZA3,Z3(1)),(A0,Z0(1)),(B0,Z0(2)),(A1,Z1(1)),  
+-     2                   (B1,Z1(2)),(A2,Z2(1)),(B2,Z2(2)),(A3,Z3(1)),   
+-     3                   (B3,Z3(2))                                     
++      DOUBLE PRECISION   RAD,C1,C2,C3,S1,S2,S3,CK,SK,SQ,A0,A1,A2,A3,    
++     1                   B0,B1,B2,B3,TWOPI,TEMP,ZERO,ONE                
++      COMPLEX*16         AK2                                            
+@@ -80,4 +75,8 @@
+-         ZA0 = A(K0)                                                    
+-         ZA1 = A(K1)                                                    
+-         ZA2 = A(K2)                                                    
+-         ZA3 = A(K3)                                                    
++         A0 = DREAL(A(K0))                                              
++         B0 = DIMAG(A(K0))                                              
++         A1 = DREAL(A(K1))                                              
++         B1 = DIMAG(A(K1))                                              
++         A2 = DREAL(A(K2))                                              
++         B2 = DIMAG(A(K2))                                              
++         A3 = DREAL(A(K3))                                              
++         B3 = DIMAG(A(K3))                                              

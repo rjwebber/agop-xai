@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "contract_id": "zc-standard-kernel-runtime-v1",
+  "scope": "Discrete Tapenade adjoint, Standard ZC configuration, ISTART=1",
+  "canonicalization": {
+    "fc.data": "Replace only TFIND, TZERO, and TENDD right-hand sides by <dynamic>.",
+    "modified_means.namelist": "Replace only time_start_writing_grads_data and time_end_writing_grads_data right-hand sides by <dynamic>."
+  },
+  "canonical_text_sha256": {
+    "fc.data": "6e487dc6d47f7b9977cae9b61d6751a7ccade906c2a05eba3d9e624e75ecb154",
+    "modified_means.namelist": "948b94ff797047397f7b92e76c0bb3e244e5bf86e73539c38978436faa3c2054"
+  },
+  "exact_file_sha256": {
+    "scales_EOF.namelist": "59fe6a7150b05126114bac7538d077e595cb0cb108cf0d54a9f7d8b62944b9ef"
+  },
+  "data_files_sha256": {
+    "Data/big_endian_to_little_endian_and_ascii.m": "86f1aa6420cd127d7dcf691f262e4b97c7b62b60426023b1f852f107b9fad940",
+    "Data/rcdivmn.data": "7e3f8eaeb43a00f22a8a3ae654e49518ecc2fdd8b20eb26aba1d7647b03604d9",
+    "Data/rcdivmn.data.ascii": "c25bef33266bb2c79b56186339837105faf90f22ab27c661b619491d1de75289",
+    "Data/rcdivmn.data.little_endian": "33807b312ff54781e14cce55d6d9d6a49dcf35247f7a3ccdb50909458f24e762",
+    "Data/rcsstmn.data": "b1a47669573a270b562867a924ce5f9dffab115b894db03ca992e0ecc0a92947",
+    "Data/rcsstmn.data.ascii": "fbefb08c6c590cf55cce8a8c8d08939c7a5b3da0867e5461c039568073adabf7",
+    "Data/rcsstmn.data.little_endian": "a5e2096aea5faec5b0ade0feace4e35fee6c707c445d4d5442c2a286a646c434",
+    "Data/rcwindmn.data": "fda719256fef00bca12ed3757015b01870e22ac8792e48c83b352337229a4181",
+    "Data/rcwindmn.data.ascii": "d872ff6c5da026696cc5d3526e3af47bb1d9b1729000a409fb46ca8d19eda9a8",
+    "Data/rcwindmn.data.little_endian": "38c779b77b3af6f1e16695e9d524227306d619307750cdeb7e7dc16fbb3e2be1",
+    "Data/test_read_data.f": "a0acf08e6b1b1f28f549efb6e01bf8dcc68c59451e60fd93c58f13f1716f5118",
+    "Data/uv.zeb": "71f0aac6a30d9c9d06da533d892188896a0d41d0219fbb44c69e9954e856c724",
+    "Data/uv.zeb.ascii": "f8173ab149db508f27bfaa152a7e4e95bab7c06d7f66daf69395ae4601a1d32c",
+    "Data/uv.zeb.little_endian": "8729fc08ca102adac0eec267dc4939d23f6425ee4b75de444ce148833776312d",
+    "Data/wem.zeb": "60337ce49f9e4e7ec94580deca48a29e4de16b96b127f6c42685765006b9e03c",
+    "Data/wem.zeb.ascii": "e0b704d1463cd9d718d274d83e901df5f0afba13400c8181b804e8ac07bc1885",
+    "Data/wem.zeb.little_endian": "f51fa9d29e233299717e6bc34182afd6638ac49dda9491ee2db5b30591e13710"
+  },
+  "required_runtime_values": {
+    "NSTART": 3,
+    "NIC": 0,
+    "state_bytes": 278864,
+    "history_bytes": 278808
+  },
+  "approved_cases": {
+    "extreme_el_nino": {
+      "fc.data": "a30fa91606bf3d68d0ad875d1fcfb45c9d2f1ca68c554cd3c088e4e6d0625c85",
+      "modified_means.namelist": "9fe34b43618191bf8c1bf5af6e33827089d43e6567a9bbcc4d89acac0e321274",
+      "scales_EOF.namelist": "59fe6a7150b05126114bac7538d077e595cb0cb108cf0d54a9f7d8b62944b9ef",
+      "zeq9fsu.hst": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825",
+      "kernel_initial_state.bin": "c4afdc6c2549e841ed65ba75abb3411088bec51f44cefacc8b538c327f87c46b"
+    },
+    "extreme_la_nina": {
+      "fc.data": "91a2fbfbe2bdc391383504623045aa080ef04605da26edf543f274aeacfe5eb0",
+      "modified_means.namelist": "3826651f1da325e47eff0f4a0933ca57f391f6d836ff0ade20cc2e9ec5536359",
+      "scales_EOF.namelist": "59fe6a7150b05126114bac7538d077e595cb0cb108cf0d54a9f7d8b62944b9ef",
+      "zeq9fsu.hst": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7",
+      "kernel_initial_state.bin": "0c2192d891e5a00f0a58e69bc1b1914e5c79756944c0d2000d939047cb220499"
+    },
+    "neutral_member_04": {
+      "fc.data": "2f1064124bf0e7a231aa8f6b8a47426fd9ec7f0ac1f8ddaf017a891cc557140a",
+      "modified_means.namelist": "cc2ed8f02091fa695e8f0f6d0e605170fc6b6805ded7a1b6318d5953cb76b4fa",
+      "scales_EOF.namelist": "59fe6a7150b05126114bac7538d077e595cb0cb108cf0d54a9f7d8b62944b9ef",
+      "zeq9fsu.hst": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74",
+      "kernel_initial_state.bin": "f15de1499ddd2494461954dd53e8bd0017f5a42c666417969af7e010d5a79512"
+    }
+  }
+}

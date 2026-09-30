@@ -1,0 +1,5 @@
+--- ztmfc1.f
++++ ztmfc1.f
+@@ -751,1 +751,1 @@
+-      SAVE
++      SAVE OMEGA

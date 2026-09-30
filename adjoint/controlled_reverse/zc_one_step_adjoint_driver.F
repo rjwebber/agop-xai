@@ -1,0 +1,122 @@
+C=======================================================================
+C Apply the exact Tapenade reverse of one authentic ZC coupled step.
+C
+C Arguments:
+C   1 packed input state
+C   2 REAL cotangent at the output boundary
+C   3 independently generated authentic output state
+C   4 replayed packed output state
+C   5 REAL cotangent at the input boundary
+C   6 three-integer branch tape
+C
+C Tapenade's split FWD does not populate passive outputs.  The independently
+C generated authentic state therefore supplies output D/I/time to BWD.  The
+C Python bridge verifies the active FWD replay and tape against that same
+C independent state before accepting the VJP.
+C=======================================================================
+      PROGRAM ZC_ONE_STEP_ADJOINT_DRIVER
+      INCLUDE 'zc_kernel_state.inc'
+
+      REAL STATE_R_IN(ZC_STATE_NREAL),STATE_R_INB(ZC_STATE_NREAL)
+      REAL STATE_R_OUT(ZC_STATE_NREAL),STATE_R_OUTB(ZC_STATE_NREAL)
+      REAL STATE_R_REFERENCE(ZC_STATE_NREAL)
+      COMPLEX STATE_C_IN(ZC_STATE_NCOMPLEX)
+      COMPLEX STATE_C_OUT(ZC_STATE_NCOMPLEX)
+      COMPLEX STATE_C_REFERENCE(ZC_STATE_NCOMPLEX)
+      REAL*8 STATE_D_IN(ZC_STATE_NDOUBLE),STATE_D_OUT(ZC_STATE_NDOUBLE)
+      REAL*8 STATE_D_REFERENCE(ZC_STATE_NDOUBLE)
+      INTEGER STATE_I_IN(ZC_STATE_NINTEGER),STATE_I_OUT(ZC_STATE_NINTEGER)
+      INTEGER STATE_I_REFERENCE(ZC_STATE_NINTEGER)
+      REAL STATE_TIME_IN(ZC_STATE_NTIME),STATE_TIME_OUT(ZC_STATE_NTIME)
+      REAL STATE_TIME_REFERENCE(ZC_STATE_NTIME)
+      INTEGER TAPE(ZC_TAPE_WIDTH,1)
+      CHARACTER*512 INPUT_FILE,SEED_FILE,REFERENCE_FILE,OUTPUT_FILE
+      CHARACTER*512 VJP_FILE,TAPE_FILE
+
+      INPUT_FILE=' '
+      SEED_FILE=' '
+      REFERENCE_FILE=' '
+      OUTPUT_FILE=' '
+      VJP_FILE=' '
+      TAPE_FILE=' '
+      CALL GET_COMMAND_ARGUMENT(1,INPUT_FILE)
+      CALL GET_COMMAND_ARGUMENT(2,SEED_FILE)
+      CALL GET_COMMAND_ARGUMENT(3,REFERENCE_FILE)
+      CALL GET_COMMAND_ARGUMENT(4,OUTPUT_FILE)
+      CALL GET_COMMAND_ARGUMENT(5,VJP_FILE)
+      CALL GET_COMMAND_ARGUMENT(6,TAPE_FILE)
+      IF(LEN_TRIM(INPUT_FILE).EQ.0) INPUT_FILE='kernel_input_state.bin'
+      IF(LEN_TRIM(SEED_FILE).EQ.0) SEED_FILE='output_cotangent.bin'
+      IF(LEN_TRIM(REFERENCE_FILE).EQ.0)
+     A REFERENCE_FILE='reference_output_state.bin'
+      IF(LEN_TRIM(OUTPUT_FILE).EQ.0) OUTPUT_FILE='kernel_output_state.bin'
+      IF(LEN_TRIM(VJP_FILE).EQ.0) VJP_FILE='input_cotangent.bin'
+      IF(LEN_TRIM(TAPE_FILE).EQ.0) TAPE_FILE='kernel_one_step_tape.bin'
+
+      CALL ZC_VW_INITIALIZE
+      CALL ZC_VW_READ_STATE(TRIM(INPUT_FILE),STATE_R_IN,STATE_C_IN,
+     A STATE_D_IN,STATE_I_IN,STATE_TIME_IN)
+      CALL ZC_VW_READ_REAL(TRIM(SEED_FILE),STATE_R_OUTB,
+     A ZC_STATE_NREAL)
+      CALL ZC_VW_READ_STATE(TRIM(REFERENCE_FILE),STATE_R_REFERENCE,
+     A STATE_C_REFERENCE,STATE_D_REFERENCE,STATE_I_REFERENCE,
+     B STATE_TIME_REFERENCE)
+
+      CALL ZC_KERNEL_WINDOW_FWD(STATE_R_IN,STATE_C_IN,STATE_D_IN,
+     A STATE_I_IN,STATE_TIME_IN,1,STATE_R_OUT,STATE_C_OUT,
+     B STATE_D_OUT,STATE_I_OUT,STATE_TIME_OUT,TAPE)
+      CALL ZC_CRA_WRITE_STATE(TRIM(OUTPUT_FILE),STATE_R_OUT,STATE_C_OUT,
+     A STATE_D_REFERENCE,STATE_I_REFERENCE,STATE_TIME_REFERENCE)
+      CALL ZC_KERNEL_WINDOW_BWD(STATE_R_IN,STATE_R_INB,STATE_C_IN,
+     A STATE_D_IN,STATE_I_IN,STATE_TIME_IN,1,STATE_R_OUT,
+     B STATE_R_OUTB,STATE_C_OUT,STATE_D_REFERENCE,STATE_I_REFERENCE,
+     C STATE_TIME_REFERENCE,TAPE)
+      CALL ZC_VW_WRITE_REAL(TRIM(VJP_FILE),STATE_R_INB,
+     A ZC_STATE_NREAL)
+      OPEN(204,FILE=TRIM(TAPE_FILE),FORM='UNFORMATTED',
+     A ACCESS='STREAM',STATUS='REPLACE')
+      WRITE(204) TAPE
+      CLOSE(204)
+      STOP
+      END
+
+
+C     Write the same packed typed-state stream consumed by ZC_VW_READ_STATE.
+      SUBROUTINE ZC_CRA_WRITE_STATE(NAME,STATE_R,STATE_C,STATE_D,
+     A STATE_I,STATE_TIME)
+      INCLUDE 'zc_kernel_state.inc'
+      CHARACTER*(*) NAME
+      REAL STATE_R(ZC_STATE_NREAL)
+      COMPLEX STATE_C(ZC_STATE_NCOMPLEX)
+      REAL*8 STATE_D(ZC_STATE_NDOUBLE)
+      INTEGER STATE_I(ZC_STATE_NINTEGER)
+      REAL STATE_TIME(ZC_STATE_NTIME)
+      INTEGER IOS
+      OPEN(203,FILE=NAME,FORM='UNFORMATTED',ACCESS='STREAM',
+     A STATUS='REPLACE',IOSTAT=IOS)
+      IF(IOS.NE.0) STOP 'cannot open packed-state output'
+      WRITE(203,IOSTAT=IOS) STATE_R,STATE_C,STATE_D,STATE_I,STATE_TIME
+      IF(IOS.NE.0) STOP 'cannot write packed-state output'
+      CLOSE(203)
+      RETURN
+      END
+
+
+C     Passive complex-workspace helpers expected by the generated wrapper.
+      SUBROUTINE ZC_PACK_COMPLEX(A,N,X,K)
+      COMPLEX A(N),X(*)
+      DO 10 I=1,N
+         X(K)=A(I)
+         K=K+1
+ 10   CONTINUE
+      RETURN
+      END
+
+      SUBROUTINE ZC_UNPACK_COMPLEX(A,N,X,K)
+      COMPLEX A(N),X(*)
+      DO 10 I=1,N
+         A(I)=X(K)
+         K=K+1
+ 10   CONTINUE
+      RETURN
+      END

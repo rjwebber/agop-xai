@@ -1,0 +1,42 @@
+--- zc_kernel_api.f
++++ zc_kernel_api.f
+@@ -75,4 +75,4 @@
+-      CALL ZC_PACK_REAL(UBAR,1,STATE_R,K)
+-      CALL ZC_PACK_REAL(T0,1,STATE_R,K)
+-      CALL ZC_PACK_REAL(R,1,STATE_R,K)
+-      CALL ZC_PACK_REAL(time_of_last_initialization,1,STATE_R,K)
++      CALL ZC_PACK_REAL_SCALAR(UBAR,STATE_R,K)
++      CALL ZC_PACK_REAL_SCALAR(T0,STATE_R,K)
++      CALL ZC_PACK_REAL_SCALAR(R,STATE_R,K)
++      CALL ZC_PACK_REAL_SCALAR(time_of_last_initialization,STATE_R,K)
+@@ -169,4 +169,4 @@
+-      CALL ZC_UNPACK_REAL(UBAR,1,STATE_R,K)
+-      CALL ZC_UNPACK_REAL(T0,1,STATE_R,K)
+-      CALL ZC_UNPACK_REAL(R,1,STATE_R,K)
+-      CALL ZC_UNPACK_REAL(time_of_last_initialization,1,STATE_R,K)
++      CALL ZC_UNPACK_REAL_SCALAR(UBAR,STATE_R,K)
++      CALL ZC_UNPACK_REAL_SCALAR(T0,STATE_R,K)
++      CALL ZC_UNPACK_REAL_SCALAR(R,STATE_R,K)
++      CALL ZC_UNPACK_REAL_SCALAR(time_of_last_initialization,STATE_R,K)
+@@ -280,6 +280,21 @@
+       RETURN
+       END
+ 
++      SUBROUTINE ZC_PACK_REAL_SCALAR(A,X,K)
++      REAL A,X(*)
++      X(K)=A
++      K=K+1
++      RETURN
++      END
++
++      SUBROUTINE ZC_UNPACK_REAL_SCALAR(A,X,K)
++      REAL A,X(*)
++      A=X(K)
++      K=K+1
++      RETURN
++      END
++
++
+       SUBROUTINE ZC_PACK_COMPLEX(A,N,X,K)
+       COMPLEX A(N),X(*)
+       DO 10 I=1,N

@@ -1,0 +1,64 @@
+{
+  "builder_source_sha256": {
+    "build_kernel.py": "5cf074a092e07598ce9bede3d416fdd74b179273e04b1d10f9f59491808aa5bb",
+    "generate_fresh_zc_dataset.py": "19c8c9f5ead08d16de5859d6a6b18c7c21fc07b7c88cbfe10627bee67b31c0aa"
+  },
+  "compiler": {
+    "path": "gfortran-13",
+    "sha256": "f6595e4eb8544e658fde3c9c2fe77c20dba53835977bd31cfc259c3a14ebc020",
+    "version": "GNU Fortran (Homebrew GCC 13.1.0) 13.1.0"
+  },
+  "elapsed_seconds": 4.977272666990757,
+  "flags": "-std=legacy -O3 -I. -ffixed-line-length-none",
+  "fresh_patch_sha256": {
+    "close_files.F": "0affbe67fcea4e5537eed3f18d185680e231f019d44e342881302d4c204062f6",
+    "nrdhist.F": "6e3ec46ad4a74a6af058325792fba1d4b5375b461b84c242eb72a2a52ea076ac",
+    "openfl.F": "0c9abfcd70c004afa77917a34f080d4ca8a398c237e173ad3fc63ed523167932",
+    "ssta.F": "1dd8aff407219199bc13374fb132f0339271665e9ed8c1a48a85266b0519c7ca",
+    "zeq1main.F": "01b348138929fe302ffc93a4cfd8bd7bd06df0cea286873cc6e480f436c6d320",
+    "ztmfc1.F": "00acdba957191fe581103ae4a37a1f3db5b65e3ebbe65a30ee7b3f5e4f2d50d4"
+  },
+  "generator": {
+    "generation_schema_version": "fresh-zc-generation-v2",
+    "script_version": "1.1.0"
+  },
+  "kernel_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+  "kernel_patch_sha256": {
+    "ssta.F": "21490f5b74182306f008198fcf9251f6ba874c3c008ee8eeb5eb14690e7e24c0",
+    "ztmfc1.F": "042a2b4835af3db8d36db511905275c4caa2faf2c32a17b365aafabea77bb182"
+  },
+  "kernel_support_source_sha256": {
+    "zc_kernel_api.F": "50776eeb6c785aea68639435e06a66414cacdaa963124e3db0919e8e34348172",
+    "zc_kernel_driver.F": "14009fc629c9441faf9716236ef3388db9bd3b22b4501b1edc2f8d0dfaf71f0f",
+    "zc_kernel_state.inc": "73f758d83337287be898c7579c244ff16b7bc4d4dfe364bd73076d650aa9a9bc"
+  },
+  "kernel_version": "0.1.4",
+  "linker_flags": [
+    "-isysroot",
+    "<MACOS_SDK>"
+  ],
+  "make": {
+    "path": "/usr/bin/make",
+    "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+    "version": "GNU Make 3.81"
+  },
+  "platform": {
+    "machine": "arm64",
+    "release": "25.6.0",
+    "system": "Darwin"
+  },
+  "reference_executable_sha256": "eb1cd729120bfffe8edba83f4215e263c177a00a2319b3601ae51f4d9e1225a6",
+  "schema_version": 2,
+  "source_dir": "<PROJECT_ROOT>/data/raw/CZ_model_share",
+  "source_manifest_digest_file_sha256": "075992b24d937c9c5b700e9ca185f82127b419bcdcb411ac92f6847aa8189ac4",
+  "source_manifest_file_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+  "source_manifest_sha256": "ecf9541d75e653a00b47e3bf56d298759a922cf447dde7ff2abfd70cbaea16cc",
+  "state_layout": {
+    "branch_tape_width": 3,
+    "complex": 5280,
+    "double": 1,
+    "integer": 4,
+    "passive_time": 2,
+    "real": 59148
+  }
+}

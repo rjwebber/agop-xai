@@ -1,0 +1,12 @@
+--- mloop.f
++++ mloop.f
+@@ -9,9 +9,6 @@
+ 
+       INCLUDE 'zeq.common'
+  
+-*Eli: Oct 5, 1995:
+-      include 'modified_means.common'
+-
+        IF (ISTART.EQ.0) THEN
+ c  model initialization;  initialize U,H,V in uhinit
+  

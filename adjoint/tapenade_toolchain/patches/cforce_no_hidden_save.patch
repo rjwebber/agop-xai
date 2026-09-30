@@ -1,0 +1,54 @@
+--- cforce.f
++++ cforce.f
+@@ -25,40 +25,29 @@
+-      DATA LP/1/
+-
+-      SAVE
+-
+-      L1=LP
+-      IF(ISTART.NE.0) GO TO 100
+-
+-c......................................................................
+-c some initialization computations. Gridding factors...
+-
++c Recompute the gridding constants on every call.  In the legacy routine
++c these values lived in local SAVE storage initialized only by the
++c ISTART=0 call.  Generated tangent/reverse routines have distinct SAVE
++c storage and would otherwise read it before initialization after restart.
+       WDX=(WXE-WXW)/(IW-1)
+       AWX=1.E0+(XWD-WXW)/WDX
+       WDXS=ELEQ*DX/WDX
+       WDY=(WYN-WYS)/(JW-1)
+       AWY=1.E0+(YSD-WYS)/WDY
+       WDYS=ELEQ*DY/WDY
+- 
+-c on the initial time step, only G is needed, unless restarting.
+-      L1 = 2
+-      IF(NSTART.GT.0 .AND. NATMR .GT. 0) L1=1
+- 
+       ISM=1
+       IEM=NX
+       JSM=1
+       JEM=NY
+       LP=1
+       L2=2
++      L1=LP
+ 
+-   50 WRITE(6,51)
+-      WRITE(6,54) LP,L2,ISM,IEM,JSM,JEM
++c On the initial time step only G is needed, unless restarting.  The
++c initialization-only diagnostics are omitted from the active kernel.
++      IF(ISTART.EQ.0) THEN
++         L1=2
++         IF(NSTART.GT.0 .AND. NATMR.GT.0) L1=1
++      ENDIF
+-   51 FORMAT(/,30X,'********** WIND FIELD PARAMETERS ********'/)
+-   54 FORMAT(/
+-     A 'L1 =',I1,' L2 =',I1,' WEST,EAST,SOUTH,NORTH LIMITS ...
+-     A',4I8//)
+  
+ c....................................................................
+ c this is the main loop section
+-100   CONTINUE
+ 
+ c zero out bk to start

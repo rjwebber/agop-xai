@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the associated paper."
+title: "AGOP XAI for Zebiak--Cane ENSO forecasts"
+type: software
+version: 1.0.0
+repository-code: "https://github.com/rjwebber/agop-xai"
+authors:
+  - given-names: Yuan
+    family-names: Hui
+    email: yuhui@ucsd.edu
+  - given-names: Dorian S.
+    family-names: Abbot
+    email: abbot@uchicago.edu
+  - given-names: Robert J.
+    family-names: Webber
+    email: rwebber@ucsd.edu
+preferred-citation:
+  type: article
+  title: "Explaining El Niño Forecasts with the Average Gradient Outer Product"
+  authors:
+    - given-names: Yuan
+      family-names: Hui
+    - given-names: Dorian S.
+      family-names: Abbot
+    - given-names: Robert J.
+      family-names: Webber
+  journal: "Journal of Geophysical Research: Machine Learning and Computation"

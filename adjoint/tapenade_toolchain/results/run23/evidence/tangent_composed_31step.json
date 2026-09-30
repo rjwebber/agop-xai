@@ -1,0 +1,1721 @@
+{
+  "acceptance_thresholds": null,
+  "build_provenance": {
+    "coupled_build_input_manifest_sha256": "49cb6c88dacfc462f34dccf0395002cbebc4a122ba358e6ba9c2d50d4812ce0e",
+    "coupled_build_manifest_sha256": "8501b8159096afd17156c2bd4ff27bafcdd387866c58d0d8bb3bb6ac6ce5f7e9",
+    "dataset_generator_sha256": "19c8c9f5ead08d16de5859d6a6b18c7c21fc07b7c88cbfe10627bee67b31c0aa",
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "one_step_executable_sha256": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5",
+    "optimization": "O3",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "snapshot_entry_count": 142,
+    "tangent_build_inputs_sha256": "4ae14db12f47e132f989ba18f683d58c4150737e99c71541bca87911dfe7e1cd",
+    "tangent_build_manifest_sha256": "75ca84383895f67d5a74122f62283de155f4a1c532608eb704009870ee98309a",
+    "tangent_input_count": 35
+  },
+  "cases": [
+    {
+      "centered_difference_steps": [
+        {
+          "active_output_relative_l2_error": 0.02710911012611225,
+          "full_absolute_l2_defect": 314.7432681498369,
+          "full_cosine": 0.9995920984591203,
+          "full_relative_l2_error": 0.028559354097389494,
+          "h": 0.2,
+          "independent_output_relative_l2_error": 0.0263572268055794,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.07308267056941986,
+          "nino3_forward_oracle_fd": -0.03696441650390625,
+          "nino3_relative_error": 0.6641036352077518,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.043586915632559536,
+          "full_absolute_l2_defect": 504.5735696140575,
+          "full_cosine": 0.9989523286675877,
+          "full_relative_l2_error": 0.045784284212018474,
+          "h": 0.1,
+          "independent_output_relative_l2_error": 0.04211373416187833,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.06600163877010345,
+          "nino3_forward_oracle_fd": -0.044045448303222656,
+          "nino3_relative_error": 0.5997581628501036,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.06723650713116362,
+          "full_absolute_l2_defect": 785.2799067428953,
+          "full_cosine": 0.9974675356648913,
+          "full_relative_l2_error": 0.0712551758583084,
+          "h": 0.05,
+          "independent_output_relative_l2_error": 0.06509546043317571,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.07771752774715424,
+          "nino3_forward_oracle_fd": -0.032329559326171875,
+          "nino3_relative_error": 0.7062206716600306,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.12995800972939406,
+          "full_absolute_l2_defect": 1520.2663487136308,
+          "full_cosine": 0.9905991895117483,
+          "full_relative_l2_error": 0.13794679463831605,
+          "h": 0.025,
+          "independent_output_relative_l2_error": 0.12582670719192107,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.11682771146297455,
+          "nino3_forward_oracle_fd": 0.0067806243896484375,
+          "nino3_relative_error": 1.061615664439445,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.12154523457114728,
+          "full_absolute_l2_defect": 1421.7977038982344,
+          "full_cosine": 0.9917594283642649,
+          "full_relative_l2_error": 0.12901189060906068,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 0.11770716481097693,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.20598672330379486,
+          "nino3_forward_oracle_fd": 0.09593963623046875,
+          "nino3_relative_error": 1.8718053224484048,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.3272385737362563,
+          "full_absolute_l2_defect": 3828.2835271293143,
+          "full_cosine": 0.9443194375445311,
+          "full_relative_l2_error": 0.34737297315105714,
+          "h": 0.01,
+          "independent_output_relative_l2_error": 0.316697486216402,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.3174712508916855,
+          "nino3_forward_oracle_fd": 0.20742416381835938,
+          "nino3_relative_error": 2.884867372092724,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        },
+        {
+          "active_output_relative_l2_error": 0.48585655795874766,
+          "full_absolute_l2_defect": 5688.72787413134,
+          "full_cosine": 0.8875718816245527,
+          "full_relative_l2_error": 0.5161870329301621,
+          "h": 0.005,
+          "independent_output_relative_l2_error": 0.4704064097647226,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.764792189002037,
+          "nino3_forward_oracle_fd": 0.6547451019287109,
+          "nino3_relative_error": 6.94968135315062,
+          "nino3_tangent": -0.11004708707332611,
+          "tangent_norm": 11020.671793785647
+        }
+      ],
+      "checkpoint": "extreme_el_nino",
+      "direct_and_segmented_primal_bitwise_equal": true,
+      "direct_and_segmented_primal_relative_l2_difference": 0.0,
+      "direct_and_segmented_tapes_equal": true,
+      "direction_sha256": "95af4b6cf197fa6d535c8e8e1e3f3bb33cbb96ca490248db285dd77c374458f7",
+      "input_state_sha256": "c4afdc6c2549e841ed65ba75abb3411088bec51f44cefacc8b538c327f87c46b",
+      "one_step_records": [
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424799,
+          "step": 1,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 37020.53026101647,
+          "transformed_primal_maximum_absolute_difference": 0.00014138221740722656,
+          "transformed_primal_relative_l2_difference": 1.2511890535649765e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424800,
+          "step": 2,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 35386.8604226257,
+          "transformed_primal_maximum_absolute_difference": 0.0001081228256225586,
+          "transformed_primal_relative_l2_difference": 1.1683426600241269e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424801,
+          "step": 3,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 33467.06628044662,
+          "transformed_primal_maximum_absolute_difference": 0.00012969970703125,
+          "transformed_primal_relative_l2_difference": 1.2338020713777205e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424802,
+          "step": 4,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 31618.405615467887,
+          "transformed_primal_maximum_absolute_difference": 0.00017154216766357422,
+          "transformed_primal_relative_l2_difference": 1.3035839945919728e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424803,
+          "step": 5,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 29916.700891348835,
+          "transformed_primal_maximum_absolute_difference": 0.00014781951904296875,
+          "transformed_primal_relative_l2_difference": 1.3022112891212732e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424804,
+          "step": 6,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 28045.197514777305,
+          "transformed_primal_maximum_absolute_difference": 0.00010395050048828125,
+          "transformed_primal_relative_l2_difference": 1.3337977756217646e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424805,
+          "step": 7,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 26048.624165817255,
+          "transformed_primal_maximum_absolute_difference": 0.0001659393310546875,
+          "transformed_primal_relative_l2_difference": 1.208213416956027e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424806,
+          "step": 8,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 24265.802753478012,
+          "transformed_primal_maximum_absolute_difference": 0.0001354217529296875,
+          "transformed_primal_relative_l2_difference": 1.2917186692334751e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424807,
+          "step": 9,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 23139.18758069207,
+          "transformed_primal_maximum_absolute_difference": 0.00012969970703125,
+          "transformed_primal_relative_l2_difference": 1.3129630232081944e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424808,
+          "step": 10,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 21826.75065774407,
+          "transformed_primal_maximum_absolute_difference": 0.00016021728515625,
+          "transformed_primal_relative_l2_difference": 1.3205597418506057e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424809,
+          "step": 11,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 20957.5633935962,
+          "transformed_primal_maximum_absolute_difference": 0.0001544952392578125,
+          "transformed_primal_relative_l2_difference": 1.480588153040322e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424810,
+          "step": 12,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 19967.124261714547,
+          "transformed_primal_maximum_absolute_difference": 0.00015783309936523438,
+          "transformed_primal_relative_l2_difference": 1.4311700154573082e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424811,
+          "step": 13,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 19207.53426246742,
+          "transformed_primal_maximum_absolute_difference": 0.00012302398681640625,
+          "transformed_primal_relative_l2_difference": 1.352334840892512e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424812,
+          "step": 14,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 18517.668460919373,
+          "transformed_primal_maximum_absolute_difference": 0.000152587890625,
+          "transformed_primal_relative_l2_difference": 1.3625221313794523e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424813,
+          "step": 15,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 17875.15999177753,
+          "transformed_primal_maximum_absolute_difference": 0.00021266937255859375,
+          "transformed_primal_relative_l2_difference": 1.391500631998603e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424814,
+          "step": 16,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 17246.951494716242,
+          "transformed_primal_maximum_absolute_difference": 0.000110626220703125,
+          "transformed_primal_relative_l2_difference": 1.4863639438224237e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424815,
+          "step": 17,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 16647.69295189196,
+          "transformed_primal_maximum_absolute_difference": 0.000141143798828125,
+          "transformed_primal_relative_l2_difference": 1.4113110457043923e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424816,
+          "step": 18,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 16063.775073503348,
+          "transformed_primal_maximum_absolute_difference": 0.00020647048950195312,
+          "transformed_primal_relative_l2_difference": 1.5094271132031466e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424817,
+          "step": 19,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 15494.273522390939,
+          "transformed_primal_maximum_absolute_difference": 0.000141143798828125,
+          "transformed_primal_relative_l2_difference": 1.636413798997829e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424818,
+          "step": 20,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 14932.15023060236,
+          "transformed_primal_maximum_absolute_difference": 0.00013017654418945312,
+          "transformed_primal_relative_l2_difference": 1.6516138029316335e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424819,
+          "step": 21,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 14435.532901021672,
+          "transformed_primal_maximum_absolute_difference": 0.0001621246337890625,
+          "transformed_primal_relative_l2_difference": 1.7812906443898795e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424820,
+          "step": 22,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 13995.550044545522,
+          "transformed_primal_maximum_absolute_difference": 0.00020360946655273438,
+          "transformed_primal_relative_l2_difference": 1.6936052598805565e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424821,
+          "step": 23,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 13600.535740487294,
+          "transformed_primal_maximum_absolute_difference": 0.00020313262939453125,
+          "transformed_primal_relative_l2_difference": 1.9108178507133374e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424822,
+          "step": 24,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 13184.870772341286,
+          "transformed_primal_maximum_absolute_difference": 0.00018107891082763672,
+          "transformed_primal_relative_l2_difference": 1.8159497624515146e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424823,
+          "step": 25,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 12836.164752694918,
+          "transformed_primal_maximum_absolute_difference": 0.0002346038818359375,
+          "transformed_primal_relative_l2_difference": 2.0393685530984787e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424824,
+          "step": 26,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 12490.446654906616,
+          "transformed_primal_maximum_absolute_difference": 0.000286102294921875,
+          "transformed_primal_relative_l2_difference": 2.3078121929335068e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424825,
+          "step": 27,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 12139.263971288598,
+          "transformed_primal_maximum_absolute_difference": 0.00022745132446289062,
+          "transformed_primal_relative_l2_difference": 2.161069439137238e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424826,
+          "step": 28,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11835.066733337186,
+          "transformed_primal_maximum_absolute_difference": 0.000244140625,
+          "transformed_primal_relative_l2_difference": 2.1805700824914228e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424827,
+          "step": 29,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11553.156748019479,
+          "transformed_primal_maximum_absolute_difference": 0.000278472900390625,
+          "transformed_primal_relative_l2_difference": 2.4369128344617938e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424828,
+          "step": 30,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11286.023599141867,
+          "transformed_primal_maximum_absolute_difference": 0.00022125244140625,
+          "transformed_primal_relative_l2_difference": 2.3022386344553673e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 424829,
+          "step": 31,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11020.671793785647,
+          "transformed_primal_maximum_absolute_difference": 0.0002589225769042969,
+          "transformed_primal_relative_l2_difference": 2.3225789071034292e-08
+        }
+      ],
+      "window_steps": 31
+    },
+    {
+      "centered_difference_steps": [
+        {
+          "active_output_relative_l2_error": 0.06915239420344838,
+          "full_absolute_l2_defect": 1847.9601273500057,
+          "full_cosine": 0.9972051267123899,
+          "full_relative_l2_error": 0.07502546230763027,
+          "h": 0.2,
+          "independent_output_relative_l2_error": 0.0678250954416743,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.7370157241821289,
+          "nino3_forward_oracle_fd": -1.9754558801651,
+          "nino3_relative_error": 0.595116139138065,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.08869971621339025,
+          "full_absolute_l2_defect": 2362.064391667296,
+          "full_cosine": 0.9955149886739618,
+          "full_relative_l2_error": 0.09589761724965272,
+          "h": 0.1,
+          "independent_output_relative_l2_error": 0.0866524370327162,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 1.0399280786514282,
+          "nino3_forward_oracle_fd": -0.19851207733154297,
+          "nino3_relative_error": 0.8397079775130672,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.09155964800599785,
+          "full_absolute_l2_defect": 2453.2795814934293,
+          "full_cosine": 0.995134682897439,
+          "full_relative_l2_error": 0.09960086911364044,
+          "h": 0.05,
+          "independent_output_relative_l2_error": 0.08947059461960877,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 1.429306149482727,
+          "nino3_forward_oracle_fd": 0.19086599349975586,
+          "nino3_relative_error": 1.154118059381127,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.06326396517786245,
+          "full_absolute_l2_defect": 1695.1553813755988,
+          "full_cosine": 0.9976639689649528,
+          "full_relative_l2_error": 0.06882173175097063,
+          "h": 0.025,
+          "independent_output_relative_l2_error": 0.06205984599778604,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.6858192682266235,
+          "nino3_forward_oracle_fd": -0.5526208877563477,
+          "nino3_relative_error": 0.5537766721414786,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.050091877023466534,
+          "full_absolute_l2_defect": 1352.7952023566531,
+          "full_cosine": 0.998502342253528,
+          "full_relative_l2_error": 0.05492222692591086,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 0.04908694396307613,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.5430268049240112,
+          "nino3_forward_oracle_fd": -0.69541335105896,
+          "nino3_relative_error": 0.43847641914760227,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.06566913617506864,
+          "full_absolute_l2_defect": 1779.353175741143,
+          "full_cosine": 0.997406099786236,
+          "full_relative_l2_error": 0.072240083886423,
+          "h": 0.01,
+          "independent_output_relative_l2_error": 0.06360104911018502,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 1.1755095720291138,
+          "nino3_forward_oracle_fd": -0.06293058395385742,
+          "nino3_relative_error": 0.949185607677661,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        },
+        {
+          "active_output_relative_l2_error": 0.06265127476120608,
+          "full_absolute_l2_defect": 1708.4937672745116,
+          "full_cosine": 0.9976120103974772,
+          "full_relative_l2_error": 0.06936325781189194,
+          "h": 0.005,
+          "independent_output_relative_l2_error": 0.061132984287955196,
+          "major_tape_matches_baseline": false,
+          "nino3_absolute_error": 0.3671633005142212,
+          "nino3_forward_oracle_fd": -0.87127685546875,
+          "nino3_relative_error": 0.2964723799857712,
+          "nino3_tangent": -1.2384401559829712,
+          "tangent_norm": 24631.1061673
+        }
+      ],
+      "checkpoint": "extreme_la_nina",
+      "direct_and_segmented_primal_bitwise_equal": true,
+      "direct_and_segmented_primal_relative_l2_difference": 0.0,
+      "direct_and_segmented_tapes_equal": true,
+      "direction_sha256": "7199a25c43f86d18fb47ab54efbe7afbfffd38256b1639f598698094ac73f9c6",
+      "input_state_sha256": "0c2192d891e5a00f0a58e69bc1b1914e5c79756944c0d2000d939047cb220499",
+      "one_step_records": [
+        {
+          "branch_tape": [
+            2,
+            3,
+            1
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417878,
+          "step": 1,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 83007.31740510889,
+          "transformed_primal_maximum_absolute_difference": 0.0002644062042236328,
+          "transformed_primal_relative_l2_difference": 2.4323496859119854e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417879,
+          "step": 2,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 79970.66119853963,
+          "transformed_primal_maximum_absolute_difference": 0.0003161430358886719,
+          "transformed_primal_relative_l2_difference": 2.6898021412479215e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417880,
+          "step": 3,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 75976.28785891122,
+          "transformed_primal_maximum_absolute_difference": 0.0003032684326171875,
+          "transformed_primal_relative_l2_difference": 2.3426581179839114e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417881,
+          "step": 4,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 70845.4926349961,
+          "transformed_primal_maximum_absolute_difference": 0.000274658203125,
+          "transformed_primal_relative_l2_difference": 2.5641047432267948e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417882,
+          "step": 5,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 65540.00569970657,
+          "transformed_primal_maximum_absolute_difference": 0.0002956390380859375,
+          "transformed_primal_relative_l2_difference": 2.4347167382860675e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417883,
+          "step": 6,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 61497.44323347902,
+          "transformed_primal_maximum_absolute_difference": 0.0002465248107910156,
+          "transformed_primal_relative_l2_difference": 2.3491900303634733e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417884,
+          "step": 7,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 57675.030467288096,
+          "transformed_primal_maximum_absolute_difference": 0.0002766922116279602,
+          "transformed_primal_relative_l2_difference": 2.3560786368348006e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417885,
+          "step": 8,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 54293.920930499735,
+          "transformed_primal_maximum_absolute_difference": 0.0002474784851074219,
+          "transformed_primal_relative_l2_difference": 2.285224856476978e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417886,
+          "step": 9,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 51522.67843125024,
+          "transformed_primal_maximum_absolute_difference": 0.0002765655517578125,
+          "transformed_primal_relative_l2_difference": 2.48156887297519e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417887,
+          "step": 10,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 48771.18531417693,
+          "transformed_primal_maximum_absolute_difference": 0.00024086236953735352,
+          "transformed_primal_relative_l2_difference": 2.24167261088659e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417888,
+          "step": 11,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 46585.45255387115,
+          "transformed_primal_maximum_absolute_difference": 0.000324249267578125,
+          "transformed_primal_relative_l2_difference": 2.60769762829261e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417889,
+          "step": 12,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 44646.01021764078,
+          "transformed_primal_maximum_absolute_difference": 0.0002498626708984375,
+          "transformed_primal_relative_l2_difference": 2.3627990668836146e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417890,
+          "step": 13,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 42842.43376495932,
+          "transformed_primal_maximum_absolute_difference": 0.0002560615539550781,
+          "transformed_primal_relative_l2_difference": 2.2658136040024706e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417891,
+          "step": 14,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 41044.22569359305,
+          "transformed_primal_maximum_absolute_difference": 0.00029587745666503906,
+          "transformed_primal_relative_l2_difference": 2.2852856520967995e-08
+        },
+        {
+          "branch_tape": [
+            3,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417892,
+          "step": 15,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 39688.984399919806,
+          "transformed_primal_maximum_absolute_difference": 0.00023365020751953125,
+          "transformed_primal_relative_l2_difference": 2.061180745644167e-08
+        },
+        {
+          "branch_tape": [
+            3,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417893,
+          "step": 16,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 38274.7973995146,
+          "transformed_primal_maximum_absolute_difference": 0.00022312253713607788,
+          "transformed_primal_relative_l2_difference": 2.0365332053998076e-08
+        },
+        {
+          "branch_tape": [
+            3,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417894,
+          "step": 17,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 36775.87763064952,
+          "transformed_primal_maximum_absolute_difference": 0.00024890899658203125,
+          "transformed_primal_relative_l2_difference": 2.141225228119302e-08
+        },
+        {
+          "branch_tape": [
+            3,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417895,
+          "step": 18,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 35494.03283420199,
+          "transformed_primal_maximum_absolute_difference": 0.00019359588623046875,
+          "transformed_primal_relative_l2_difference": 1.9486323839526135e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417896,
+          "step": 19,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 34437.093923109685,
+          "transformed_primal_maximum_absolute_difference": 0.00029754638671875,
+          "transformed_primal_relative_l2_difference": 2.2962438862947176e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417897,
+          "step": 20,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 33467.27297928323,
+          "transformed_primal_maximum_absolute_difference": 0.0002932548522949219,
+          "transformed_primal_relative_l2_difference": 2.2020968817115312e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417898,
+          "step": 21,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 32358.724721685365,
+          "transformed_primal_maximum_absolute_difference": 0.00019502639770507812,
+          "transformed_primal_relative_l2_difference": 1.91634364054062e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417899,
+          "step": 22,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 31222.286513758474,
+          "transformed_primal_maximum_absolute_difference": 0.0001747608184814453,
+          "transformed_primal_relative_l2_difference": 1.792201244935718e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417900,
+          "step": 23,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 30224.21954372856,
+          "transformed_primal_maximum_absolute_difference": 0.0002579689025878906,
+          "transformed_primal_relative_l2_difference": 1.9472704232303636e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417901,
+          "step": 24,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 29414.72976507545,
+          "transformed_primal_maximum_absolute_difference": 0.00018310546875,
+          "transformed_primal_relative_l2_difference": 1.8989679302358433e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417902,
+          "step": 25,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 28532.994176765398,
+          "transformed_primal_maximum_absolute_difference": 0.000213623046875,
+          "transformed_primal_relative_l2_difference": 1.806131701080582e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417903,
+          "step": 26,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 27699.87796218458,
+          "transformed_primal_maximum_absolute_difference": 0.00022530555725097656,
+          "transformed_primal_relative_l2_difference": 2.0312784830281116e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417904,
+          "step": 27,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 26921.798287593978,
+          "transformed_primal_maximum_absolute_difference": 0.00028228759765625,
+          "transformed_primal_relative_l2_difference": 1.9575190409830346e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417905,
+          "step": 28,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 26245.944436182457,
+          "transformed_primal_maximum_absolute_difference": 0.00022125244140625,
+          "transformed_primal_relative_l2_difference": 1.839771983906092e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417906,
+          "step": 29,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 25691.72169726919,
+          "transformed_primal_maximum_absolute_difference": 0.00029143691062927246,
+          "transformed_primal_relative_l2_difference": 1.8449715361314736e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417907,
+          "step": 30,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 25178.966942466857,
+          "transformed_primal_maximum_absolute_difference": 0.00022125244140625,
+          "transformed_primal_relative_l2_difference": 1.8733936875521094e-08
+        },
+        {
+          "branch_tape": [
+            2,
+            3,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 417908,
+          "step": 31,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 24631.1061673,
+          "transformed_primal_maximum_absolute_difference": 0.0001811981201171875,
+          "transformed_primal_relative_l2_difference": 1.702432112093689e-08
+        }
+      ],
+      "window_steps": 31
+    },
+    {
+      "centered_difference_steps": [
+        {
+          "active_output_relative_l2_error": 0.02514770298762684,
+          "full_absolute_l2_defect": 158.98881818274543,
+          "full_cosine": 0.999624287049339,
+          "full_relative_l2_error": 0.027410822758188208,
+          "h": 0.2,
+          "independent_output_relative_l2_error": 0.024386816250070647,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.07206934690475464,
+          "nino3_forward_oracle_fd": -0.42219266295433044,
+          "nino3_relative_error": 0.20583989583415793,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.02118015053105174,
+          "full_absolute_l2_defect": 134.5654564010932,
+          "full_cosine": 0.9997308501356831,
+          "full_relative_l2_error": 0.023200058450307894,
+          "h": 0.1,
+          "independent_output_relative_l2_error": 0.020468717602341598,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.03276529908180237,
+          "nino3_forward_oracle_fd": -0.3828886151313782,
+          "nino3_relative_error": 0.09358216828142618,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.024730650559079095,
+          "full_absolute_l2_defect": 157.6415557164569,
+          "full_cosine": 0.999630721815118,
+          "full_relative_l2_error": 0.027178544959697078,
+          "h": 0.05,
+          "independent_output_relative_l2_error": 0.023885505937269794,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.07790300250053406,
+          "nino3_forward_oracle_fd": -0.42802631855010986,
+          "nino3_relative_error": 0.22250161280176886,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.015267075631706213,
+          "full_absolute_l2_defect": 94.9796565196792,
+          "full_cosine": 0.9998661002012227,
+          "full_relative_l2_error": 0.01637518009286686,
+          "h": 0.025,
+          "independent_output_relative_l2_error": 0.01484345421137134,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.12436601519584656,
+          "nino3_forward_oracle_fd": -0.47448933124542236,
+          "nino3_relative_error": 0.35520632158709736,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.01736498267987937,
+          "full_absolute_l2_defect": 111.71554142777329,
+          "full_cosine": 0.9998148315620512,
+          "full_relative_l2_error": 0.019260567758242877,
+          "h": 0.02,
+          "independent_output_relative_l2_error": 0.0169350889699263,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.10310518741607666,
+          "nino3_forward_oracle_fd": -0.45322850346565247,
+          "nino3_relative_error": 0.29448249428060785,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.03231066413999387,
+          "full_absolute_l2_defect": 211.9840285068596,
+          "full_cosine": 0.9993342184080379,
+          "full_relative_l2_error": 0.036547580511538495,
+          "h": 0.01,
+          "independent_output_relative_l2_error": 0.031495568312628335,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.11560651659965515,
+          "nino3_forward_oracle_fd": -0.46572983264923096,
+          "nino3_relative_error": 0.3301879974862509,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        },
+        {
+          "active_output_relative_l2_error": 0.05340025918884195,
+          "full_absolute_l2_defect": 350.63246790118296,
+          "full_cosine": 0.9981834910802578,
+          "full_relative_l2_error": 0.060451574775895196,
+          "h": 0.005,
+          "independent_output_relative_l2_error": 0.051935067622930854,
+          "major_tape_matches_baseline": true,
+          "nino3_absolute_error": 0.09460780024528503,
+          "nino3_forward_oracle_fd": -0.44473111629486084,
+          "nino3_relative_error": 0.2702127962020359,
+          "nino3_tangent": -0.3501233160495758,
+          "tangent_norm": 5800.220576569597
+        }
+      ],
+      "checkpoint": "neutral_member_04",
+      "direct_and_segmented_primal_bitwise_equal": true,
+      "direct_and_segmented_primal_relative_l2_difference": 0.0,
+      "direct_and_segmented_tapes_equal": true,
+      "direction_sha256": "86d89f218f1d1f7a5ff15b640e3a2cfa19220ce3fb7bfd0187ad7a7b88636ccc",
+      "input_state_sha256": "f15de1499ddd2494461954dd53e8bd0017f5a42c666417969af7e010d5a79512",
+      "one_step_records": [
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406358,
+          "step": 1,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 19952.69175978029,
+          "transformed_primal_maximum_absolute_difference": 6.0439109802246094e-05,
+          "transformed_primal_relative_l2_difference": 6.126776817350659e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406359,
+          "step": 2,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 19245.624881232437,
+          "transformed_primal_maximum_absolute_difference": 5.841255187988281e-05,
+          "transformed_primal_relative_l2_difference": 6.356461419594512e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406360,
+          "step": 3,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 18267.43950015451,
+          "transformed_primal_maximum_absolute_difference": 7.104873657226562e-05,
+          "transformed_primal_relative_l2_difference": 6.21315646072437e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406361,
+          "step": 4,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 17004.29456879274,
+          "transformed_primal_maximum_absolute_difference": 5.8650970458984375e-05,
+          "transformed_primal_relative_l2_difference": 6.090219490485037e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406362,
+          "step": 5,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 16035.479724649444,
+          "transformed_primal_maximum_absolute_difference": 5.823373794555664e-05,
+          "transformed_primal_relative_l2_difference": 5.813349414869214e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406363,
+          "step": 6,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 15036.025432684452,
+          "transformed_primal_maximum_absolute_difference": 6.459280848503113e-05,
+          "transformed_primal_relative_l2_difference": 6.171460107749558e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406364,
+          "step": 7,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 14092.29135287594,
+          "transformed_primal_maximum_absolute_difference": 5.53131103515625e-05,
+          "transformed_primal_relative_l2_difference": 5.956143943631179e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406365,
+          "step": 8,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 13282.492247212156,
+          "transformed_primal_maximum_absolute_difference": 5.702674388885498e-05,
+          "transformed_primal_relative_l2_difference": 5.548836792711529e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406366,
+          "step": 9,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 12593.467384834617,
+          "transformed_primal_maximum_absolute_difference": 5.441904067993164e-05,
+          "transformed_primal_relative_l2_difference": 5.228002953908488e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406367,
+          "step": 10,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11926.298869613049,
+          "transformed_primal_maximum_absolute_difference": 5.221366882324219e-05,
+          "transformed_primal_relative_l2_difference": 5.25924996867691e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406368,
+          "step": 11,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 11291.162255609896,
+          "transformed_primal_maximum_absolute_difference": 5.459785461425781e-05,
+          "transformed_primal_relative_l2_difference": 5.021522508428768e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406369,
+          "step": 12,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 10811.403628851018,
+          "transformed_primal_maximum_absolute_difference": 5.14984130859375e-05,
+          "transformed_primal_relative_l2_difference": 4.930540964070593e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406370,
+          "step": 13,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 10362.244273604741,
+          "transformed_primal_maximum_absolute_difference": 6.139278411865234e-05,
+          "transformed_primal_relative_l2_difference": 5.091329150972291e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406371,
+          "step": 14,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 9964.735557251883,
+          "transformed_primal_maximum_absolute_difference": 7.295608520507812e-05,
+          "transformed_primal_relative_l2_difference": 5.246922619297888e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406372,
+          "step": 15,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 9613.12266197179,
+          "transformed_primal_maximum_absolute_difference": 5.054473876953125e-05,
+          "transformed_primal_relative_l2_difference": 4.931318400098489e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406373,
+          "step": 16,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 9200.744991106396,
+          "transformed_primal_maximum_absolute_difference": 4.9591064453125e-05,
+          "transformed_primal_relative_l2_difference": 4.6989062569914045e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406374,
+          "step": 17,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 8860.849291310316,
+          "transformed_primal_maximum_absolute_difference": 5.91278076171875e-05,
+          "transformed_primal_relative_l2_difference": 4.868360861071119e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406375,
+          "step": 18,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 8536.073647226505,
+          "transformed_primal_maximum_absolute_difference": 8.153915405273438e-05,
+          "transformed_primal_relative_l2_difference": 5.070234865856437e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406376,
+          "step": 19,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 8250.274126996572,
+          "transformed_primal_maximum_absolute_difference": 5.1975250244140625e-05,
+          "transformed_primal_relative_l2_difference": 4.891523465092535e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406377,
+          "step": 20,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 7950.955929342245,
+          "transformed_primal_maximum_absolute_difference": 4.4465065002441406e-05,
+          "transformed_primal_relative_l2_difference": 4.6821028283594024e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406378,
+          "step": 21,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 7691.240953270736,
+          "transformed_primal_maximum_absolute_difference": 6.258487701416016e-05,
+          "transformed_primal_relative_l2_difference": 4.486632464183157e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406379,
+          "step": 22,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 7472.398469663477,
+          "transformed_primal_maximum_absolute_difference": 6.67572021484375e-05,
+          "transformed_primal_relative_l2_difference": 4.506036944585219e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406380,
+          "step": 23,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 7240.256034062719,
+          "transformed_primal_maximum_absolute_difference": 6.008148193359375e-05,
+          "transformed_primal_relative_l2_difference": 4.7082779734636315e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406381,
+          "step": 24,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 7010.307811818777,
+          "transformed_primal_maximum_absolute_difference": 5.2928924560546875e-05,
+          "transformed_primal_relative_l2_difference": 4.534507134998934e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406382,
+          "step": 25,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 6813.364487022397,
+          "transformed_primal_maximum_absolute_difference": 5.340576171875e-05,
+          "transformed_primal_relative_l2_difference": 4.419915307071656e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406383,
+          "step": 26,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 6621.387203583007,
+          "transformed_primal_maximum_absolute_difference": 5.632638931274414e-05,
+          "transformed_primal_relative_l2_difference": 4.0740090871736764e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406384,
+          "step": 27,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 6436.319573645027,
+          "transformed_primal_maximum_absolute_difference": 5.367398262023926e-05,
+          "transformed_primal_relative_l2_difference": 4.131300256113529e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406385,
+          "step": 28,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 6265.414227460528,
+          "transformed_primal_maximum_absolute_difference": 5.519390106201172e-05,
+          "transformed_primal_relative_l2_difference": 4.3504558098159255e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406386,
+          "step": 29,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 6098.988640103579,
+          "transformed_primal_maximum_absolute_difference": 4.51207160949707e-05,
+          "transformed_primal_relative_l2_difference": 4.150753544535427e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406387,
+          "step": 30,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 5944.081618655224,
+          "transformed_primal_maximum_absolute_difference": 5.745887756347656e-05,
+          "transformed_primal_relative_l2_difference": 3.900211552980693e-09
+        },
+        {
+          "branch_tape": [
+            2,
+            2,
+            0
+          ],
+          "local_centered_difference_steps": [],
+          "pre_nt": 406388,
+          "step": 31,
+          "tangent_major_tape_matches_forward_oracle": true,
+          "tangent_norm": 5800.220576569597,
+          "transformed_primal_maximum_absolute_difference": 5.364418029785156e-05,
+          "transformed_primal_relative_l2_difference": 3.814557547656394e-09
+        }
+      ],
+      "window_steps": 31
+    }
+  ],
+  "certification_assessed": false,
+  "checkpoint_inputs": [
+    {
+      "advance": 0,
+      "label": "extreme_el_nino",
+      "pre_nt": 424799,
+      "sha256": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825"
+    },
+    {
+      "advance": 0,
+      "label": "extreme_la_nina",
+      "pre_nt": 417878,
+      "sha256": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7"
+    },
+    {
+      "advance": 0,
+      "label": "neutral_member_04",
+      "pre_nt": 406358,
+      "sha256": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74"
+    }
+  ],
+  "composition": "Discard the transformed primal after each step and re-anchor the next tangent step at the validated float32 forward-oracle state.",
+  "created_utc": "2026-09-06T13:26:37.520734+00:00",
+  "executables": {
+    "forward_oracle_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "tapenade_tangent_sha256": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5"
+  },
+  "private_staged_input_binding": {
+    "files": {
+      "checkpoint extreme_el_nino": "04647489b5ffce58411eb24a8fc248f223750106ebed124f1c3764bb82d2f825",
+      "checkpoint extreme_la_nina": "c451ee91b9b05cf930587025790c5fa408607595ff4f8cf7cf6df897c5dba4f7",
+      "checkpoint neutral_member_04": "62e392ff707836a3683422db580dbbd1268a4baa79555df2401a715acdef7c74",
+      "primal executable": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+      "state manifest": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+      "tangent executable": "8edd2803401429fff6d9149d2e2a10be750d9fbfc18fbaa7fea45b084fe9cfe5"
+    },
+    "trees": {
+      "kernel source": {
+        "file_count": 16,
+        "manifest_sha256": "364e671ebda2c45424d838e4b4c21047010d1624efe40376daa5472b533b546a"
+      },
+      "runtime source": {
+        "file_count": 74,
+        "manifest_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5"
+      }
+    }
+  },
+  "replay_validation_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "primal_executable_sha256": "23887b36d404bd5f297961d03281ca807202e0abd4753d5a75dbebc439c48e5f",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a"
+  },
+  "replay_validation_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+  "runtime_source_binding": {
+    "kernel_build_report_sha256": "ec5cd75827765e6f71f9f7c5e611ddef665e10bf7751773b7fc0e199ba912b47",
+    "kernel_source_manifest_sha256": "4ba4b38effead8a9c3e78859e789e53e3327548358971d25dc6e9532d38c34dc",
+    "replay_report_sha256": "1c6b7e06343ec8c2cad87724d68dfd863c54b9d4abdccc28b1035dd0704c8f2a",
+    "runtime_source_complete_tree_entry_count": 74,
+    "runtime_source_complete_tree_sha256": "af5c26b4eb3122ea719b218276823778c6b68d6b43ff04bd23ca78633cb7e8c5",
+    "runtime_source_manifest_entry_count": 74,
+    "runtime_source_manifest_sha256": "f600085466d74b806169f2052738e887d0bcd45482dc3ed81fe8b5f5b0b2fd27"
+  },
+  "schema_version": 1,
+  "scientific_claim": "Major-tape-conditioned comparison of a long-window tangent formed by composing one-step Tapenade maps on an independently validated ZC trajectory. The tape observes only SST substeps, atmosphere iterations, and reset\u2014not every internal branch. This report applies no threshold and is not adjoint certification.",
+  "state_manifest_sha256": "9553a308884ba235f130bd9f9ecfc2217afa35998db91d4cea857b2fab3f1775",
+  "status": "completed_not_certified",
+  "validator_script_sha256": "386d2abdc83aee3ce18e448ced5f728c5dfade27abaa408182d7be2b00ae290e",
+  "window_steps": 31
+}

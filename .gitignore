@@ -1,0 +1,68 @@
+# Keep local raw inputs and the re-downloadable upstream source copy out of Git,
+# while publishing the explanation of what is intentionally absent.
+/data/raw/*
+!/data/raw/README.md
+# The legacy private headerless file is never needed by the fresh pipeline.
+grads_1.data
+
+# Publish extracted arrays through a data archive or an explicit LFS/DVC setup,
+# not ordinary Git history.
+/data/processed/
+/data/clean/
+
+# Re-downloadable third-party data caches (Figure 3 fetches a checksum-pinned
+# NOAA ERSSTv5 climatology here).
+/data/external/
+
+# Trained checkpoints and cached gradient matrices belong in Zenodo, not Git.
+/artifacts/*
+!/artifacts/README.md
+
+# Generated reports, figures, temporary Fortran builds, and native histories.
+# Some run metadata also contains machine-local paths; publish selected results
+# deliberately rather than adding this workspace wholesale.
+/outputs/*
+!/outputs/README.md
+/tmp/
+/scratch/
+
+# Local Fortran compiler products. The active steering rescue currently uses
+# one such build, but no executable or object file belongs in the source repo.
+/adjoint/controlled_reverse/build-*/
+/adjoint/controlled_window/build-*/
+/adjoint/controlled_window/build/
+/adjoint/full_tangent_audit/build/
+/adjoint/tapenade_toolchain/build/
+
+# Interrupted atomic writes are local scratch data.
+.*.incomplete-*/
+
+# Local Python and macOS artifacts.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.tox/
+.venv/
+venv/
+.DS_Store
+
+# Local secrets and compiler products. Keep the public VERSION.env receipt.
+/.env
+/.env.local
+*.o
+*.obj
+*.mod
+*.a
+*.so
+*.dylib
+*.exe
+
+# Python packaging, coverage, and test reports.
+/build/
+/dist/
+.coverage
+coverage.xml
+htmlcov/
