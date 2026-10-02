@@ -57,6 +57,14 @@ class FreshFigure3And4Tests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "include the 90 W center"):
             FIGURE3.load_region_metadata(self.fixture.directory)
 
+    def test_figure3_uses_manuscript_scale_typography(self) -> None:
+        self.assertEqual(FIGURE3.FIGURE_STYLE["font.size"], 10.0)
+        self.assertEqual(FIGURE3.FIGURE_STYLE["xtick.labelsize"], 11.0)
+        self.assertEqual(FIGURE3.FIGURE_STYLE["ytick.labelsize"], 11.0)
+        self.assertEqual(FIGURE3.FIGURE_STYLE["legend.fontsize"], 10.0)
+        self.assertEqual(FIGURE3.COLORBAR_LABEL_FONT_SIZE, 11.0)
+        self.assertEqual(FIGURE3.COLORBAR_TICK_FONT_SIZE, 9.0)
+
     def test_figure4_uses_common_targets_inside_fixed_test_block(self) -> None:
         data = ZCData(self.fixture.directory, input_profile="core4")
         targets, common_block = FIGURE4.select_common_test_target_steps(

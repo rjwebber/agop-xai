@@ -25,9 +25,10 @@ sys.path.insert(0, str(REPOSITORY_ROOT / "src"))
 from zc_xai.io import atomic_output_path, sha256_file, write_json  # noqa: E402
 
 LOGGER = logging.getLogger(__name__)
-SCRIPT_VERSION = "5.1.0"
+SCRIPT_VERSION = "5.2.0"
 COLORS = {"mlp": "#fe6100", "cnn": "#648fff", "vit": "#ffb000"}
 LABELS = {"mlp": "MLP", "cnn": "CNN", "vit": "ViT"}
+Y_AXIS_LIMITS = (0.5, 1.05)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -178,7 +179,7 @@ def main() -> int:
 
         for axis in (left_ax, right_ax):
             axis.grid(alpha=0.22, linewidth=0.6)
-            axis.set_ylim(min(0.35, axis.get_ylim()[0]), 1.02)
+            axis.set_ylim(*Y_AXIS_LIMITS)
         architecture_handles = [
             Line2D([0], [0], color=COLORS[name], linewidth=2, label=LABELS[name])
             for name in architectures
@@ -217,6 +218,7 @@ def main() -> int:
                 {len(values) for values in left.values()}
             ),
             "y_axis_label": "$R^2$",
+            "y_axis_limits": list(Y_AXIS_LIMITS),
             "panel_titles": [],
             "legend": {
                 "architecture_labels": [LABELS[name] for name in architectures],

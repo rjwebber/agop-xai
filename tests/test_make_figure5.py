@@ -124,6 +124,7 @@ class MakeFigure5Tests(unittest.TestCase):
         self.assertEqual(metadata["right_repetition_counts"], [5])
         self.assertEqual(metadata["left_uncertainty"], "not displayed")
         self.assertEqual(metadata["y_axis_label"], "$R^2$")
+        self.assertEqual(metadata["y_axis_limits"], [0.5, 1.05])
         self.assertEqual(metadata["panel_titles"], [])
         self.assertFalse(metadata["legend"]["numeric_training_years_shown"])
         self.assertEqual(metadata["legend"]["data_regime_labels"], [])

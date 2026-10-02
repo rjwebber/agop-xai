@@ -49,7 +49,7 @@ from matplotlib.patches import Patch, Rectangle  # noqa: E402
 
 LOGGER = logging.getLogger(__name__)
 
-SCRIPT_VERSION = "3.0.0"
+SCRIPT_VERSION = "3.1.0"
 EXPECTED_FORMAT_VERSION = 3
 FRESH_SCHEMA_VERSION = "fresh-zc-interpretability-v1"
 SUPPORTED_OUTPUT_SUFFIXES = {".pdf", ".png"}
@@ -90,16 +90,18 @@ COLORBAR_PAD_FRACTION = 0.075
 
 FIGURE_STYLE: dict[str, Any] = {
     "font.family": "DejaVu Sans",
-    "font.size": 15.0,
+    "font.size": 10.0,
     "axes.linewidth": 0.8,
-    "xtick.labelsize": 17.0,
-    "ytick.labelsize": 17.0,
-    "legend.fontsize": 15.0,
+    "xtick.labelsize": 11.0,
+    "ytick.labelsize": 11.0,
+    "legend.fontsize": 10.0,
     "figure.facecolor": "white",
     "savefig.facecolor": "white",
     "pdf.fonttype": 42,
     "ps.fonttype": 42,
 }
+COLORBAR_LABEL_FONT_SIZE = 11.0
+COLORBAR_TICK_FONT_SIZE = 9.0
 
 
 @dataclass(frozen=True)
@@ -685,8 +687,14 @@ def build_figure(
             shrink=0.80,
             aspect=20,
         )
-        colorbar.set_label("SST (°C)", fontsize=16.0, labelpad=5.0)
-        colorbar.ax.tick_params(labelsize=11.0, length=3.0, width=0.7)
+        colorbar.set_label(
+            "SST (°C)", fontsize=COLORBAR_LABEL_FONT_SIZE, labelpad=5.0
+        )
+        colorbar.ax.tick_params(
+            labelsize=COLORBAR_TICK_FONT_SIZE,
+            length=3.0,
+            width=0.7,
+        )
         colorbar.outline.set_linewidth(0.75)
 
     return figure
@@ -834,6 +842,11 @@ def provenance_document(
             "dpi": dpi,
             "color_limits_degrees_c": [-2.0, 32.0],
             "colorbar_pad_fraction": COLORBAR_PAD_FRACTION,
+            "font_size_points": FIGURE_STYLE["font.size"],
+            "tick_label_size_points": FIGURE_STYLE["xtick.labelsize"],
+            "legend_font_size_points": FIGURE_STYLE["legend.fontsize"],
+            "colorbar_label_size_points": COLORBAR_LABEL_FONT_SIZE,
+            "colorbar_tick_size_points": COLORBAR_TICK_FONT_SIZE,
             "bounding_box": "tight",
             "outer_padding_inches": 0.03,
         },
